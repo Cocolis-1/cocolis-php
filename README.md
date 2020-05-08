@@ -6,3 +6,15 @@ This composer package will help you to use Cocolis.fr API.
 
 ## Installation
 
+### Composer
+
+`composer require cocolis/php`
+
+
+## Tests
+
+To run tests, just run :
+
+`./vendor/bin/phpunit`
+
+It will use phpunit.xml config as default
