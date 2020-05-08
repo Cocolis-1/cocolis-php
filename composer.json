@@ -1,0 +1,21 @@
+{
+  "name": "cocolis/php",
+  "type": "library",
+  "description": "PHP library to use Cocolis.fr API",
+  "keywords": ["cocolis","php"],
+  "homepage": "https://www.cocolis.fr",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Sébastien Fieloux",
+          "email": "sebastien.fieloux@gmail.com",
+          "homepage": "https://www.sebfie.com",
+          "role": "Developer"
+      },
+      {
+          "name": "Alexandre Bettan",
+          "email": "contact@alexandre.business",
+          "role": "Developer"
+      }
+  ]
+}
