@@ -1,21 +1,35 @@
 {
   "name": "cocolis/php",
-  "type": "library",
+  "type": "package",
   "description": "PHP library to use Cocolis.fr API",
   "keywords": ["cocolis","php"],
   "homepage": "https://www.cocolis.fr",
   "license": "MIT",
+  "require": {
+      "php": ">=5.3.0"
+  },
+  "require-dev": {
+    "php-vcr/phpunit-testlistener-vcr": "*",
+    "phpunit/phpunit": "^9",
+    "kint-php/kint": "dev-master"
+  },
   "authors": [
-      {
-          "name": "Sébastien Fieloux",
-          "email": "sebastien.fieloux@gmail.com",
-          "homepage": "https://www.sebfie.com",
-          "role": "Developer"
-      },
-      {
-          "name": "Alexandre Bettan",
-          "email": "contact@alexandre.business",
-          "role": "Developer"
-      }
-  ]
+    {
+        "name": "Sébastien Fieloux",
+        "email": "sebastien.fieloux@gmail.com",
+        "homepage": "https://www.sebfie.com",
+        "role": "Developer"
+    },
+    {
+        "name": "Alexandre Bettan",
+        "email": "contact@alexandre.business",
+        "role": "Developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+        "Cocolis\\Api\\": "src/"
+    }
+  }
 }
