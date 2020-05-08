@@ -18,6 +18,5 @@ jobs:
     - uses: php-actions/composer@v1 # or alternative dependency management
     - name: Run php-cs-fixer
       run: ./vendor/bin/php-cs-fixer fix ./ --diff --dry-run
-    - uses: php-actions/phpunit@v1
-      with:
-        config: phpunit.xml
+    - uses: Run phpunit
+      run: ./vendor/bin/phpunit
