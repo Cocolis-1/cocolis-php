@@ -9,26 +9,26 @@ class APITest extends TestCase
 {
     public function testAPI()
     {
-         // After turning on the VCR will intercept all requests
-         \VCR\VCR::turnOn();
+        // After turning on the VCR will intercept all requests
+        \VCR\VCR::turnOn();
 
-         // Record requests and responses in cassette file 'example'
-         \VCR\VCR::insertCassette('example');
+        // Record requests and responses in cassette file 'example'
+        \VCR\VCR::insertCassette('example');
  
-         // Following request will be recorded once and replayed in future test runs
-         $client = new Client();
-         $client = $client::create(array(
+        // Following request will be recorded once and replayed in future test runs
+        $client = new Client();
+        $client = $client::create(array(
              'app_id' => 'mon_app_id',
              'password' => 'test',
              'live' => false
          ));
-         $result = $client->signIn();
-         $this->assertNotEmpty($result);
+        $result = $client->signIn();
+        $this->assertNotEmpty($result);
  
-         // To stop recording requests, eject the cassette
-         \VCR\VCR::eject();
+        // To stop recording requests, eject the cassette
+        \VCR\VCR::eject();
  
-         // Turn off VCR to stop intercepting requests
-         \VCR\VCR::turnOff();
+        // Turn off VCR to stop intercepting requests
+        \VCR\VCR::turnOff();
     }
 }

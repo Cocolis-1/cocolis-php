@@ -75,7 +75,7 @@ class Client
     }
 
 
-    // Initialize the connection to the api 
+    // Initialize the connection to the api
     public static function create(array $auth)
     {
         // Set array of values for the class
@@ -96,16 +96,16 @@ class Client
     public function signIn()
     {
         if ($this->isLive()) {
-            $client = new \GuzzleHttp\Client(['base_uri' => self::API_PROD]);   
-        }else{
-            $client = new \GuzzleHttp\Client(['base_uri' => self::API_SANDBOX]);   
+            $client = new \GuzzleHttp\Client(['base_uri' => self::API_PROD]);
+        } else {
+            $client = new \GuzzleHttp\Client(['base_uri' => self::API_SANDBOX]);
         }
 
         $headers = ['Content-Type' => 'application/json'];
         $body = ['app_id' => $this->_app_id, 'password' => $this->_password];
         $res = $client->request('POST', 'app_auth/sign_in', $headers, $body);
 
-        if($res->getStatusCode() == 200){
+        if ($res->getStatusCode() == 200) {
             return $res->getHeaders();
         }
         
