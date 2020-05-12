@@ -101,11 +101,11 @@ class Client
             self::setLive($auth['live']);
         }
 
-        if(self::isLive()){
+        if (self::isLive()) {
             self::setClient(new \GuzzleHttp\Client(['base_uri' => self::API_PROD]));
-        }else{
+        } else {
             self::setClient(new \GuzzleHttp\Client(['base_uri' => self::API_SANDBOX]));
-        } 
+        }
     }
 
     // Connect to the API
