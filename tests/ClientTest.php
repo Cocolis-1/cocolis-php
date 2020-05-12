@@ -5,7 +5,7 @@ namespace Tests\API;
 use PHPUnit\Framework\TestCase;
 use Cocolis\Api\Client;
 
-class APITest extends TestCase
+class ClientTest extends TestCase
 {
     public function testAPI()
     {
@@ -13,16 +13,17 @@ class APITest extends TestCase
         \VCR\VCR::turnOn();
 
         // Record requests and responses in cassette file 'example'
-        \VCR\VCR::insertCassette('example');
+        \VCR\VCR::insertCassette('clienttest_api');
  
         // Following request will be recorded once and replayed in future test runs
         $client = new Client();
-        $client = $client::create(array(
-             'app_id' => 'mon_app_id',
-             'password' => 'test',
+        Client::create(array(
+             'app_id' => 'e0611906',
+             'password' => 'sebfie',
              'live' => false
-         ));
+        ));
         $result = $client->signIn();
+        var_dump($result);
         $this->assertNotEmpty($result);
  
         // To stop recording requests, eject the cassette
