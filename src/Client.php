@@ -69,7 +69,7 @@ class Client
         self::$_live = $live;
     }
 
-    public static function setClient(array $client)
+    public static function setClient($client)
     {
         self::$_client = $client;
     }
@@ -101,7 +101,11 @@ class Client
             self::setLive($auth['live']);
         }
 
-        self::$_client = self::isLive() ? new \GuzzleHttp\Client(['base_uri' => self::API_PROD]) : new \GuzzleHttp\Client(['base_uri' => self::API_SANDBOX]);
+        if(self::isLive()){
+            self::setClient(new \GuzzleHttp\Client(['base_uri' => self::API_PROD]));
+        }else{
+            self::setClient(new \GuzzleHttp\Client(['base_uri' => self::API_SANDBOX]));
+        } 
     }
 
     // Connect to the API
