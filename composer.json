@@ -6,7 +6,7 @@
   "homepage": "https://www.cocolis.fr",
   "license": "MIT",
   "require": {
-      "php": ">=5.3.0",
+    "php": ">=5.3.0",
     "guzzlehttp/guzzle": "^7.0@dev"
   },
   "require-dev": {
