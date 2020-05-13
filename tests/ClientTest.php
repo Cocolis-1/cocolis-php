@@ -63,7 +63,7 @@ class ClientTest extends TestCase
             'live' => false
         ));
     $result = $client->signIn();
-    $this->assertEquals(array('access-token' => 'rEHFJu1MCzlwcpNRV8DI-g', 'client' => 'zCND6Qd2av4JDkJva8tcWA', 'expiry' => '1590577129', 'uid' => 'e0611906'), $result);
+    $this->assertEquals(array('access-token' => 'X0ZnwNjjy1NIO6A92MXQ_A', 'client' => 'K6Vv5mv4VsK-MVUTp4d2Bw', 'expiry' => '1590611821', 'uid' => 'e0611906'), $result);
 
     // @TODO
     // Vérifier que la réponse est bien égale à (ce que tu as dans la cassette) :
