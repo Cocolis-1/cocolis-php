@@ -51,7 +51,7 @@ class Client
   public static function getClient(array $auth)
   {
     if (!static::$_client) {
-        static::$_client = static::create($auth);
+      static::$_client = static::create($auth);
     }
 
     return static::$_client;
