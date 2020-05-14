@@ -21,8 +21,6 @@ class ClientTest extends TestCase
 
   public function getContent()
   {
-    //@TODO API_SANDBOX should be equal to https://sandbox-api.cocolis.fr/api/v1/
-    //@TODO API_PROD should be equal to https://api.cocolis.fr/api/v1/
     $this->assertEquals('https://sandbox-api.cocolis.fr/api/v1/', Client::API_SANDBOX);
     $this->assertEquals('https://api.cocolis.fr/api/v1/', Client::API_PROD);
   }
