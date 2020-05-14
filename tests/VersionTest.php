@@ -2,7 +2,7 @@
 use PHPUnit\Framework\TestCase;
 use Cocolis\Api\Version;
 
-final class VersionTest extends TestCase
+final class VersionTest extends \Tests\Api\CocolisTest
 {
   public function testCanBeUsedAsString(): void
   {

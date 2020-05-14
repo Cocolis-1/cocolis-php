@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="vendor/autoload.php" colors="true">
+<phpunit bootstrap="bootstrap.php" colors="true">
     <testsuites>
         <testsuite name="Tests">
             <directory suffix="Test.php">./tests</directory>
+            <exclude>./tests/CocolisTest.php</exclude>
         </testsuite>
     </testsuites>
     <logging>
