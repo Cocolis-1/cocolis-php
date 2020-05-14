@@ -18,3 +18,9 @@ To run tests, just run :
 `./vendor/bin/phpunit`
 
 It will use phpunit.xml config as default
+
+### Coverage
+
+Just run
+
+`./vendor/bin/phpunit --coverage-html build/coverage-report`

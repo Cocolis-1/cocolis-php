@@ -26,12 +26,12 @@ class Client
   private $_uid;
 
   const API_SANDBOX = "https://sandbox-api.cocolis.fr/api/v1/"; //  Test environment during your implementation
-    const API_PROD = "https://api.cocolis.fr/api/v1/"; // Online environment (in production, be careful what you do with this)
+  const API_PROD = "https://api.cocolis.fr/api/v1/"; // Online environment (in production, be careful what you do with this)
 
-    public static function isLive()
-    {
-      return self::$_live;
-    }
+  public static function isLive()
+  {
+    return self::$_live;
+  }
 
   public static function getAppId()
   {

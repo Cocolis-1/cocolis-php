@@ -42,10 +42,10 @@ class ClientTest extends TestCase
   public function testSignIn()
   {
     //@TODO Should call $client->call with right arguments
-        // Read : https://phpunit.readthedocs.io/en/9.1/test-doubles.html?highlight=mock
+    // Read : https://phpunit.readthedocs.io/en/9.1/test-doubles.html?highlight=mock
 
-        // @TODO Should return false if the response is not 200
-        // @TODO Should return array with right values if response is 200
+    // @TODO Should return false if the response is not 200
+    // @TODO Should return array with right values if response is 200
   }
 
   public function testStaticCreate()
@@ -63,7 +63,12 @@ class ClientTest extends TestCase
             'live' => false
         ));
     $result = $client->signIn();
-    $this->assertEquals(array('access-token' => 'X0ZnwNjjy1NIO6A92MXQ_A', 'client' => 'K6Vv5mv4VsK-MVUTp4d2Bw', 'expiry' => '1590611821', 'uid' => 'e0611906'), $result);
+    $this->assertEquals(array(
+      'access-token' => '8dX5MJhZ6I5NAxK0-uxLjw',
+      'client' => 'q5ubXwodRenhrX07axaOTA',
+      'expiry' => '1590568115',
+      'uid' => 'e0611906'
+    ), $result);
 
     // @TODO
     // Vérifier que la réponse est bien égale à (ce que tu as dans la cassette) :

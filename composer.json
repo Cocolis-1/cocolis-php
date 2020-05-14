@@ -13,7 +13,8 @@
     "php-vcr/phpunit-testlistener-vcr": "*",
     "phpunit/phpunit": "^9",
     "kint-php/kint": "dev-master",
-    "friendsofphp/php-cs-fixer": "^2.17@dev"
+    "friendsofphp/php-cs-fixer": "^2.17@dev",
+    "phpunit/php-code-coverage": "^8.0@dev"
   },
   "authors": [
     {
