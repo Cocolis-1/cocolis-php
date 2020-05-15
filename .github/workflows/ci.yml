@@ -12,7 +12,6 @@ jobs:
         php-version: '7.3'
         coverage: xdebug
         extensions: xdebug
-        tools: php-cs-fixer, phpunit
     - name: Cache Packages
       uses: actions/cache@v1
       with:
@@ -27,7 +26,7 @@ jobs:
       run: ./vendor/bin/phpunit
     - name: Upload Coverage report
       run: |
-        php -i | grep xdebug
+        php -i
         bash <(curl -s https://codecov.io/bash)
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
