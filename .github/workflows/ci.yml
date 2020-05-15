@@ -7,11 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: nanasess/setup-php@master
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
       with:
         php-version: '7.3'
         coverage: xdebug
-        extensions: xdebug
     - name: Cache Packages
       uses: actions/cache@v1
       with:
