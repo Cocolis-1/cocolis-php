@@ -3,7 +3,6 @@
 namespace Tests\Api;
 
 use PHPUnit\Framework\TestCase;
-use Cocolis\Api\Client;
 
 class CocolisTest extends TestCase
 {

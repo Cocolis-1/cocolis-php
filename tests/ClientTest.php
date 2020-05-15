@@ -4,63 +4,83 @@ namespace Tests\Api;
 
 use PHPUnit\Framework\TestCase;
 use Cocolis\Api\Client;
+use InvalidArgumentException;
+use Tests\Api\CocolisTest;
 
-class ClientTest extends \Tests\Api\CocolisTest
+class ClientTest extends CocolisTest
 {
-  /**
-   * @before
-   */
-  public function setupSomeFixtures()
+ 
+  public function testEmptyClient()
   {
-    // var_dump('I am before test');
+    $client = Client::getClient(array(
+      'app_id' => 'e0611906',
+      'password' => 'sebfie',
+      'live' => false
+    ));
+    $this->assertNotEmpty($client);
   }
 
-  // @TODO Test all getters, setter
-  // Getter should return value setted
-  // Setters should set values
 
-  public function getContent()
+ public function testContent()
   {
     $this->assertEquals('https://sandbox-api.cocolis.fr/api/v1/', Client::API_SANDBOX);
     $this->assertEquals('https://api.cocolis.fr/api/v1/', Client::API_PROD);
   }
 
-  public function getClient()
+  public function testClient()
   {
-    //@TODO Should create a client with passed data
-    //@TODO Should return existing client is already created
     $client = Client::create(array(
-            'app_id' => 'e0611906',
-            'password' => 'sebfie',
-            'live' => false
-        ));
+      'app_id' => 'e0611906',
+      'password' => 'sebfie',
+      'live' => false
+    ));
     $this->assertNotEmpty($client);
   }
 
+
   public function testSignIn()
   {
-    //@TODO Should call $client->call with right arguments
-    // Read : https://phpunit.readthedocs.io/en/9.1/test-doubles.html?highlight=mock
-
-    // @TODO Should return false if the response is not 200
-    // @TODO Should return array with right values if response is 200
-    $this->assertEquals(true, true);
+    $client = Client::create(array(
+      'app_id' => 'e0611906',
+      'password' => 'notsebfie',
+      'live' => false
+    ));
+    $result = $client->signIn();
+    $this->assertEquals($result, false);
   }
+
 
   public function testStaticCreate()
   {
-    // Following request will be recorded once and replayed in future test runs
     $client = Client::create(array(
-            'app_id' => 'e0611906',
-            'password' => 'sebfie',
-            'live' => false
-        ));
+      'app_id' => 'e0611906',
+      'password' => 'sebfie',
+      'live' => false
+    ));
     $result = $client->signIn();
     $this->assertEquals(array(
-      'access-token' => 'sITqhzkMojX_BARZQdl9Ww',
-      'client' => '6UH8rnh-fCoLdkcBNI7EBQ',
-      'expiry' => '1590656678',
+      'access-token' => 'Jy64iEiJ4vUgtp8TqhkTkQ',
+      'client' => 'HLSmEW1TIDqsSMiwuKjnQg',
+      'expiry' => '1590748027',
       'uid' => 'e0611906'
     ), $result);
+  }
+
+  public function testAppIdException()
+  {
+    $this->expectException(InvalidArgumentException::class);
+    Client::create(array(
+      'app_id' => '',
+      'password' => 'test'
+    ));
+  }
+
+  public function testPasswordException()
+  {
+    $this->expectException(InvalidArgumentException::class);
+    Client::create(array(
+      'app_id' => 'test',
+      'password' => ''
+    ));
   }
 }

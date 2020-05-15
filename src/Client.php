@@ -15,15 +15,15 @@ class Client
   // Local informations
   private static $_app_id;
   private static $_password;
-  private static $_live;
+  private static $_live = false;
 
   private static $_client;
   private static $_http_client;
 
   // Returned by the API
-  private $_access_token;
-  private $_expiry;
-  private $_uid;
+  private static $_access_token;
+  private static $_expiry;
+  private static $_uid;
 
   const API_SANDBOX = "https://sandbox-api.cocolis.fr/api/v1/"; //  Test environment during your implementation
   const API_PROD = "https://api.cocolis.fr/api/v1/"; // Online environment (in production, be careful what you do with this)
@@ -48,7 +48,7 @@ class Client
     return self::$_access_token;
   }
 
-  public static function getClient(array $auth)
+  public static function getClient(array $auth = array())
   {
     if (!static::$_client) {
       static::$_client = static::create($auth);
@@ -66,7 +66,6 @@ class Client
   {
     self::$_app_id = $app_id;
   }
-
 
   public static function setPassword(string $password)
   {
@@ -88,14 +87,29 @@ class Client
     self::$_client = $client;
   }
 
-  public function getExpiry()
+  public static function setAccessToken(string $token)
   {
-    return $this->_expiry;
+    self::$_access_token = $token;
   }
 
-  public function getUID()
+  public static function setExpiry(string $expiry)
   {
-    return $this->_uid;
+    self::$_expiry = $expiry;
+  }
+
+  public static function setUid(string $uid)
+  {
+    self::$_uid = $uid;
+  }
+
+  public static function getExpiry()
+  {
+    return self::$_expiry;
+  }
+
+  public static function getUID()
+  {
+    return self::$_uid;
   }
 
   // Initialize the connection to the api
@@ -104,16 +118,17 @@ class Client
     $client = new static();
 
     if (!isset($auth['app_id']) || empty($auth['app_id'])) {
-      throw new \Exception('Key app_id is missing');
+      throw new \InvalidArgumentException('Key app_id is missing');
     } elseif (!isset($auth['password']) || empty($auth['password'])) {
-      throw new \Exception('Key password is missing');
-    } elseif (!isset($auth['live']) || $auth['live'] != false && $auth['live'] != true) {
-      throw new \Exception('Key live is missing');
+      throw new \InvalidArgumentException('Key password is missing');
+    }
+
+    if (isset($auth['live'])) {
+      self::setLive($auth['live']);
     }
 
     self::setAppId($auth['app_id']);
     self::setPassword($auth['password']);
-    self::setLive($auth['live']);
 
     $url = self::isLive() ? self::API_PROD : self::API_SANDBOX;
 
@@ -126,12 +141,18 @@ class Client
   // Connect to the API
   public function signIn()
   {
-    $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
-
-    if ($res->getStatusCode() == 200) {
-      return array('access-token' => $res->getHeader('Access-Token')[0], 'client' => $res->getHeader('Client')[0], 'expiry' => $res->getHeader('Expiry')[0], 'uid' => $res->getHeader('Uid')[0]);
+    try {
+      $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
+    } catch (\Throwable $th) {
+      return false;
     }
-    return false;
+
+    self::setAccessToken($res->getHeader('Access-Token')[0]);
+    self::setClient($res->getHeader('Client')[0]);
+    self::setExpiry($res->getHeader('Expiry')[0]);
+    self::setUid($res->getHeader('Uid')[0]);
+
+    return array('access-token' => self::getAccessToken(), 'client' => self::getClient(), 'expiry' => self::getExpiry(), 'uid' => self::getUID());
   }
 
   public function call($url, $method = 'GET', $body = array())
