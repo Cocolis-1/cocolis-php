@@ -1,0 +1,37 @@
+
+-
+    request:
+        method: POST
+        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/sign_in'
+        headers:
+            Host: sandbox-api.cocolis.fr
+            Expect: null
+            Accept-Encoding: null
+            User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
+            Content-Type: application/json
+            Accept: null
+        body: '{"app_id":"e0611906","password":"notsebfie"}'
+    response:
+        status:
+            http_version: '1.1'
+            code: '401'
+            message: Unauthorized
+        headers:
+            Server: Cowboy
+            Date: 'Fri, 15 May 2020 10:32:31 GMT'
+            Connection: keep-alive
+            X-Frame-Options: SAMEORIGIN
+            X-Xss-Protection: '1; mode=block'
+            X-Content-Type-Options: nosniff
+            X-Download-Options: noopen
+            X-Permitted-Cross-Domain-Policies: none
+            Referrer-Policy: strict-origin-when-cross-origin
+            Content-Type: 'application/json; charset=utf-8'
+            Set-Cookie: '_session_id=7rnhrerjegJiaqMBz9UOjlIPqgoqkXZbclaZQv5CYG6B4APtn8w50lPhCaZ%2BgnlctzUGaHdMiKLH952Enh7DxfDuKGFu58mqtSAXDXnqyKqMk8lSERWbJU4%2FL40T9%2B9kcDNMKO6W3kUEpucS%2Ba1dPrKDpRoSMBmd5LZT1X9EKIwj7PI%3D--BZq1PwmNOIVnOFxV--KBBlpHP6a3zw8rQqGXvrgg%3D%3D; path=/; HttpOnly; secure, _session_id=7rnhrerjegJiaqMBz9UOjlIPqgoqkXZbclaZQv5CYG6B4APtn8w50lPhCaZ%2BgnlctzUGaHdMiKLH952Enh7DxfDuKGFu58mqtSAXDXnqyKqMk8lSERWbJU4%2FL40T9%2B9kcDNMKO6W3kUEpucS%2Ba1dPrKDpRoSMBmd5LZT1X9EKIwj7PI%3D--BZq1PwmNOIVnOFxV--KBBlpHP6a3zw8rQqGXvrgg%3D%3D; path=/; HttpOnly; secure, _backend_session=7WiCqntx2RRt13WdmkO3pDropuJlO28dzw%2FYbflr0HPhRbDnuhXsdN2n%2FpnYzT3Tg5xQXYcc5FZFyg%2FZtCtgI3od40Se3mKiKN9YWEBPkn92%2BEKQlSachC8dIf15s0UoKVzVWtY0%2FYdvZA2Pgq9kPoDYvS8BrTjmy3%2BjAQRdU2sKHJKGaMaC%2BA%3D%3D--PAWe%2BJcOo20WrPrq--HP0QAB2uizoJ5b4AmkgR8Q%3D%3D; path=/; HttpOnly; secure'
+            Cache-Control: no-cache
+            X-Request-Id: 18157751-019c-4ea1-b4d4-cf29e86eb30c
+            X-Runtime: '0.259518'
+            Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
+            Transfer-Encoding: chunked
+            Via: '1.1 vegur'
+        body: '{"success":false,"errors":["Mot de passe ou identifiant invalide."]}'

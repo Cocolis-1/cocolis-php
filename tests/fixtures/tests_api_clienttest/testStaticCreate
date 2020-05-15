@@ -1,0 +1,43 @@
+
+-
+    request:
+        method: POST
+        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/sign_in'
+        headers:
+            Host: sandbox-api.cocolis.fr
+            Expect: null
+            Accept-Encoding: null
+            User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
+            Content-Type: application/json
+            Accept: null
+        body: '{"app_id":"e0611906","password":"sebfie"}'
+    response:
+        status:
+            http_version: '1.1'
+            code: '200'
+            message: OK
+        headers:
+            Server: Cowboy
+            Date: 'Fri, 15 May 2020 10:27:07 GMT'
+            Connection: keep-alive
+            X-Frame-Options: SAMEORIGIN
+            X-Xss-Protection: '1; mode=block'
+            X-Content-Type-Options: nosniff
+            X-Download-Options: noopen
+            X-Permitted-Cross-Domain-Policies: none
+            Referrer-Policy: strict-origin-when-cross-origin
+            Content-Type: 'application/json; charset=utf-8'
+            Access-Token: Jy64iEiJ4vUgtp8TqhkTkQ
+            Token-Type: Bearer
+            Client: HLSmEW1TIDqsSMiwuKjnQg
+            Expiry: '1590748027'
+            Uid: e0611906
+            Set-Cookie: '_session_id=16uv8gRKm%2BbShcT66uL21Q2ijNeCKjD4MGICAhqb84%2F2kn9Opi7RsAAhdIekM3TVz8qC3t4jOjOe0e8q0KJtsEBH58EtopXhPVk1H67hIQwaH3Si73%2BzRLh7DmFLEHj%2BhajobXeW00uBdwUqZQ1k%2FreGtGYSk25Flh0GzYTz6nZUJSk%3D--8BV%2B%2FspG8AaCkhnA--MHOccqXRyhqfMBOALicdmg%3D%3D; path=/; HttpOnly; secure, _session_id=16uv8gRKm%2BbShcT66uL21Q2ijNeCKjD4MGICAhqb84%2F2kn9Opi7RsAAhdIekM3TVz8qC3t4jOjOe0e8q0KJtsEBH58EtopXhPVk1H67hIQwaH3Si73%2BzRLh7DmFLEHj%2BhajobXeW00uBdwUqZQ1k%2FreGtGYSk25Flh0GzYTz6nZUJSk%3D--8BV%2B%2FspG8AaCkhnA--MHOccqXRyhqfMBOALicdmg%3D%3D; path=/; HttpOnly; secure, _backend_session=j6kLZa2StLPF%2F%2Fyn%2FmlWBVFLOrnS94Pu%2FQQOv9GiGS4qR3zdknl7tF1g7XzDFCoa7sZDt%2Fu5E7SvWKZKR9qKRsiseV6iYjoTDdnCDke2wkQ850TQIx0ZwWYSTdjn5rd817BubVbYxpXyFzqBd0attBplwmA3QZF29seOGFayZbTxNpf20eu52A%3D%3D--3x1xBQdmW5CYTw1A--FFDkDv0gH6J01BS3OvCR7A%3D%3D; path=/; HttpOnly; secure'
+            Etag: 'W/"396a052818130c2968d4e104f803ebfe"'
+            Cache-Control: 'max-age=0, private, must-revalidate'
+            X-Request-Id: 9aa93223-425d-4a19-8174-74ac786aac2e
+            X-Runtime: '0.383288'
+            Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
+            Transfer-Encoding: chunked
+            Via: '1.1 vegur'
+        body: '{"data":{"id":1,"user_id":2,"app_id":"e0611906","name":"Sebfie","description":null,"created_at":"2020-04-20T18:15:12.542+02:00","updated_at":"2020-05-15T12:27:07.579+02:00","reserve_amount":0,"balance":0,"running_balance":884600,"suffisant_balance?":false}}'
