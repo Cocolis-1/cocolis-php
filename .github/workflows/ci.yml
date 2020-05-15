@@ -17,9 +17,9 @@ jobs:
       uses: actions/cache@v1
       with:
         path: vendor
-        key: v1-dependencies-${{ hashFiles('composer.lock') }}
+        key: v2-dependencies-${{ hashFiles('composer.lock') }}
         restore-keys: |
-          v1-dependencies-${{ hashFiles('composer.lock') }}
+          v2-dependencies-${{ hashFiles('composer.lock') }}
     - uses: php-actions/composer@v1 # or alternative dependency management
     - name: Run php-cs-fixer
       run: ./vendor/bin/php-cs-fixer fix ./ --diff --dry-run
