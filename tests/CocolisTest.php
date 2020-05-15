@@ -30,5 +30,4 @@ class CocolisTest extends TestCase
     // Turn off VCR to stop intercepting requests
     \VCR\VCR::turnOff();
   }
-
 }

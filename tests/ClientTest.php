@@ -9,7 +9,6 @@ use Tests\Api\CocolisTest;
 
 class ClientTest extends CocolisTest
 {
- 
   public function testEmptyClient()
   {
     $client = Client::getClient(array(
@@ -21,7 +20,7 @@ class ClientTest extends CocolisTest
   }
 
 
- public function testContent()
+  public function testContent()
   {
     $this->assertEquals('https://sandbox-api.cocolis.fr/api/v1/', Client::API_SANDBOX);
     $this->assertEquals('https://api.cocolis.fr/api/v1/', Client::API_PROD);
