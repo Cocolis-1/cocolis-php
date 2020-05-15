@@ -10,6 +10,7 @@ jobs:
     - uses: nanasess/setup-php@master
       with:
         php-version: '7.3'
+        coverage: xdebug
     - name: Cache Gems
       uses: actions/cache@v1
       with:

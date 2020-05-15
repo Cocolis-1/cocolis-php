@@ -4,3 +4,4 @@ composer.phar
 .php*
 !.php_cs
 build/
+clover.xml
