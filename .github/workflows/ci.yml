@@ -11,7 +11,7 @@ jobs:
       with:
         php-version: '7.3'
         coverage: xdebug
-    - name: Cache Gems
+    - name: Cache Packages
       uses: actions/cache@v1
       with:
         path: vendor
@@ -24,6 +24,8 @@ jobs:
     - name: Run phpunit
       run: ./vendor/bin/phpunit
     - name: Upload Coverage report
-      run: bash <(curl -s https://codecov.io/bash)
+      run: |
+        bash <(curl -s https://codecov.io/bash)
+        php -i | grep xdebug
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
