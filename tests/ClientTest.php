@@ -2,7 +2,6 @@
 
 namespace Tests\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cocolis\Api\Client;
 use InvalidArgumentException;
 use Tests\Api\CocolisTest;
@@ -68,15 +67,27 @@ class ClientTest extends CocolisTest
   public function testAppIdException()
   {
     $this->expectException(InvalidArgumentException::class);
+    $this->expectExceptionMessage('Key app_id is missing');
     Client::create(array(
       'app_id' => '',
       'password' => 'test'
     ));
   }
 
+  public function testAuthInfo()
+  {
+    $this->assertEquals(array(
+      'access-token' => 'Jy64iEiJ4vUgtp8TqhkTkQ',
+      'client' => 'HLSmEW1TIDqsSMiwuKjnQg',
+      'expiry' => '1590748027',
+      'uid' => 'e0611906'
+    ), Client::getCurrentAuthInfo());
+  }
+
   public function testPasswordException()
   {
     $this->expectException(InvalidArgumentException::class);
+    $this->expectExceptionMessage('Key password is missing');
     Client::create(array(
       'app_id' => 'test',
       'password' => ''

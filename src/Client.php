@@ -21,9 +21,7 @@ class Client
   private static $_http_client;
 
   // Returned by the API
-  private static $_access_token;
-  private static $_expiry;
-  private static $_uid;
+  private static $_auth;
 
   const API_SANDBOX = "https://sandbox-api.cocolis.fr/api/v1/"; //  Test environment during your implementation
   const API_PROD = "https://api.cocolis.fr/api/v1/"; // Online environment (in production, be careful what you do with this)
@@ -41,11 +39,6 @@ class Client
   public static function getPassword()
   {
     return self::$_password;
-  }
-
-  public static function getAccessToken()
-  {
-    return self::$_access_token;
   }
 
   public static function getClient(array $auth = array())
@@ -87,29 +80,15 @@ class Client
     self::$_client = $client;
   }
 
-  public static function setAccessToken(string $token)
+  public static function getCurrentAuthInfo()
   {
-    self::$_access_token = $token;
+    return self::$_auth;
   }
 
-  public static function setExpiry(string $expiry)
+  public static function setCurrentAuthInfo(string $token, string $client, string $expiry, string $uid)
   {
-    self::$_expiry = $expiry;
-  }
-
-  public static function setUid(string $uid)
-  {
-    self::$_uid = $uid;
-  }
-
-  public static function getExpiry()
-  {
-    return self::$_expiry;
-  }
-
-  public static function getUID()
-  {
-    return self::$_uid;
+    self::$_auth = array('access-token' => $token, 'client' => $client, 'expiry' => $expiry, 'uid' => $uid);
+    return self::$_auth;
   }
 
   // Initialize the connection to the api
@@ -147,12 +126,9 @@ class Client
       return false;
     }
 
-    self::setAccessToken($res->getHeader('Access-Token')[0]);
-    self::setClient($res->getHeader('Client')[0]);
-    self::setExpiry($res->getHeader('Expiry')[0]);
-    self::setUid($res->getHeader('Uid')[0]);
+    $auth = self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
 
-    return array('access-token' => self::getAccessToken(), 'client' => self::getClient(), 'expiry' => self::getExpiry(), 'uid' => self::getUID());
+    return array('access-token' => $auth['access-token'], 'client' => $auth['client'], 'expiry' => $auth['expiry'], 'uid' => $auth['uid']);
   }
 
   public function call($url, $method = 'GET', $body = array())
