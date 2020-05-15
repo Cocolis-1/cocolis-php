@@ -22,3 +22,7 @@ jobs:
       run: ./vendor/bin/php-cs-fixer fix ./ --diff --dry-run
     - name: Run phpunit
       run: ./vendor/bin/phpunit
+    - name: Upload Coverage report
+      run: bash <(curl -s https://codecov.io/bash)
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
