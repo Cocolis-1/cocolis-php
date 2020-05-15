@@ -11,6 +11,7 @@ jobs:
       with:
         php-version: '7.3'
         coverage: xdebug
+        extensions: :xdebug
     - name: Cache Packages
       uses: actions/cache@v1
       with:
