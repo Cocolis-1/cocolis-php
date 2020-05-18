@@ -128,9 +128,7 @@ class Client
     $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
 
     if ($res->getStatusCode() == 200) {
-      $auth = self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
-
-      return array('access-token' => $auth['access-token'], 'client' => $auth['client'], 'expiry' => $auth['expiry'], 'uid' => $auth['uid']);
+      return self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
     }
 
     return false;
@@ -142,9 +140,9 @@ class Client
     if (empty($authinfo) && empty($auth)) {
       throw new \InvalidArgumentException('Missing auth informations (no params)');
     } elseif (!empty($authinfo)) {
-      $res = $this->call('app_auth/validate_token', 'GET', ['token-type' => 'Bearer', 'uid' => $authinfo['uid'], 'access-token' => $authinfo['access-token'], 'client' => $authinfo['client'], 'expiry' => $authinfo['expiry']]);
+      $res = $this->call('app_auth/validate_token', 'GET', ['token-type' => 'Bearer', $authinfo]);
     } else {
-      $res = $this->call('app_auth/validate_token', 'GET', ['token-type' => 'Bearer', 'uid' => $auth['uid'], 'access-token' => $auth['access-token'], 'client' => $auth['client'], 'expiry' => $auth['expiry']]);
+      $res = $this->call('app_auth/validate_token', 'GET', ['token-type' => 'Bearer', $auth]);
     }
 
     if ($res->getStatusCode() == 200) {
