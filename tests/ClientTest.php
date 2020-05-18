@@ -117,7 +117,6 @@ class ClientTest extends CocolisTest
       'password' => 'sebfie',
       'live' => false
     ));
-
     // Clear auth
     $client->setAuth(null);
 
