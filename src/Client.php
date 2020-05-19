@@ -10,6 +10,8 @@
 
 namespace Cocolis\Api;
 
+use Cocolis\Api\Clients\AbstractClient;
+
 class Client
 {
   // Local informations
@@ -96,6 +98,10 @@ class Client
     return self::$_auth;
   }
 
+  public function getRideClient(){
+    return new \Cocolis\Api\Clients\RideClient($this);
+  }
+
   // Initialize the connection to the api
   public static function create(array $auth)
   {
@@ -140,9 +146,9 @@ class Client
     if (empty($authinfo) && empty($auth)) {
       throw new \InvalidArgumentException('Missing auth informations (no params)');
     } elseif (!empty($authinfo)) {
-      $res = $this->call('app_auth/validate_token', 'GET', ['token-type' => 'Bearer', $authinfo]);
+      $res = $this->call('app_auth/validate_token', 'GET', array_merge(['token-type' => 'Bearer'], $authinfo));
     } else {
-      $res = $this->call('app_auth/validate_token', 'GET', ['token-type' => 'Bearer', $auth]);
+      $res = $this->call('app_auth/validate_token', 'GET', array_merge(['token-type' => 'Bearer'], $auth));
     }
 
     if ($res->getStatusCode() == 200) {
@@ -155,5 +161,11 @@ class Client
   public function call($url, $method = 'GET', $body = array())
   {
     return $this->getHttpClient()->request($method, $url, ['json' => $body, 'http_errors' => false]);
+  }
+
+  //@TODO : GETCURRENTAUTHINFO => arraymerge
+  public function callAuth($url, $method = 'GET', $body = array())
+  {
+    return $this->getHttpClient()->request($method, $url, ['headers' => self::getCurrentAuthInfo(), 'json' => $body, 'http_errors' => false]);
   }
 }

@@ -3,7 +3,6 @@
 namespace Tests\Api;
 
 use Cocolis\Api\Client;
-use GuzzleHttp\Exception\GuzzleException;
 use InvalidArgumentException;
 use Tests\Api\CocolisTest;
 
