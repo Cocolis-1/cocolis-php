@@ -98,7 +98,8 @@ class Client
     return self::$_auth;
   }
 
-  public function getRideClient(){
+  public function getRideClient()
+  {
     return new \Cocolis\Api\Clients\RideClient($this);
   }
 
