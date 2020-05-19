@@ -103,7 +103,7 @@ class Client
     return new \Cocolis\Api\Clients\RideClient($this);
   }
 
-  // Initialize the connection to the api
+  // Initialize the connection to the API
   public static function create(array $auth)
   {
     $client = new static();
