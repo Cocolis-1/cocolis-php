@@ -47,16 +47,18 @@ class RideClient extends AbstractClient
 
   public function getBuyerURL()
   {
-    if (Client::isLive())
+    if (Client::isLive()) {
       return self::URL_PROD . 'rides/buyer/' . $this->getBuyerTracking();
+    }
 
     return self::URL_SANDBOX . 'rides/buyer/' . $this->getBuyerTracking();
   }
 
   public function getSellerURL()
   {
-    if (Client::isLive())
+    if (Client::isLive()) {
       return self::URL_PROD . 'rides/seller/' . $this->getSellerTracking();
+    }
 
     return self::URL_SANDBOX . 'rides/seller/' . $this->getSellerTracking();
   }

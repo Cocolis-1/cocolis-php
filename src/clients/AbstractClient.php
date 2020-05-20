@@ -34,8 +34,9 @@ abstract class AbstractClient
 
   public function getRestPath(string $path)
   {
-    if (empty($this->_rest_path))
+    if (empty($this->_rest_path)) {
       throw new InvalidConfigurationException('The child class shoud defined $_rest_path');
+    }
 
     return $this->_rest_path . '/' . $path;
   }
