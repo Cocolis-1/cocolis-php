@@ -19,7 +19,7 @@ class RideClient extends AbstractClient
   private $_seller_tracking;
   private $_buyer_tracking;
 
-  
+
   const URL_SANDBOX = "https://sandbox.cocolis.fr/";
   const URL_PROD = "https://cocolis.fr/";
 
@@ -74,7 +74,16 @@ class RideClient extends AbstractClient
       $this->getCocolisClient()->callAuth(
         $this->getRestPath('can_match'),
         'POST',
-        ['from' => ['postal_code' => $zipfrom], 'to' => ['postal_code' => $zipto], 'volume' => $volume, 'content_value' => $value]
+        [
+          'from' => [
+            'postal_code' => $zipfrom
+          ],
+          'to' => [
+            'postal_code' => $zipto
+          ],
+          'volume' => $volume,
+          'content_value' => $value
+        ]
       )->getBody(),
       true
     ));
