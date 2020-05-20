@@ -57,9 +57,9 @@ class ClientTest extends CocolisTest
     ));
     $result = $client->signIn();
     $this->assertEquals(array(
-      'access-token' => 'Jy64iEiJ4vUgtp8TqhkTkQ',
-      'client' => 'HLSmEW1TIDqsSMiwuKjnQg',
-      'expiry' => '1590748027',
+      'access-token' => 'pMoVproO2Zky5ts0uV2EBQ',
+      'client' => 'OtCOLIScZXQX50rfO2WL1A',
+      'expiry' => '1591002082',
       'uid' => 'e0611906'
     ), $result);
   }
@@ -77,9 +77,9 @@ class ClientTest extends CocolisTest
   public function testAuthInfo()
   {
     $this->assertEquals(array(
-      'access-token' => 'Jy64iEiJ4vUgtp8TqhkTkQ',
-      'client' => 'HLSmEW1TIDqsSMiwuKjnQg',
-      'expiry' => '1590748027',
+      'access-token' => 'pMoVproO2Zky5ts0uV2EBQ',
+      'client' => 'OtCOLIScZXQX50rfO2WL1A',
+      'expiry' => '1591002082',
       'uid' => 'e0611906'
     ), Client::getCurrentAuthInfo());
   }
@@ -92,5 +92,60 @@ class ClientTest extends CocolisTest
       'app_id' => 'test',
       'password' => ''
     ));
+  }
+
+  public function testTokenValid()
+  {
+    $client = Client::create(array(
+      'app_id' => 'e0611906',
+      'password' => 'sebfie',
+      'live' => false
+    ));
+    $result = $client->validateToken(["uid" => "e0611906", "access-token" => "Jy64iEiJ4vUgtp8TqhkTkQ", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "expiry" => "1590748027"]);
+    if (gettype($result) == 'boolean') {
+      $this->assertEquals($result, false);
+    } else {
+      $this->assertNotEmpty($result);
+    }
+  }
+
+  public function testTokenNoArgs()
+  {
+    $client = Client::create(array(
+      'app_id' => 'e0611906',
+      'password' => 'sebfie',
+      'live' => false
+    ));
+    // Clear auth
+    $client->setAuth(null);
+
+    // No arguments
+    $this->expectException(InvalidArgumentException::class);
+    $client->validateToken();
+  }
+
+  public function testTokenInvalid()
+  {
+    $client = Client::create(array(
+      'app_id' => 'e0611906',
+      'password' => 'sebfie',
+      'live' => false
+    ));
+
+    // Invalid params
+    $result = $client->validateToken(["uid" => "e0611906", "access-token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "expiry" => "1590748027"]);
+    $this->assertEquals($result, false);
+  }
+
+  public function testTokenNoAuth()
+  {
+    $client = Client::create(array(
+      'app_id' => 'e0611906',
+      'password' => 'sebfie',
+      'live' => false
+    ));
+    $client->signIn();
+    $result = $client->validateToken();
+    $this->assertNotEmpty($result);
   }
 }

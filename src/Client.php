@@ -10,6 +10,8 @@
 
 namespace Cocolis\Api;
 
+use Cocolis\Api\Clients\AbstractClient;
+
 class Client
 {
   // Local informations
@@ -80,6 +82,11 @@ class Client
     self::$_client = $client;
   }
 
+  public static function setAuth($auth)
+  {
+    self::$_auth = $auth;
+  }
+
   public static function getCurrentAuthInfo()
   {
     return self::$_auth;
@@ -91,7 +98,12 @@ class Client
     return self::$_auth;
   }
 
-  // Initialize the connection to the api
+  public function getRideClient()
+  {
+    return new \Cocolis\Api\Clients\RideClient($this);
+  }
+
+  // Initialize the connection to the API
   public static function create(array $auth)
   {
     $client = new static();
@@ -120,19 +132,41 @@ class Client
   // Connect to the API
   public function signIn()
   {
-    try {
-      $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
-    } catch (\Throwable $th) {
-      return false;
+    $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
+
+    if ($res->getStatusCode() == 200) {
+      return self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
     }
 
-    $auth = self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
+    return false;
+  }
 
-    return array('access-token' => $auth['access-token'], 'client' => $auth['client'], 'expiry' => $auth['expiry'], 'uid' => $auth['uid']);
+  public function validateToken($authinfo = array())
+  {
+    $auth = self::getCurrentAuthInfo();
+    if (empty($authinfo) && empty($auth)) {
+      throw new \InvalidArgumentException('Missing auth informations (no params)');
+    } elseif (!empty($authinfo)) {
+      $res = $this->call('app_auth/validate_token', 'GET', array_merge(['token-type' => 'Bearer'], $authinfo));
+    } else {
+      $res = $this->call('app_auth/validate_token', 'GET', array_merge(['token-type' => 'Bearer'], $auth));
+    }
+
+    if ($res->getStatusCode() == 200) {
+      return json_decode($res->getBody(), true);
+    }
+
+    return false;
   }
 
   public function call($url, $method = 'GET', $body = array())
   {
-    return $this->getHttpClient()->request($method, $url, ['json' => $body]);
+    return $this->getHttpClient()->request($method, $url, ['json' => $body, 'http_errors' => false]);
+  }
+
+  //@TODO : GETCURRENTAUTHINFO => arraymerge
+  public function callAuth($url, $method = 'GET', $body = array())
+  {
+    return $this->getHttpClient()->request($method, $url, ['headers' => self::getCurrentAuthInfo(), 'json' => $body, 'http_errors' => false]);
   }
 }
