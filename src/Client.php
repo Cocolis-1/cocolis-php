@@ -10,7 +10,7 @@
 
 namespace Cocolis\Api;
 
-use Cocolis\Api\Clients\AbstractClient;
+use Cocolis\Api\Clients\RideClient;
 
 class Client
 {
@@ -27,6 +27,9 @@ class Client
 
   const API_SANDBOX = "https://sandbox-api.cocolis.fr/api/v1/"; //  Test environment during your implementation
   const API_PROD = "https://api.cocolis.fr/api/v1/"; // Online environment (in production, be careful what you do with this)
+
+  const FRONTEND_URL = "https://cocolis.fr/";
+  const SANDBOXFRONTEND_URL = "https://sandbox.cocolis.fr/";
 
   public static function isLive()
   {
@@ -100,7 +103,7 @@ class Client
 
   public function getRideClient()
   {
-    return new \Cocolis\Api\Clients\RideClient($this);
+    return new RideClient($this);
   }
 
   // Initialize the connection to the API
@@ -133,7 +136,6 @@ class Client
   public function signIn()
   {
     $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
-
     if ($res->getStatusCode() == 200) {
       return self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
     }
@@ -143,13 +145,11 @@ class Client
 
   public function validateToken($authinfo = array())
   {
-    $auth = self::getCurrentAuthInfo();
+    $auth = !empty($authinfo) ? $authinfo : self::getCurrentAuthInfo();
     if (empty($authinfo) && empty($auth)) {
       throw new \InvalidArgumentException('Missing auth informations (no params)');
-    } elseif (!empty($authinfo)) {
-      $res = $this->call('app_auth/validate_token', 'GET', array_merge(['token-type' => 'Bearer'], $authinfo));
     } else {
-      $res = $this->call('app_auth/validate_token', 'GET', array_merge(['token-type' => 'Bearer'], $auth));
+      $res = $this->callAuthentificated('app_auth/validate_token', 'GET', array_merge(['token-type' => 'Bearer'], $auth));
     }
 
     if ($res->getStatusCode() == 200) {
@@ -164,8 +164,7 @@ class Client
     return $this->getHttpClient()->request($method, $url, ['json' => $body, 'http_errors' => false]);
   }
 
-  //@TODO : GETCURRENTAUTHINFO => arraymerge
-  public function callAuth($url, $method = 'GET', $body = array())
+  public function callAuthentificated($url, $method = 'GET', $body = array())
   {
     return $this->getHttpClient()->request($method, $url, ['headers' => self::getCurrentAuthInfo(), 'json' => $body, 'http_errors' => false]);
   }
