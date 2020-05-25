@@ -60,7 +60,7 @@ class RideClient extends AbstractClient
     if (!empty($value)) {
       $params['content_value'] = $value;
     }
-
+    
     return $this->hydrate(json_decode(
       $this->getCocolisClient()->callAuthentificated(
         $this->getRestPath('can_match'),
