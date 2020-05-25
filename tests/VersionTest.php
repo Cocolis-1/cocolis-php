@@ -1,5 +1,4 @@
 <?php declare(strict_types=1);
-use PHPUnit\Framework\TestCase;
 use Cocolis\Api\Version;
 
 final class VersionTest extends \Tests\Api\CocolisTest
