@@ -56,22 +56,15 @@ class RideClient extends AbstractClient
 
   public function canMatch(string $zipfrom, string $zipto, float $volume, int $value = null)
   {
-    if (empty($value)) {
-      return $this->hydrate(json_decode(
-        $this->getCocolisClient()->callAuthentificated(
-          $this->getRestPath('can_match'),
-          'POST',
-          ['from' => ['postal_code' => $zipfrom], 'to' => ['postal_code' => $zipto], 'volume' => $volume]
-        )->getBody(),
-        true
-      ));
-    }
+    $params = ['from' => ['postal_code' => $zipfrom], 'to' => ['postal_code' => $zipto], 'volume' => $volume];
+    if (!empty($value))
+      $params['content_value'] = $value;
 
     return $this->hydrate(json_decode(
       $this->getCocolisClient()->callAuthentificated(
         $this->getRestPath('can_match'),
         'POST',
-        ['from' => ['postal_code' => $zipfrom], 'to' => ['postal_code' => $zipto], 'volume' => $volume, 'content_value' => $value]
+        $params
       )->getBody(),
       true
     ));
