@@ -10,8 +10,6 @@
 
 namespace Cocolis\Api\Clients;
 
-use Cocolis\Api\Client;
-
 class RideClient extends AbstractClient
 {
   public $_rest_path = 'rides';
@@ -58,6 +56,17 @@ class RideClient extends AbstractClient
 
   public function canMatch(string $zipfrom, string $zipto, float $volume, int $value = null)
   {
+    if (empty($value)) {
+      return $this->hydrate(json_decode(
+        $this->getCocolisClient()->callAuthentificated(
+          $this->getRestPath('can_match'),
+          'POST',
+          ['from' => ['postal_code' => $zipfrom], 'to' => ['postal_code' => $zipto], 'volume' => $volume]
+        )->getBody(),
+        true
+      ));
+    }
+
     return $this->hydrate(json_decode(
       $this->getCocolisClient()->callAuthentificated(
         $this->getRestPath('can_match'),

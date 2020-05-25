@@ -28,8 +28,8 @@ class Client
   const API_SANDBOX = "https://sandbox-api.cocolis.fr/api/v1/"; //  Test environment during your implementation
   const API_PROD = "https://api.cocolis.fr/api/v1/"; // Online environment (in production, be careful what you do with this)
 
-  const FRONTEND_URL = "https://cocolis.fr/";
-  const SANDBOXFRONTEND_URL = "https://sandbox.cocolis.fr/";
+  const FRONTEND_PROD = "https://cocolis.fr/";
+  const FRONTEND_SANDBOX = "https://sandbox.cocolis.fr/";
 
   public static function isLive()
   {
@@ -104,6 +104,11 @@ class Client
   public function getRideClient()
   {
     return new RideClient($this);
+  }
+
+  public function getWebhookClient()
+  {
+    return new WebhookClient($this);
   }
 
   // Initialize the connection to the API

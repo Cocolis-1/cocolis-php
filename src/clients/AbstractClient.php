@@ -35,7 +35,7 @@ abstract class AbstractClient
 
   public function getBaseURL()
   {
-    return Client::isLive() ? Client::FRONTEND_URL : Client::SANDBOXFRONTEND_URL;
+    return Client::isLive() ? Client::FRONTEND_PROD : Client::FRONTEND_SANDBOX;
   }
 
   public function getRestPath(string $path)
