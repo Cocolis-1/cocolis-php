@@ -1,0 +1,47 @@
+
+-
+    request:
+        method: GET
+        url: 'https://sandbox-api.cocolis.fr/api/v1/applications//webhooks'
+        headers:
+            Host: sandbox-api.cocolis.fr
+            Expect: null
+            Accept-Encoding: null
+            User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
+            Content-Type: application/json
+            access-token: eT00t6RMIeZRqDV0qH-9yw
+            client: mghSYiwe0EsUyP6qxi6ZIg
+            expiry: '1591008268'
+            uid: e0611906
+            Accept: null
+        body: '[]'
+    response:
+        status:
+            http_version: '1.1'
+            code: '200'
+            message: OK
+        headers:
+            Server: Cowboy
+            Date: 'Tue, 26 May 2020 15:04:57 GMT'
+            Connection: keep-alive
+            X-Frame-Options: SAMEORIGIN
+            X-Xss-Protection: '1; mode=block'
+            X-Content-Type-Options: nosniff
+            X-Download-Options: noopen
+            X-Permitted-Cross-Domain-Policies: none
+            Referrer-Policy: strict-origin-when-cross-origin
+            Content-Type: 'application/json; charset=utf-8'
+            Access-Token: eT00t6RMIeZRqDV0qH-9yw
+            Token-Type: Bearer
+            Client: mghSYiwe0EsUyP6qxi6ZIg
+            Expiry: '1591008268'
+            Uid: e0611906
+            Set-Cookie: '_session_id=LbzoFwsb6dBAk%2Fwok9oM%2FcDFo4bqXbR01Gan%2B5bK2mI%2FL1%2B%2FOYSGBa%2FnHORnk12RZA%2F8KwebHC4ynnZ2KoyTpgJAv4JD9GdmtNkWDJdVRPMaSJO6U1Pad4j3yk18uJ0PB908p3%2FPMoSq2FkJ4lVztl6A1GOsZA43tsgE4ShDkNFEzOcj07nqkcvQNLR2bnWBetUARpCuDqTT6557Z44wSmQKLMWAUksxIv7WxcNiWycMgFk8mcVp5nTKMHpv8tt04ahKy4lFs34ugHWEyV3QIghSecZ00iDkM5lVH5GHaKbETA%2FDBHK2rL2h9BjgyopsajSwIouqKl6lKQ77i8YA%2F%2FdiHIs%2FB0QdFD7PNMLkWEM27rbMEdWKwF1n0FNTGkIyisNvJETlPAqaF0gIo6rDSdQmQatMWZ6fwLNE7krA8XN%2FlAtUue5Yw5OQnHVI3kc7NPZeFOytaPxObG0IsgF40usdUSvILjQcNrvZDxBSSk8bgPqDbroLazi880bYDugOw4y2xW1UxoBiT9uJ2Hpulj99kq4qdF%2BCpDWms8ibd%2BlT5C6vZS%2Fx6ghFoOdQ9CsmKBTYhFAI99yKh34z73GtTUCJyufAXni0QlPucEw7Z%2FOAejF7Jg7cZif0zCJoG%2BOYeyQNVvYK4o%2FvfaFSN9FJlY5OREPRmGxvR6VhKbi7tmL3Yfo%3D--33dsJIKUde7r9Oda--yERJyPSsr7NX26gUxS5S%2Fg%3D%3D; path=/; HttpOnly; secure, _session_id=LbzoFwsb6dBAk%2Fwok9oM%2FcDFo4bqXbR01Gan%2B5bK2mI%2FL1%2B%2FOYSGBa%2FnHORnk12RZA%2F8KwebHC4ynnZ2KoyTpgJAv4JD9GdmtNkWDJdVRPMaSJO6U1Pad4j3yk18uJ0PB908p3%2FPMoSq2FkJ4lVztl6A1GOsZA43tsgE4ShDkNFEzOcj07nqkcvQNLR2bnWBetUARpCuDqTT6557Z44wSmQKLMWAUksxIv7WxcNiWycMgFk8mcVp5nTKMHpv8tt04ahKy4lFs34ugHWEyV3QIghSecZ00iDkM5lVH5GHaKbETA%2FDBHK2rL2h9BjgyopsajSwIouqKl6lKQ77i8YA%2F%2FdiHIs%2FB0QdFD7PNMLkWEM27rbMEdWKwF1n0FNTGkIyisNvJETlPAqaF0gIo6rDSdQmQatMWZ6fwLNE7krA8XN%2FlAtUue5Yw5OQnHVI3kc7NPZeFOytaPxObG0IsgF40usdUSvILjQcNrvZDxBSSk8bgPqDbroLazi880bYDugOw4y2xW1UxoBiT9uJ2Hpulj99kq4qdF%2BCpDWms8ibd%2BlT5C6vZS%2Fx6ghFoOdQ9CsmKBTYhFAI99yKh34z73GtTUCJyufAXni0QlPucEw7Z%2FOAejF7Jg7cZif0zCJoG%2BOYeyQNVvYK4o%2FvfaFSN9FJlY5OREPRmGxvR6VhKbi7tmL3Yfo%3D--33dsJIKUde7r9Oda--yERJyPSsr7NX26gUxS5S%2Fg%3D%3D; path=/; HttpOnly; secure, _backend_session=Z3RUtBOyP1Bvp9IYO5JL1hHHvLDn9cVboDZPOQ3v%2BuYXGk9OhVqZ8pMnm2pDToIKCs07SjofgsLSpBCkN%2BjcQt%2BEypfqMSR8bW%2BtNPMKWBFo5syAQEErXfM6N%2F0q9cIHeexqjlqauCRNbDyIF%2F8pcEHC6%2BZiw5obF6%2FbbfEhw5ymWOXlFWqgQoURcXojJbw9Ld2AJ5pyHQU5M5uhMibb9FLLyNYjOEB1k6ApcEYfZ8eu1oFeQh2M4t22ACMv5jVu5etKfkA8nvGrQiyY%2BlShIB8hAa0wXmTYypZ%2BwJKs2H3PxNW2g77klpHloaJOVOs3fAxtRYNQNQz%2BKewibmmgiLgGhN5RFEzz7DPsPYOFjFXDupI%2B9TGyUDllMj3FYPXOhl6vQ2cYuDfiqNFXhXIwH%2BVneWeFXqsz7A2tbGVI02jmqs52%2FZSc3cjPSUprxB1ET4j33fxIkS4ojtblIFqrEWFjHQElBRcYBJVF%2BJG1oJE2%2FWh0BLTFoh662Ae%2B4iEzvRAocgBFpUzRqdpameAEEzIu8GZmethRAohmE3apFEpNQXwK23Uf8UQRaYHPER2YlI2bFxvJQEQRVLPY%2Bew32yPPPk8P22d2nKDtWAXw1XBHWjZXi6lyrsB5uCAjeAHT5L6joSxN6Z1M4j2B5uCkXEP82pJpgMG4bMKACMiy6MjO8fbmzS0LUA%3D%3D--ICH%2BQlHBxxOUkCGS--GWPBV7YZb6u7rj2m5yCd5g%3D%3D; path=/; HttpOnly; secure'
+            Etag: 'W/"517c4297185bea58956f49b308cd3e36"'
+            Cache-Control: 'max-age=0, private, must-revalidate'
+            X-Request-Id: 721beac1-82e9-4642-9a3d-319befaf8ca5
+            X-Runtime: '0.061139'
+            Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
+            Transfer-Encoding: chunked
+            Via: '1.1 vegur'
+        body: '[{"id":1,"event":"ride_published","url":"https://www.test.com/ride_webhook","active":true,"api_application_id":1,"created_at":"2020-05-26T14:23:02.610+02:00","updated_at":"2020-05-26T14:23:02.610+02:00"}]'

@@ -1,0 +1,33 @@
+
+-
+    request:
+        method: DELETE
+        url: 'https://sandbox-api.cocolis.fr/api/v1/applications//webhooks'
+        headers:
+            Host: sandbox-api.cocolis.fr
+            Expect: null
+            Accept-Encoding: null
+            User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
+            Content-Type: application/json
+            access-token: eT00t6RMIeZRqDV0qH-9yw
+            client: mghSYiwe0EsUyP6qxi6ZIg
+            expiry: '1591008268'
+            uid: e0611906
+            Accept: null
+        body: '{"id":"1"}'
+    response:
+        status:
+            http_version: '1.1'
+            code: '404'
+            message: 'Not Found'
+        headers:
+            Server: Cowboy
+            Date: 'Tue, 26 May 2020 15:06:18 GMT'
+            Connection: keep-alive
+            Content-Type: 'text/html; charset=UTF-8'
+            X-Request-Id: e07088e9-9d33-4829-9e7d-fd4818636075
+            X-Runtime: '0.006669'
+            Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
+            Content-Length: '1722'
+            Via: '1.1 vegur'
+        body: "<!DOCTYPE html>\n<html>\n<head>\n  <title>The page you were looking for doesn't exist (404)</title>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <style>\n  .rails-default-error-page {\n    background-color: #EFEFEF;\n    color: #2E2F30;\n    text-align: center;\n    font-family: arial, sans-serif;\n    margin: 0;\n  }\n\n  .rails-default-error-page div.dialog {\n    width: 95%;\n    max-width: 33em;\n    margin: 4em auto 0;\n  }\n\n  .rails-default-error-page div.dialog > div {\n    border: 1px solid #CCC;\n    border-right-color: #999;\n    border-left-color: #999;\n    border-bottom-color: #BBB;\n    border-top: #B00100 solid 4px;\n    border-top-left-radius: 9px;\n    border-top-right-radius: 9px;\n    background-color: white;\n    padding: 7px 12% 0;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n\n  .rails-default-error-page h1 {\n    font-size: 100%;\n    color: #730E15;\n    line-height: 1.5em;\n  }\n\n  .rails-default-error-page div.dialog > p {\n    margin: 0 0 1em;\n    padding: 1em;\n    background-color: #F7F7F7;\n    border: 1px solid #CCC;\n    border-right-color: #999;\n    border-left-color: #999;\n    border-bottom-color: #999;\n    border-bottom-left-radius: 4px;\n    border-bottom-right-radius: 4px;\n    border-top-color: #DADADA;\n    color: #666;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n  </style>\n</head>\n\n<body class=\"rails-default-error-page\">\n  <!-- This file lives in public/404.html -->\n  <div class=\"dialog\">\n    <div>\n      <h1>The page you were looking for doesn't exist.</h1>\n      <p>You may have mistyped the address or the page may have moved.</p>\n    </div>\n    <p>If you are the application owner check the logs for more information.</p>\n  </div>\n</body>\n</html>\n"
