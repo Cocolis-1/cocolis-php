@@ -2,7 +2,7 @@
 -
     request:
         method: DELETE
-        url: 'https://sandbox-api.cocolis.fr/api/v1/applications//webhooks'
+        url: 'https://sandbox-api.cocolis.fr/api/v1/applications/webhooks//1'
         headers:
             Host: sandbox-api.cocolis.fr
             Expect: null
@@ -14,20 +14,28 @@
             expiry: '1591008268'
             uid: e0611906
             Accept: null
-        body: '{"id":"1"}'
+        body: '[]'
     response:
         status:
             http_version: '1.1'
-            code: '404'
-            message: 'Not Found'
+            code: '401'
+            message: Unauthorized
         headers:
             Server: Cowboy
-            Date: 'Tue, 26 May 2020 15:06:18 GMT'
+            Date: 'Wed, 27 May 2020 17:29:39 GMT'
             Connection: keep-alive
-            Content-Type: 'text/html; charset=UTF-8'
-            X-Request-Id: e07088e9-9d33-4829-9e7d-fd4818636075
-            X-Runtime: '0.006669'
+            X-Frame-Options: SAMEORIGIN
+            X-Xss-Protection: '1; mode=block'
+            X-Content-Type-Options: nosniff
+            X-Download-Options: noopen
+            X-Permitted-Cross-Domain-Policies: none
+            Referrer-Policy: strict-origin-when-cross-origin
+            Content-Type: 'application/json; charset=utf-8'
+            Set-Cookie: '_session_id=T4RM6IVGRY%2Fo18dXKhuM0LCKjA1Jg4z0JFDBg7cd7rVGLloAvVUwIUgO8bhvIFtXE1hYHxLVZq0uVu4O19hXGu8GLQXGj%2FU3ekEWsibYRa4TdJ75%2B%2FKVBg3Jg%2FqKTwbW5foNXktXxpp%2BsscDJU%2FYCrX6GL2G3KiLi9rGJWo%2FHiVqwQY%3D--aq20PzqqG8hlxdD2--qik%2BADny3%2FqJyxrYpy%2FGPw%3D%3D; path=/; HttpOnly; secure, _session_id=T4RM6IVGRY%2Fo18dXKhuM0LCKjA1Jg4z0JFDBg7cd7rVGLloAvVUwIUgO8bhvIFtXE1hYHxLVZq0uVu4O19hXGu8GLQXGj%2FU3ekEWsibYRa4TdJ75%2B%2FKVBg3Jg%2FqKTwbW5foNXktXxpp%2BsscDJU%2FYCrX6GL2G3KiLi9rGJWo%2FHiVqwQY%3D--aq20PzqqG8hlxdD2--qik%2BADny3%2FqJyxrYpy%2FGPw%3D%3D; path=/; HttpOnly; secure, _backend_session=gdkDSZgp9190LAgxmGcsclxQ7lCoU5z8fPuOIzs7rNsT00IPlxgtHwok9opK22xpndD4yRcXIWALWzQySRSnn5FhSSdw35bNnyQfrj2OdIvXP%2B2Mnhf1xT1UQViUOcnrXqBN3xUTnzKEoTSkEN59y8M%2F9VHTycjKzDtHd61YYHx61M1Qs1Tv7Q%3D%3D--65Ldh8TfOS9m53kL--bBJv9N2SgSg35Y836AsfKA%3D%3D; path=/; HttpOnly; secure'
+            Cache-Control: no-cache
+            X-Request-Id: aa50635b-d740-427c-81a3-82225759b7e2
+            X-Runtime: '0.017609'
             Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
-            Content-Length: '1722'
+            Transfer-Encoding: chunked
             Via: '1.1 vegur'
-        body: "<!DOCTYPE html>\n<html>\n<head>\n  <title>The page you were looking for doesn't exist (404)</title>\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n  <style>\n  .rails-default-error-page {\n    background-color: #EFEFEF;\n    color: #2E2F30;\n    text-align: center;\n    font-family: arial, sans-serif;\n    margin: 0;\n  }\n\n  .rails-default-error-page div.dialog {\n    width: 95%;\n    max-width: 33em;\n    margin: 4em auto 0;\n  }\n\n  .rails-default-error-page div.dialog > div {\n    border: 1px solid #CCC;\n    border-right-color: #999;\n    border-left-color: #999;\n    border-bottom-color: #BBB;\n    border-top: #B00100 solid 4px;\n    border-top-left-radius: 9px;\n    border-top-right-radius: 9px;\n    background-color: white;\n    padding: 7px 12% 0;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n\n  .rails-default-error-page h1 {\n    font-size: 100%;\n    color: #730E15;\n    line-height: 1.5em;\n  }\n\n  .rails-default-error-page div.dialog > p {\n    margin: 0 0 1em;\n    padding: 1em;\n    background-color: #F7F7F7;\n    border: 1px solid #CCC;\n    border-right-color: #999;\n    border-left-color: #999;\n    border-bottom-color: #999;\n    border-bottom-left-radius: 4px;\n    border-bottom-right-radius: 4px;\n    border-top-color: #DADADA;\n    color: #666;\n    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);\n  }\n  </style>\n</head>\n\n<body class=\"rails-default-error-page\">\n  <!-- This file lives in public/404.html -->\n  <div class=\"dialog\">\n    <div>\n      <h1>The page you were looking for doesn't exist.</h1>\n      <p>You may have mistyped the address or the page may have moved.</p>\n    </div>\n    <p>If you are the application owner check the logs for more information.</p>\n  </div>\n</body>\n</html>\n"
+        body: '{"errors":["Vous devez vous connecter ou vous enregistrer pour continuer."]}'

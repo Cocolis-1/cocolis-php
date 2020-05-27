@@ -2,7 +2,7 @@
 -
     request:
         method: POST
-        url: 'https://sandbox-api.cocolis.fr/api/v1/applications//webhooks'
+        url: 'https://sandbox-api.cocolis.fr/api/v1/applications/webhooks/'
         headers:
             Host: sandbox-api.cocolis.fr
             Expect: null
@@ -18,11 +18,11 @@
     response:
         status:
             http_version: '1.1'
-            code: '200'
-            message: OK
+            code: '401'
+            message: Unauthorized
         headers:
             Server: Cowboy
-            Date: 'Tue, 26 May 2020 12:23:01 GMT'
+            Date: 'Wed, 27 May 2020 17:29:39 GMT'
             Connection: keep-alive
             X-Frame-Options: SAMEORIGIN
             X-Xss-Protection: '1; mode=block'
@@ -31,17 +31,11 @@
             X-Permitted-Cross-Domain-Policies: none
             Referrer-Policy: strict-origin-when-cross-origin
             Content-Type: 'application/json; charset=utf-8'
-            Access-Token: eT00t6RMIeZRqDV0qH-9yw
-            Token-Type: Bearer
-            Client: mghSYiwe0EsUyP6qxi6ZIg
-            Expiry: '1591008268'
-            Uid: e0611906
-            Set-Cookie: '_session_id=GM0w6IMII2N4YClK3165EDNM%2B%2Bidrk9SqOY97f2qvmADDgHiC5Y0ut5bjugSc%2Fsnbqw3NdHLiFnunF0IFSZiZjcg08dtCruyoBi17z35E8fZMfF1HYv4rf5XJrFojsrst0WYJgxfvYmRv5gZSPX2HBX9mR4S1kNG9W3FVtHqjEQv2x0X9OqsWlbqKE7OgjnHKjzWLZiNiB%2FUMGQiW6edu63YCjPsAXaghuAepshqTYS66ngtWfncZvs8sw17eDsZ2MdLMebQm2F9svW6rJH19pgOTZM7FqyZMrcegmeWpiW1twbduFvS3hDn45lkTzmyj6fa4WW7SYqVAzJRCKX0xjIfD4viDEpDf8YFS5GoDeheJxSR8hlwK3sMOxH3WvyLG46J6z8S5%2FapYrtpcc17lC3MDrKAYkMJDIfvrqXqQrOv229FpjZ8S8N%2FBEsTJ7yF3FxG%2BsERH6p7%2FbpkWQsym1ewdGrSTJvotDvo%2BmiCMbjKXEBT4Xi0D8jy7muqtpkxb2u%2F4YCkhvCHG%2BTmaCzscqWrQ%2BTIWsNcgqzK79bE4u3VH1BbK%2BH8fJiuSNVfSZFqpkvwuBBHiNvBkQNJcSF34jLEvWql3WlK6Qzxo4bhXhUWREdywjPJoDaSrsRN7lRVYeNc%2FAthlcePtjzsgkszK2Qg65kefdxj8Y6Lus12FMMvC9A%3D--XCgBCJj3yNM%2BeVNd--gtri4vRCDSWEzhmINqCv4g%3D%3D; path=/; HttpOnly; secure, _session_id=GM0w6IMII2N4YClK3165EDNM%2B%2Bidrk9SqOY97f2qvmADDgHiC5Y0ut5bjugSc%2Fsnbqw3NdHLiFnunF0IFSZiZjcg08dtCruyoBi17z35E8fZMfF1HYv4rf5XJrFojsrst0WYJgxfvYmRv5gZSPX2HBX9mR4S1kNG9W3FVtHqjEQv2x0X9OqsWlbqKE7OgjnHKjzWLZiNiB%2FUMGQiW6edu63YCjPsAXaghuAepshqTYS66ngtWfncZvs8sw17eDsZ2MdLMebQm2F9svW6rJH19pgOTZM7FqyZMrcegmeWpiW1twbduFvS3hDn45lkTzmyj6fa4WW7SYqVAzJRCKX0xjIfD4viDEpDf8YFS5GoDeheJxSR8hlwK3sMOxH3WvyLG46J6z8S5%2FapYrtpcc17lC3MDrKAYkMJDIfvrqXqQrOv229FpjZ8S8N%2FBEsTJ7yF3FxG%2BsERH6p7%2FbpkWQsym1ewdGrSTJvotDvo%2BmiCMbjKXEBT4Xi0D8jy7muqtpkxb2u%2F4YCkhvCHG%2BTmaCzscqWrQ%2BTIWsNcgqzK79bE4u3VH1BbK%2BH8fJiuSNVfSZFqpkvwuBBHiNvBkQNJcSF34jLEvWql3WlK6Qzxo4bhXhUWREdywjPJoDaSrsRN7lRVYeNc%2FAthlcePtjzsgkszK2Qg65kefdxj8Y6Lus12FMMvC9A%3D--XCgBCJj3yNM%2BeVNd--gtri4vRCDSWEzhmINqCv4g%3D%3D; path=/; HttpOnly; secure, _backend_session=UT5AHdyEx9S1gq0Dor1N%2BTEzWE6%2BVaFTMHMkaYCLgcGqtQ4648TTyEfwKMPB7hkclqHhYx%2BEjn25IzvvY6ZVKvUDYSXi4POjB8bDH0Pbi3NrvtQaFNKQWW3HzZiS4eVRXocuiEhQ0HNZIURhIaLqM%2Ft8VTEJQL8e9d2vrNOMEP5mUms3q6aCZ7fCJnEztSs8AqT5FIdj%2BX5sFAjJxl%2B8brIm6dvMF6EW%2FYvQauHGXWWkPwfYVT6eTEHxNSLbVjbYk33z%2BwSjAQCqXDEWFOOph13%2FBxI9v9vmzY%2F4pIziH1MKPjtcXHsr4Lg%2BOzudf6XDZExLiLXPQhezKA0ML5pfEo0mTJcu5mhccQro8MdkMlPGxjD4OZ6WahGPEAnF7097xlIM3nrgDjCzoSIQwQFE5kGRVHFz0NyvJJj%2FBNbRKgTt9bbT%2F80yJNoYQf3paOrN3xvNZA%2BL1u7E92QObTBNik6ytD6yiJMrQLinf95IHYG0835WKlnCmy%2FuLVC3YYj1J0yo5soh0ieWYlYSW%2BflKam%2BS9IXL8d6h280ZNe1aSZmzIsJwjN1mfBzxwir5Hti4n1%2FHEToNf%2FrFmzM6enCRZqdLEcEu0ixRzEMA39q6GFKC5HS7zq2sZK9zB7AFkScCG1tUscoXDas4nfFxqz4%2FnLV4S26xZqUNhoZbb6HmbUPPXlk7e%2BaAQ%3D%3D--MzX%2B6%2BdXHeBmaMHL--F9tXcLBMpZ7aqbrMTHMX4A%3D%3D; path=/; HttpOnly; secure'
-            Etag: 'W/"670e09b188f0b9fe2d6bab02fe5f02db"'
-            Cache-Control: 'max-age=0, private, must-revalidate'
-            X-Request-Id: 6bc7c190-f4ad-4492-a049-137d0cf0f7ad
-            X-Runtime: '0.493014'
+            Set-Cookie: '_session_id=RQJdKevtEHY603PWoyrdLlpT2Asf%2F65Z9p6j27Ce21NBTCP2aTXxZyXcy6tbWLPnZJdfpnkVkTozfZWfWkwC8WTOVcqRz5nmdaPsAKBVAglfTyvDbaoy274dDSm37g1sNQEdcaehyBe5mc7I9m37UbPDdsDqg17obQI2l1eaG7RyqBg%3D--Tmqz63L1kugtRSxF--O92LkDExtyVbeP8cR2JSkA%3D%3D; path=/; HttpOnly; secure, _session_id=RQJdKevtEHY603PWoyrdLlpT2Asf%2F65Z9p6j27Ce21NBTCP2aTXxZyXcy6tbWLPnZJdfpnkVkTozfZWfWkwC8WTOVcqRz5nmdaPsAKBVAglfTyvDbaoy274dDSm37g1sNQEdcaehyBe5mc7I9m37UbPDdsDqg17obQI2l1eaG7RyqBg%3D--Tmqz63L1kugtRSxF--O92LkDExtyVbeP8cR2JSkA%3D%3D; path=/; HttpOnly; secure, _backend_session=Q%2B2vfsLUi1MMASHdN%2BPPSD1xWlYQOPAm1D8X5VTH6SWYDZLoDSf6kMJfGjcQ7sXaEs%2BY3IBLMznqe8Cn%2Fl%2Fc96F23NaJe3daBT2iKc1iX8P1GXZf5btf2AsGfO4kaJFzhiitxVfay8C90VqGYWoXowyHIVmk8b%2BAUDx2MndarZZYbIwMtmeMsQ%3D%3D--wH%2Fx3hmuffJLtJ8j--8Xd%2BGgp3mAPWavaKK9NCgA%3D%3D; path=/; HttpOnly; secure'
+            Cache-Control: no-cache
+            X-Request-Id: 43222ad8-2fd0-4b54-b70c-9a0bfacb9aa9
+            X-Runtime: '0.017377'
             Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
             Transfer-Encoding: chunked
             Via: '1.1 vegur'
-        body: '{"id":1,"event":"ride_published","url":"https://www.test.com/ride_webhook","active":true,"api_application_id":1,"created_at":"2020-05-26T14:23:02.610+02:00","updated_at":"2020-05-26T14:23:02.610+02:00"}'
+        body: '{"errors":["Vous devez vous connecter ou vous enregistrer pour continuer."]}'
