@@ -10,49 +10,26 @@
 
 namespace Cocolis\Api\Clients;
 
+use Exception;
+
 class RideClient extends AbstractClient
 {
   public $_rest_path = 'rides';
   public $_model_class = 'Cocolis\Api\Models\Ride';
 
-  private $_seller_tracking;
-  private $_buyer_tracking;
-
-  public function getSellerTracking()
+  public function getBuyerURL(string $id)
   {
-    return $this->_seller_tracking;
+    return $this->getBaseURL() . 'rides/buyer/' . $this->get($id)->buyer_tracking;
   }
 
-
-  public function getBuyerTracking()
+  public function getSellerURL(string $id)
   {
-    return $this->_buyer_tracking;
-  }
-
-  public function setSellerTracking(string $code)
-  {
-    $this->_seller_tracking = $code;
-  }
-
-
-  public function setBuyerTracking(string $code)
-  {
-    $this->_buyer_tracking = $code;
-  }
-
-  public function getBuyerURL()
-  {
-    return $this->getBaseURL() . 'rides/buyer/' . $this->getBuyerTracking();
-  }
-
-  public function getSellerURL()
-  {
-    return $this->getBaseURL() . 'rides/seller/' . $this->getSellerTracking();
+    return $this->getBaseURL() . 'rides/seller/' . $this->get($id)->seller_tracking;
   }
 
   public function mine()
   {
-    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('mine'))->getBody(), true)['rides']);
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('mine'))->getBody(), true));
   }
 
   public function canMatch(string $zipfrom, string $zipto, float $volume, int $value = null)
@@ -72,11 +49,18 @@ class RideClient extends AbstractClient
     ));
   }
 
-  public function createRide(array $params)
+  public function remove(string $id)
   {
-    $res = $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated('rides', 'POST', array('ride' => $params))->getBody(), true));
-    $this->setSellerTracking($res->seller_tracking);
-    $this->setBuyerTracking($res->buyer_tracking);
-    return $res;
+    throw new Exception('This feature is not accessible in this Class');
+  }
+
+  public function update(array $params, string $id)
+  {
+    throw new Exception('This feature is not accessible in this Class');
+  }
+
+  public function getAll()
+  {
+    throw new Exception('This feature is not accessible in this Class');
   }
 }

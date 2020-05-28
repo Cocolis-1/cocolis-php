@@ -3,6 +3,7 @@
 namespace Tests\Api;
 
 use Cocolis\Api\Client;
+use Exception;
 
 class RideClientTest extends CocolisTest
 {
@@ -52,8 +53,8 @@ class RideClientTest extends CocolisTest
       "photos" => [],
       "ride_objects_attributes" => [
         [
-          "title" =>
-          "Canapé", "qty" => 1,
+          "title" => "Canapé",
+          "qty" => 1,
           "format" => "xxl"
         ]
       ],
@@ -76,11 +77,32 @@ class RideClientTest extends CocolisTest
       ]
     ];
     $client = $client->getRideClient();
-    $results = $client->createRide($params);
-    $this->assertNotEmpty($results, $client->getBuyerURL(), $client->getSellerURL());
+    $results = $client->create($params);
+    $this->assertNotEmpty($results, $client->getBuyerURL('1'), $client->getSellerURL('1'));
 
     // Test live version
     Client::setLive(true);
-    $this->assertNotEmpty($client->getBuyerURL(), $client->getSellerURL());
+    $this->assertNotEmpty($client->getBuyerURL('1'), $client->getSellerURL('1'));
+  }
+
+  public function testRemove()
+  {
+    $this->expectException(Exception::class);
+    $client = new Client();
+    $client = $client->getRideClient()->remove('1');
+  }
+
+  public function testUpdate()
+  {
+    $this->expectException(Exception::class);
+    $client = new Client();
+    $client = $client->getRideClient()->update(['test' => 'test'], '1');
+  }
+
+  public function testGetAll()
+  {
+    $this->expectException(Exception::class);
+    $client = new Client();
+    $client = $client->getRideClient()->getAll();
   }
 }

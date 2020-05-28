@@ -57,4 +57,29 @@ abstract class AbstractClient
 
     return $this->_rest_path . '/' . $path;
   }
+
+  public function create(array $params)
+  {
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath(''), 'POST', $params)->getBody(), true));
+  }
+
+  public function update(array $params, string $id)
+  {
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/') . $id, 'PUT', $params)->getBody(), true));
+  }
+
+  public function getAll()
+  {
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath(''), 'GET')->getBody(), true));
+  }
+
+  public function get(string $id)
+  {
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/' . $id), 'GET')->getBody(), true));
+  }
+
+  public function remove(string $id)
+  {
+    return json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/') . $id, 'DELETE')->getBody(), true);
+  }
 }

@@ -1,0 +1,41 @@
+
+-
+    request:
+        method: PUT
+        url: 'https://sandbox-api.cocolis.fr/api/v1/applications/webhooks//1'
+        headers:
+            Host: sandbox-api.cocolis.fr
+            Expect: null
+            Accept-Encoding: null
+            User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
+            Content-Type: application/json
+            access-token: eT00t6RMIeZRqDV0qH-9yw
+            client: mghSYiwe0EsUyP6qxi6ZIg
+            expiry: '1591008268'
+            uid: e0611906
+            Accept: null
+        body: '{"event":"offer_accepted","url":"https:\/\/www.test.com\/ride_webhook","active":true}'
+    response:
+        status:
+            http_version: '1.1'
+            code: '401'
+            message: Unauthorized
+        headers:
+            Server: Cowboy
+            Date: 'Wed, 27 May 2020 17:29:39 GMT'
+            Connection: keep-alive
+            X-Frame-Options: SAMEORIGIN
+            X-Xss-Protection: '1; mode=block'
+            X-Content-Type-Options: nosniff
+            X-Download-Options: noopen
+            X-Permitted-Cross-Domain-Policies: none
+            Referrer-Policy: strict-origin-when-cross-origin
+            Content-Type: 'application/json; charset=utf-8'
+            Set-Cookie: '_session_id=WsMQG9XsZOWLYMxQFr62UolFZxDzfpiAwE9xlw3f6oYwqBE6tj%2FuiVYSxm%2F7oX7fRNRZXu1djmCXRMXDiUV%2FJLG46K0lq72Cg6dl3qGg0TgFufoiQaloFzPa3xRP8YBGcyPijajDx1eyD3A2IaNmAOWHFyWu1USLyCCxhDQt150N8E8%3D--oHg7c3zgL%2BPzD9%2Bf--WMM5SoAAke%2FfUU6%2BytgR4Q%3D%3D; path=/; HttpOnly; secure, _session_id=WsMQG9XsZOWLYMxQFr62UolFZxDzfpiAwE9xlw3f6oYwqBE6tj%2FuiVYSxm%2F7oX7fRNRZXu1djmCXRMXDiUV%2FJLG46K0lq72Cg6dl3qGg0TgFufoiQaloFzPa3xRP8YBGcyPijajDx1eyD3A2IaNmAOWHFyWu1USLyCCxhDQt150N8E8%3D--oHg7c3zgL%2BPzD9%2Bf--WMM5SoAAke%2FfUU6%2BytgR4Q%3D%3D; path=/; HttpOnly; secure, _backend_session=KMkTwaG2y7FHZR%2BtEMZb0LlOGJj66ZbwZMT8gE%2F%2FNc5BKlRiCUUEvBYS2KCnRT3iR2%2BDsh0hdsOI8Ya2S9wMxHufANdE4PKN3%2F1angQBy2JVR6%2F7jF0X2rrmPnCIIXXcKRA5N5%2Fak7rkbqKYzz1Eqr%2Bo4%2FeNYgvgktzOnO1zcHa1nTXsx%2BMfQw%3D%3D--aGf9k2ZIU9PZb0SL--37pxwM%2B78yZzfPYr4QThMw%3D%3D; path=/; HttpOnly; secure'
+            Cache-Control: no-cache
+            X-Request-Id: 0519b7c2-658f-408d-aaee-a1431ccda1c7
+            X-Runtime: '0.015213'
+            Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
+            Transfer-Encoding: chunked
+            Via: '1.1 vegur'
+        body: '{"errors":["Vous devez vous connecter ou vous enregistrer pour continuer."]}'
