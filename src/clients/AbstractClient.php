@@ -25,7 +25,18 @@ abstract class AbstractClient
 
   public function hydrate(array $array)
   {
-    return json_decode(json_encode($array));
+    $stdClassArray = json_decode(json_encode($array));
+    if (is_array($stdClassArray)) {
+      $result = array();
+      foreach($stdClassArray as $item)
+      {
+        array_push($result, new $this->_model_class($item, $this));
+      }
+    }
+    if (is_object($stdClassArray)) {
+      $result = new $this->_model_class($item, $this);
+    }
+    return $result;
   }
 
   public function getCocolisClient()

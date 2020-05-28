@@ -13,6 +13,7 @@ namespace Cocolis\Api\Clients;
 class RideClient extends AbstractClient
 {
   public $_rest_path = 'rides';
+  public $_model_class = 'Cocolis\Api\Models\Ride';
 
   private $_seller_tracking;
   private $_buyer_tracking;
@@ -60,7 +61,7 @@ class RideClient extends AbstractClient
     if (!empty($value)) {
       $params['content_value'] = $value;
     }
-    
+
     return $this->hydrate(json_decode(
       $this->getCocolisClient()->callAuthentificated(
         $this->getRestPath('can_match'),
