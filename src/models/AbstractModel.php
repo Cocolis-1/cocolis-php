@@ -12,28 +12,31 @@ namespace Cocolis\Api\Models;
 
 abstract class AbstractModel
 {
-
   private $_data;
   private $_client;
 
-  public function __construct($data, $client) {
+  public function __construct($data, $client)
+  {
     $this->_data = $data;
     $this->_client = $client;
   }
 
-  public function __get(string $get) {
+  public function __get(string $get)
+  {
     if (is_object($this->_data)) {
-      if (isset($this->_data->{$get}))
+      if (isset($this->_data->{$get})) {
         $return = $this->_data->{$get};
-      else
+      } else {
         $return = null;
+      }
     } else {
       trigger_error('Data is no object!', E_USER_ERROR);
     }
     return $return;
   }
 
-  public function __set(string $set, $value) {
+  public function __set(string $set, $value)
+  {
     return $this->_data->{$set};
   }
 }
