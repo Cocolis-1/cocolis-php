@@ -5,6 +5,10 @@
 
 This composer package will help you to use Cocolis.fr API.
 
+## Documentation
+
+You will find our documentation at [https://doc.cocolis.fr](https://doc.cocolis.fr)
+
 ## Installation
 
 ### Composer
