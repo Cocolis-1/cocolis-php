@@ -11,6 +11,7 @@
 namespace Cocolis\Api\Clients;
 
 use Cocolis\Api\Client;
+use Exception;
 use PhpCsFixer\ConfigurationException\InvalidConfigurationException;
 
 abstract class AbstractClient
@@ -25,7 +26,17 @@ abstract class AbstractClient
 
   public function hydrate(array $array)
   {
-    return json_decode(json_encode($array));
+    $transformedToStdClass = json_decode(json_encode($array));
+    if (is_array($transformedToStdClass)) {
+      $result = array();
+      foreach ($transformedToStdClass as $item) {
+        array_push($result, new $this->_model_class($item, $this));
+      }
+    }
+    if (is_object($transformedToStdClass)) {
+      $result = new $this->_model_class($transformedToStdClass, $this);
+    }
+    return $result;
   }
 
   public function getCocolisClient()
@@ -45,5 +56,35 @@ abstract class AbstractClient
     }
 
     return $this->_rest_path . '/' . $path;
+  }
+
+  public function create(array $params)
+  {
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath(''), 'POST', $params)->getBody(), true));
+  }
+
+  public function update(array $params, string $id)
+  {
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/') . $id, 'PUT', $params)->getBody(), true));
+  }
+
+  public function getAll()
+  {
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath(''), 'GET')->getBody(), true));
+  }
+
+  public function get(string $id)
+  {
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/' . $id), 'GET')->getBody(), true));
+  }
+
+  public function remove(string $id)
+  {
+    return json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/') . $id, 'DELETE')->getBody(), true);
+  }
+
+  public function notSupported()
+  {
+    throw new Exception('This feature is not accessible in this Class');
   }
 }
