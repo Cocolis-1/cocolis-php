@@ -156,12 +156,7 @@ class Client
     } else {
       $res = $this->callAuthentificated('app_auth/validate_token', 'GET', array_merge(['token-type' => 'Bearer'], $auth));
     }
-
-    if ($res->getStatusCode() == 200) {
-      return json_decode($res->getBody(), true);
-    }
-
-    return false;
+    return json_decode($res->getBody(), true);
   }
 
   public function call($url, $method = 'GET', $body = array())
