@@ -11,6 +11,7 @@
 namespace Cocolis\Api\Clients;
 
 use Cocolis\Api\Client;
+use Exception;
 use PhpCsFixer\ConfigurationException\InvalidConfigurationException;
 
 abstract class AbstractClient
@@ -25,16 +26,15 @@ abstract class AbstractClient
 
   public function hydrate(array $array)
   {
-    $stdClassArray = json_decode(json_encode($array));
-    if (is_array($stdClassArray)) {
+    $transformedToStdClass = json_decode(json_encode($array));
+    if (is_array($transformedToStdClass)) {
       $result = array();
-      foreach($stdClassArray as $item)
-      {
+      foreach ($transformedToStdClass as $item) {
         array_push($result, new $this->_model_class($item, $this));
       }
     }
-    if (is_object($stdClassArray)) {
-      $result = new $this->_model_class($item, $this);
+    if (is_object($transformedToStdClass)) {
+      $result = new $this->_model_class($transformedToStdClass, $this);
     }
     return $result;
   }
@@ -81,5 +81,10 @@ abstract class AbstractClient
   public function remove(string $id)
   {
     return json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/') . $id, 'DELETE')->getBody(), true);
+  }
+
+  public function notSupported()
+  {
+    throw new Exception('This feature is not accessible in this Class');
   }
 }

@@ -12,8 +12,4 @@ namespace Cocolis\Api\Models;
 
 class Webhook extends AbstractModel
 {
-
 }
-
-
-

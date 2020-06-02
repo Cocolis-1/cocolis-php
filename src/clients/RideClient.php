@@ -51,16 +51,16 @@ class RideClient extends AbstractClient
 
   public function remove(string $id)
   {
-    throw new Exception('This feature is not accessible in this Class');
+    $this->notSupported();
   }
 
   public function update(array $params, string $id)
   {
-    throw new Exception('This feature is not accessible in this Class');
+    $this->notSupported();
   }
 
   public function getAll()
   {
-    throw new Exception('This feature is not accessible in this Class');
+    $this->notSupported();
   }
 }

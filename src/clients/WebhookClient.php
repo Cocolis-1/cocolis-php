@@ -15,4 +15,5 @@ use Cocolis\Api\Clients\AbstractClient;
 class WebhookClient extends AbstractClient
 {
   public $_rest_path = 'applications/webhooks';
+  public $_model_class = 'Cocolis\Api\Models\Webhook';
 }
