@@ -9,12 +9,7 @@ class RideClientTest extends CocolisTest
 {
   public function testMine()
   {
-    $client = Client::create(array(
-      'app_id' => 'e0611906',
-      'password' => 'sebfie',
-      'live' => false
-    ));
-    $client->signIn();
+    $client = $this->authenticatedClient();
     $rides = $client->getRideClient()->mine();
     $this->assertNotEmpty($rides);
     $this->assertInstanceOf('Cocolis\Api\Models\Ride', $rides[0]);
@@ -22,12 +17,7 @@ class RideClientTest extends CocolisTest
 
   public function testMatch()
   {
-    $client = Client::create(array(
-      'app_id' => 'e0611906',
-      'password' => 'sebfie',
-      'live' => false
-    ));
-    $client->signIn();
+    $client = $this->authenticatedClient();
     $result = $client->getRideClient()->canMatch(75015, 31400, 10, 150100);
     $this->assertNotEmpty($result);
     $this->assertInstanceOf('stdClass', $result);
@@ -36,11 +26,7 @@ class RideClientTest extends CocolisTest
 
   public function testCreate()
   {
-    $client = Client::create(array(
-      'app_id' => 'e0611906',
-      'password' => 'sebfie',
-      'live' => false
-    ));
+    $client = $this->authenticatedClient();
     $client->signIn();
     $params = [
       "description" => "Carcassonne vers toulu",

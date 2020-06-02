@@ -3,6 +3,7 @@
 namespace Tests\Api;
 
 use PHPUnit\Framework\TestCase;
+use Cocolis\Api\Client;
 
 class CocolisTest extends TestCase
 {
@@ -29,5 +30,16 @@ class CocolisTest extends TestCase
 
     // Turn off VCR to stop intercepting requests
     \VCR\VCR::turnOff();
+  }
+
+  public function authenticatedClient()
+  {
+    $client = Client::create(array(
+      'app_id' => 'e0611906',
+      'password' => 'sebfie',
+      'live' => false
+    ));
+    $client->signIn();
+    return $client;
   }
 }

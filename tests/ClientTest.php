@@ -132,6 +132,8 @@ class ClientTest extends CocolisTest
       'live' => false
     ));
 
+    $this->expectException(\GuzzleHttp\Exception\ClientException::class);
+
     // Invalid params
     $result = $client->validateToken(["uid" => "e0611906", "access-token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "expiry" => "1590748027"]);
     $this->assertEquals($result, false);

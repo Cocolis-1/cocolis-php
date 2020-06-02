@@ -171,6 +171,6 @@ class Client
 
   public function callAuthentificated($url, $method = 'GET', $body = array())
   {
-    return $this->getHttpClient()->request($method, $url, ['headers' => self::getCurrentAuthInfo(), 'json' => $body, 'http_errors' => false]);
+    return $this->getHttpClient()->request($method, $url, ['headers' => self::getCurrentAuthInfo(), 'json' => $body]);
   }
 }
