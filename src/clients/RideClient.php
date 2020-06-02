@@ -51,16 +51,16 @@ class RideClient extends AbstractClient
 
   public function remove(string $id)
   {
-    $this->notSupported();
+    return $this->notSupported();
   }
 
   public function update(array $params, string $id)
   {
-    $this->notSupported();
+    return $this->notSupported();
   }
 
   public function getAll()
   {
-    $this->notSupported();
+    return $this->notSupported();
   }
 }

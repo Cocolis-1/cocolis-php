@@ -38,9 +38,4 @@ abstract class AbstractModel
     }
     return $return;
   }
-
-  public function __set(string $set, $value)
-  {
-    return $this->_data->{$set};
-  }
 }
