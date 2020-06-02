@@ -31,7 +31,8 @@ class RideTest extends CocolisTest
     $ride->my_key;
   }
 
-  public function testArray(){
+  public function testArray()
+  {
     $client = new Client();
     $model = $client->getRideClient()->hydrate(array('toto'));
     var_dump($model);
