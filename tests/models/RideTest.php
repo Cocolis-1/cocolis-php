@@ -24,17 +24,10 @@ class RideTest extends CocolisTest
 
   public function testObjectException()
   {
-    $this->expectException(Error::class);
-    $this->expectExceptionMessage('Data is no object!');
+    $this->expectError(Error::class);
+    $this->expectErrorMessage('Data is no object!');
     $client = new Client();
     $ride = new Ride('toto', $client);
     $ride->my_key;
-  }
-
-  public function testArray()
-  {
-    $client = new Client();
-    $model = $client->getRideClient()->hydrate(array('toto'));
-    var_dump($model);
   }
 }
