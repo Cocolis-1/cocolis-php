@@ -21,8 +21,12 @@ abstract class AbstractModel
     $this->_client = $client;
   }
 
-  public function __get(string $get)
+  public function getBaseURL()
   {
+    return $this->_client->getBaseURL();
+  }
+
+  public function __get(string $get) {
     if (is_object($this->_data)) {
       if (isset($this->_data->{$get})) {
         $return = $this->_data->{$get};
