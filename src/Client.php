@@ -141,11 +141,7 @@ class Client
   public function signIn()
   {
     $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
-    if ($res->getStatusCode() == 200) {
-      return self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
-    }
-
-    return false;
+    return self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
   }
 
   public function validateToken($authinfo = array())
@@ -161,7 +157,7 @@ class Client
 
   public function call($url, $method = 'GET', $body = array())
   {
-    return $this->getHttpClient()->request($method, $url, ['json' => $body, 'http_errors' => false]);
+    return $this->getHttpClient()->request($method, $url, ['json' => $body]);
   }
 
   public function callAuthentificated($url, $method = 'GET', $body = array())

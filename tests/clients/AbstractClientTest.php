@@ -7,7 +7,6 @@ use Exception;
 
 class AbstractClientTest extends CocolisTest
 {
-
   public function testHydrateArray()
   {
     $client = new Client();

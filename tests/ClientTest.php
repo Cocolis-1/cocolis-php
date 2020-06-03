@@ -36,8 +36,10 @@ class ClientTest extends CocolisTest
   }
 
 
-  public function testSignIn()
+  public function testSignInWithWrongCredentials()
   {
+    $this->expectException(\GuzzleHttp\Exception\ClientException::class);
+
     $client = Client::create(array(
       'app_id' => 'e0611906',
       'password' => 'notsebfie',
