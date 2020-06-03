@@ -17,19 +17,9 @@ class RideClient extends AbstractClient
   public $_rest_path = 'rides';
   public $_model_class = 'Cocolis\Api\Models\Ride';
 
-  public function getBuyerURL(string $id)
-  {
-    return $this->getBaseURL() . 'rides/buyer/' . $this->get($id)->buyer_tracking;
-  }
-
-  public function getSellerURL(string $id)
-  {
-    return $this->getBaseURL() . 'rides/seller/' . $this->get($id)->seller_tracking;
-  }
-
   public function mine()
   {
-    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('mine'))->getBody(), true));
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('mine'))->getBody(), true)["rides"]);
   }
 
   public function canMatch(string $zipfrom, string $zipto, float $volume, int $value = null)
@@ -46,21 +36,21 @@ class RideClient extends AbstractClient
         $params
       )->getBody(),
       true
-    ));
+    ), false);
   }
 
   public function remove(string $id)
   {
-    $this->notSupported();
+    return $this->notSupported();
   }
 
   public function update(array $params, string $id)
   {
-    $this->notSupported();
+    return $this->notSupported();
   }
 
   public function getAll()
   {
-    $this->notSupported();
+    return $this->notSupported();
   }
 }

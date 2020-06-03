@@ -9,21 +9,25 @@ class RideClientTest extends CocolisTest
 {
   public function testMine()
   {
-    $client = new Client();
+    $client = $this->authenticatedClient();
     $rides = $client->getRideClient()->mine();
     $this->assertNotEmpty($rides);
+    $this->assertInstanceOf('Cocolis\Api\Models\Ride', $rides[0]);
   }
 
   public function testMatch()
   {
-    $client = new Client();
-    $results = $client->getRideClient()->canMatch(75015, 31400, 10, 150100);
-    $this->assertNotEmpty($results);
+    $client = $this->authenticatedClient();
+    $result = $client->getRideClient()->canMatch(75015, 31400, 10, 150100);
+    $this->assertNotEmpty($result);
+    $this->assertInstanceOf('stdClass', $result);
+    $this->assertEquals(95500, $result->estimated_prices->regular);
   }
 
   public function testCreate()
   {
-    $client = new Client();
+    $client = $this->authenticatedClient();
+    $client->signIn();
     $params = [
       "description" => "Carcassonne vers toulu",
       "from_lat" => 43.212498,
@@ -77,12 +81,10 @@ class RideClientTest extends CocolisTest
       ]
     ];
     $client = $client->getRideClient();
-    $results = $client->create($params);
-    $this->assertNotEmpty($results, $client->getBuyerURL('1'), $client->getSellerURL('1'));
-
-    // Test live version
-    Client::setLive(true);
-    $this->assertNotEmpty($client->getBuyerURL('1'), $client->getSellerURL('1'));
+    $ride = $client->create($params);
+    $this->assertInstanceOf('Cocolis\Api\Models\Ride', $ride);
+    $this->assertNotNull($ride->id);
+    $this->assertEquals($ride->id, 58);
   }
 
   public function testRemove()

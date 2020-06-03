@@ -24,17 +24,21 @@ abstract class AbstractClient
     $this->_cocolis_client = $cocolisClient;
   }
 
-  public function hydrate(array $array)
+  public function hydrate(array $array, $transformToModel = true)
   {
     $transformedToStdClass = json_decode(json_encode($array));
-    if (is_array($transformedToStdClass)) {
-      $result = array();
-      foreach ($transformedToStdClass as $item) {
-        array_push($result, new $this->_model_class($item, $this));
+    if ($transformToModel) {
+      if (is_array($transformedToStdClass)) {
+        $result = array();
+        foreach ($transformedToStdClass as $item) {
+          array_push($result, new $this->_model_class($item, $this));
+        }
       }
-    }
-    if (is_object($transformedToStdClass)) {
-      $result = new $this->_model_class($transformedToStdClass, $this);
+      if (is_object($transformedToStdClass)) {
+        $result = new $this->_model_class($transformedToStdClass, $this);
+      }
+    } else {
+      $result = $transformedToStdClass;
     }
     return $result;
   }

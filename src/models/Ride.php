@@ -10,6 +10,8 @@
 
 namespace Cocolis\Api\Models;
 
+use Cocolis\Api\Clients\AbstractClient;
+
 class Ride extends AbstractModel
 {
   public function getBuyerURL()

@@ -21,6 +21,11 @@ abstract class AbstractModel
     $this->_client = $client;
   }
 
+  public function getBaseURL()
+  {
+    return $this->_client->getBaseURL();
+  }
+
   public function __get(string $get)
   {
     if (is_object($this->_data)) {
@@ -33,10 +38,5 @@ abstract class AbstractModel
       trigger_error('Data is no object!', E_USER_ERROR);
     }
     return $return;
-  }
-
-  public function __set(string $set, $value)
-  {
-    return $this->_data->{$set};
   }
 }

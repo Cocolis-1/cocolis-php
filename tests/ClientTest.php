@@ -36,8 +36,10 @@ class ClientTest extends CocolisTest
   }
 
 
-  public function testSignIn()
+  public function testSignInWithWrongCredentials()
   {
+    $this->expectException(\GuzzleHttp\Exception\ClientException::class);
+
     $client = Client::create(array(
       'app_id' => 'e0611906',
       'password' => 'notsebfie',
@@ -131,6 +133,8 @@ class ClientTest extends CocolisTest
       'password' => 'sebfie',
       'live' => false
     ));
+
+    $this->expectException(\GuzzleHttp\Exception\ClientException::class);
 
     // Invalid params
     $result = $client->validateToken(["uid" => "e0611906", "access-token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "expiry" => "1590748027"]);

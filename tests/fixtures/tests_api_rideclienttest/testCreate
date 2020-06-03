@@ -2,59 +2,15 @@
 -
     request:
         method: POST
-        url: 'https://sandbox-api.cocolis.fr/api/v1/rides/'
+        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/sign_in'
         headers:
             Host: sandbox-api.cocolis.fr
             Expect: null
             Accept-Encoding: null
-            User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
+            User-Agent: 'GuzzleHttp/Guzzle curl/7.70.0 PHP/7.3.18'
             Content-Type: application/json
-            access-token: eT00t6RMIeZRqDV0qH-9yw
-            client: mghSYiwe0EsUyP6qxi6ZIg
-            expiry: '1591008268'
-            uid: e0611906
             Accept: null
-        body: '{"description":"Carcassonne vers toulu","from_lat":43.212498,"to_lat":43.59912,"from_address":"Carcassonne","to_address":"Toulouse","from_lng":2.350351,"to_lng":1.444391,"from_is_flexible":true,"from_pickup_date":"2020-06-13T14:21:21+00:00","to_is_flexible":true,"to_pickup_date":"2020-06-13T14:21:21+00:00","is_passenger":false,"is_packaged":false,"price":57000,"volume":15,"environment":"objects","from_need_help":false,"from_need_help_floor":"0","from_need_help_elevator":false,"from_need_help_furniture_lift":false,"to_need_help":false,"to_need_help_floor":0,"to_need_help_elevator":false,"to_need_help_furniture_lift":false,"rider_extra_information":"Extra informations","photos":[],"ride_objects_attributes":[{"title":"Canap\u00e9","qty":1,"format":"xxl"}],"ride_delivery_information_attributes":{"from_address":"14 rue des fleurs","from_postal_code":"69000","from_city":"Lyon","from_country":"FR","from_contact_name":"John Smith","from_contact_email":"john.smith@gmail.com","from_contact_phone":"06 01 02 02 02","from_extra_information":"test","to_address":"19 rue des champignons","to_postal_code":"75000","to_city":"Paris","to_country":"FR","to_contact_name":"John Doe","to_contact_email":"john.doe@gmail.com","to_contact_phone":"06 07 08 06 09"}}'
-    response:
-        status:
-            http_version: '1.1'
-            code: '401'
-            message: Unauthorized
-        headers:
-            Server: Cowboy
-            Date: 'Wed, 27 May 2020 15:41:36 GMT'
-            Connection: keep-alive
-            X-Frame-Options: SAMEORIGIN
-            X-Xss-Protection: '1; mode=block'
-            X-Content-Type-Options: nosniff
-            X-Download-Options: noopen
-            X-Permitted-Cross-Domain-Policies: none
-            Referrer-Policy: strict-origin-when-cross-origin
-            Content-Type: 'application/json; charset=utf-8'
-            Set-Cookie: '_session_id=j3VJ%2BnjAfu34vb1aFyOgwl%2BWDNB9SNi6OxwHj%2BQoQnE8XLrc7YNPmE66i6K8npOh%2BohZPWH%2F%2BLjRgmd%2BlWqBc6jNGvqrZWLYM2bMg8u1p41jPQB87jLdTO0ZRrMslnJsmMpaz6Phwzzhv4tU698o9%2FB57MaY5GH9jOdi2LHIJTRBwTs%3D--rvNNjXqtwfUwXVso--iBtmd14fGhe3nkXATdYJxA%3D%3D; path=/; HttpOnly; secure, _session_id=j3VJ%2BnjAfu34vb1aFyOgwl%2BWDNB9SNi6OxwHj%2BQoQnE8XLrc7YNPmE66i6K8npOh%2BohZPWH%2F%2BLjRgmd%2BlWqBc6jNGvqrZWLYM2bMg8u1p41jPQB87jLdTO0ZRrMslnJsmMpaz6Phwzzhv4tU698o9%2FB57MaY5GH9jOdi2LHIJTRBwTs%3D--rvNNjXqtwfUwXVso--iBtmd14fGhe3nkXATdYJxA%3D%3D; path=/; HttpOnly; secure, _backend_session=nGhQrZGUohMibt0pqXriC4jZ9gFSs6ky7EI5GWyKnZTHesGfsXPyqBDTc4jevRwVwHip0LmyTijuaQ%2B9ER9HpHd7E0N2jyWnS75lkrHDBMF9458JiO35r9AkYyuXBcXXK4HczXZr8VGMAOKS6DBayLa%2FSRKRqmph8XivszSZ7BFOl9PlVMzqPA%3D%3D--ejKxyP8%2Bhp8tjSkN--9sSqXpu%2FBiOTElQFrnjOrQ%3D%3D; path=/; HttpOnly; secure'
-            Cache-Control: no-cache
-            X-Request-Id: 1f99d069-b531-48a4-9440-4b3a77362017
-            X-Runtime: '0.022306'
-            Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
-            Transfer-Encoding: chunked
-            Via: '1.1 vegur'
-        body: '{"errors":["Vous devez vous connecter ou vous enregistrer pour continuer."]}'
--
-    request:
-        method: GET
-        url: 'https://sandbox-api.cocolis.fr/api/v1/rides//1'
-        headers:
-            Host: sandbox-api.cocolis.fr
-            Expect: null
-            Accept-Encoding: null
-            User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
-            Content-Type: application/json
-            access-token: eT00t6RMIeZRqDV0qH-9yw
-            client: mghSYiwe0EsUyP6qxi6ZIg
-            expiry: '1591008268'
-            uid: e0611906
-            Accept: null
-        body: '[]'
+        body: '{"app_id":"e0611906","password":"sebfie"}'
     response:
         status:
             http_version: '1.1'
@@ -62,7 +18,7 @@
             message: OK
         headers:
             Server: Cowboy
-            Date: 'Wed, 27 May 2020 15:41:36 GMT'
+            Date: 'Tue, 02 Jun 2020 19:45:24 GMT'
             Connection: keep-alive
             X-Frame-Options: SAMEORIGIN
             X-Xss-Protection: '1; mode=block'
@@ -71,12 +27,63 @@
             X-Permitted-Cross-Domain-Policies: none
             Referrer-Policy: strict-origin-when-cross-origin
             Content-Type: 'application/json; charset=utf-8'
-            Set-Cookie: '_session_id=sNjYVbRpB%2FCqAy7dL9cX4%2Fd2JISgGu1mUf7I6Pj4phR1r9lWZ3RdfbMDwMm2pkRzseSSprZkfu4dxAopiWz%2F41MGwl0TaAjt3NKB1dJI8io0vxzcNS3c0%2Bc95zjAxUQn6JM9nHEHQ36Kaet4VnxxH9kxbET4oELX8ec%2Fw1UIX0XU9rc%3D--tmt%2B4RGqNI2Sbn%2Bl--cD4gkdk7azsaiCCFVQGWAg%3D%3D; path=/; HttpOnly; secure, _session_id=sNjYVbRpB%2FCqAy7dL9cX4%2Fd2JISgGu1mUf7I6Pj4phR1r9lWZ3RdfbMDwMm2pkRzseSSprZkfu4dxAopiWz%2F41MGwl0TaAjt3NKB1dJI8io0vxzcNS3c0%2Bc95zjAxUQn6JM9nHEHQ36Kaet4VnxxH9kxbET4oELX8ec%2Fw1UIX0XU9rc%3D--tmt%2B4RGqNI2Sbn%2Bl--cD4gkdk7azsaiCCFVQGWAg%3D%3D; path=/; HttpOnly; secure, _backend_session=ZZAE3IhPuc1st%2FYai3zpjiG8jsa2hlIKct10rFclHsCZDKMrLws5vPqGx%2FIodymXYMIoyxdfzY7CXRBb2qcKGv%2B3vC2zRRVfny0%2BZ6y5nnUptCZgAJoTfEv10CZSUFaS0CxlRUpKegxVsEPb9CaDyyo829MgY1OSJnuLC2Yqo40DnE4gJd53fw%3D%3D--taS9lYRtpTaAOkS0--rPwXD32JLTaNxz5K%2FqwjRw%3D%3D; path=/; HttpOnly; secure'
-            Etag: 'W/"229897728ceb2b0a51f6ad3ee4489de2"'
+            Access-Token: vqsi5t90gTG5hneI892ADw
+            Token-Type: Bearer
+            Client: cHikl_7UVVf7Pdfjp8PBhg
+            Expiry: '1592336724'
+            Uid: e0611906
+            Set-Cookie: '_session_id=gZ4hyTogQQQQiy3qNhExWSj2dIi8RGa9byvzP6eGLGhOodj06ov6AtAZuYPZyqP15TFHjTnD%2BFfCtaOo%2Ff1W%2Fq61Cwb%2BukynYWdALNRpI4Y5QHs%2FcnYScMqecUyjLgJ%2BEN0IkIRf9JwCR0wvWLfHYC4%2FFi5JgvG8SkMikdpfqgEWeDs%3D--jndCLFDUHjWkBCxc--VDQ4TYZE0paMr4t2r5GDRg%3D%3D; path=/; HttpOnly; secure, _session_id=gZ4hyTogQQQQiy3qNhExWSj2dIi8RGa9byvzP6eGLGhOodj06ov6AtAZuYPZyqP15TFHjTnD%2BFfCtaOo%2Ff1W%2Fq61Cwb%2BukynYWdALNRpI4Y5QHs%2FcnYScMqecUyjLgJ%2BEN0IkIRf9JwCR0wvWLfHYC4%2FFi5JgvG8SkMikdpfqgEWeDs%3D--jndCLFDUHjWkBCxc--VDQ4TYZE0paMr4t2r5GDRg%3D%3D; path=/; HttpOnly; secure, _backend_session=LNFdde0VjoBPtxiqMFG654rNh%2B0bq78qCSHgcmBQHrThit%2F54Z7NqehlAQ7XlISBi%2B0gvBofxi3HTiNs84gwfxMzRelbVv9AbyPLgoTQ6TB%2BlymdcZJwmwUU8Dq8SDZBNs%2FanqerJht5i4P%2B2%2BIruqCNazLAW0MAK61h1T1w7uTC4%2FpGOQL3kQ%3D%3D--j8Eu%2BKTgy27eecQB--Y5GjlCSSaVyLmj5LMG1Pbg%3D%3D; path=/; HttpOnly; secure'
+            Etag: 'W/"a04948e1631d16e7bdb9222cc018937e"'
             Cache-Control: 'max-age=0, private, must-revalidate'
-            X-Request-Id: 82e90ec0-afdf-4882-9d32-91f0d9d3c005
-            X-Runtime: '0.089479'
+            X-Request-Id: 07d1d1aa-95ab-4785-9c30-3075827c14c1
+            X-Runtime: '0.376962'
             Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
             Transfer-Encoding: chunked
             Via: '1.1 vegur'
-        body: '{"id":1,"title":"guitare","description":null,"owner_id":1,"from_lat":43.311852,"to_lat":48.85658,"ga_sent":null,"price":1300,"created_at":"2020-04-17T22:48:01.236+02:00","updated_at":"2020-05-01T05:30:21.118+02:00","from_lng":6.013474,"to_lng":2.35183,"from_is_flexible":false,"from_pickup_date":"2020-04-17T12:00:00.000+02:00","to_is_flexible":false,"to_pickup_date":"2020-04-30T23:59:59.999+02:00","is_packaged":null,"is_passenger":false,"volume":0.01,"environment":"objects","deleted_at":null,"slug":"guitare","rider_extra_information":"","from_need_help":false,"from_need_help_floor":null,"from_need_help_elevator":null,"from_need_help_furniture_lift":null,"to_need_help":false,"to_need_help_floor":null,"to_need_help_elevator":null,"to_need_help_furniture_lift":null,"state":"expired","owner_status":"sender","moderated_by":null,"moderated_at":null,"moderated_reason_content":null,"completed_at":null,"published_at":"2020-04-17T22:48:01.376+02:00","gat_sent":false,"v2_id":null,"last_activity_at":"2020-04-17T22:48:01.237+02:00","fees":200.0,"validated_by_id":null,"environment_kind":null,"api_application_id":null,"seller_tracking":"5CC4E42CF5A9AA33","buyer_tracking":"04060F3C48B239CB","external_id":null,"content_value":null,"rider_price":1100.0,"owner":{"id":1,"last_sign_in_at":"2020-05-20T16:32:40.192+02:00","nickname":"Sébastien F.","gender":"M","business_name":"","phone_verified":true,"role":"superadmin","sign_up_finished":true,"v2_id":null,"rate":null,"rating_count":0,"email_verified":true,"response_percent":0.0,"kyc_validated":false,"identity_validated":true,"role_label":"Super administrateur"},"previous_pay_in":false,"conversations":{"count":0,"unreaded_messages":0},"from_address":"Néoules, 83136","to_address":"Paris, 75004","offers_count":0,"photos":[],"mine":false,"ride_objects_attributes":[{"id":1,"ride_id":1,"qty":1,"title":"guitare","length":20,"width":20,"height":20,"format":null,"integer":null,"created_at":"2020-04-17T22:48:01.268+02:00","updated_at":"2020-04-17T22:48:01.268+02:00","weight":"between_5_and_30_kg","external_url":null}]}'
+        body: '{"data":{"id":1,"user_id":2,"app_id":"e0611906","name":"Sebfie","description":null,"created_at":"2020-04-20T18:15:12.542+02:00","updated_at":"2020-06-02T21:45:24.771+02:00","reserve_amount":0,"balance":3000000,"running_balance":1503300,"suffisant_balance?":true}}'
+-
+    request:
+        method: POST
+        url: 'https://sandbox-api.cocolis.fr/api/v1/rides/'
+        headers:
+            Host: sandbox-api.cocolis.fr
+            Expect: null
+            Accept-Encoding: null
+            User-Agent: 'GuzzleHttp/Guzzle curl/7.70.0 PHP/7.3.18'
+            Content-Type: application/json
+            access-token: vqsi5t90gTG5hneI892ADw
+            client: cHikl_7UVVf7Pdfjp8PBhg
+            expiry: '1592336724'
+            uid: e0611906
+            Accept: null
+        body: '{"description":"Carcassonne vers toulu","from_lat":43.212498,"to_lat":43.59912,"from_address":"Carcassonne","to_address":"Toulouse","from_lng":2.350351,"to_lng":1.444391,"from_is_flexible":true,"from_pickup_date":"2020-06-13T14:21:21+00:00","to_is_flexible":true,"to_pickup_date":"2020-06-13T14:21:21+00:00","is_passenger":false,"is_packaged":false,"price":57000,"volume":15,"environment":"objects","from_need_help":false,"from_need_help_floor":"0","from_need_help_elevator":false,"from_need_help_furniture_lift":false,"to_need_help":false,"to_need_help_floor":0,"to_need_help_elevator":false,"to_need_help_furniture_lift":false,"rider_extra_information":"Extra informations","photos":[],"ride_objects_attributes":[{"title":"Canap\u00e9","qty":1,"format":"xxl"}],"ride_delivery_information_attributes":{"from_address":"14 rue des fleurs","from_postal_code":"69000","from_city":"Lyon","from_country":"FR","from_contact_name":"John Smith","from_contact_email":"john.smith@gmail.com","from_contact_phone":"06 01 02 02 02","from_extra_information":"test","to_address":"19 rue des champignons","to_postal_code":"75000","to_city":"Paris","to_country":"FR","to_contact_name":"John Doe","to_contact_email":"john.doe@gmail.com","to_contact_phone":"06 07 08 06 09"}}'
+    response:
+        status:
+            http_version: '1.1'
+            code: '200'
+            message: OK
+        headers:
+            Server: Cowboy
+            Date: 'Tue, 02 Jun 2020 19:45:26 GMT'
+            Connection: keep-alive
+            X-Frame-Options: SAMEORIGIN
+            X-Xss-Protection: '1; mode=block'
+            X-Content-Type-Options: nosniff
+            X-Download-Options: noopen
+            X-Permitted-Cross-Domain-Policies: none
+            Referrer-Policy: strict-origin-when-cross-origin
+            Content-Type: 'application/json; charset=utf-8'
+            Access-Token: vqsi5t90gTG5hneI892ADw
+            Token-Type: Bearer
+            Client: cHikl_7UVVf7Pdfjp8PBhg
+            Expiry: '1592336724'
+            Uid: e0611906
+            Set-Cookie: '_session_id=d5inxsDjouSRygVpZBxo6dMpUjsdmCCFN6Gs275sF2ke80mtsbOaV3x%2Bbvtb3iEOuHTa%2FvjW82mnKw9Gn9YrwzIPKBWexzNigFv%2FiTfe%2BtobTJe9yWXD9ipNK7htlsn%2F%2BVgC5ZglxFuMyXhL5mK%2FVt9q9BliTOuKj5nDrUbftk5fxcxtyZTNgc8ezCImgqJY9Yvv%2BsT3qhvvFkCxW0KsaZVJleyf805j6rJS6So7EaimvRWjf8QXNyFLz1bh1QJ%2F6wnYZU2f5SvD6G0Rf5iJ1BuwDq9odMTpj9RoWzkn%2B4RdPrw23hYHanjcfxsAv9doI1sqogqwgowHtYmBSPDwZE2KenhIMUXcIsP0kvTY8uB2%2F33ITwK%2BD2JX0ykA8NbTrYI1HZLP3zTCStlzZsHxmpaNwcfHJ5W0yt6lKjI3S3G678Ttp5dc2Dn7VFsjrBLqSpbVQKlFHTDnxaO9nfQL%2FHEVcqMMXkmIFcJMMO3TLzdud%2F1LjsJQuVlE4UYwEMqZtxg77ucg3VxX6DYZs0VpP7gYphFQiDwi4ythnRBgz%2FjHUHzQUUnubzeXZkHaxPI3BWd8ehrEcWPxJ4YuUCczi2pTL58lAYB8HqeK54rP1Jc8uNsWIaQlAQrOG4C0EDtEfCiSF%2BZA9HdTSUr2VpF0I19dg25bE1HIy8EDj%2FiCuX3Mofs%3D--4%2BWhFioVvm5LsPky--1wDRIU3ji5SrzOYhqK6qhQ%3D%3D; path=/; HttpOnly; secure, _session_id=d5inxsDjouSRygVpZBxo6dMpUjsdmCCFN6Gs275sF2ke80mtsbOaV3x%2Bbvtb3iEOuHTa%2FvjW82mnKw9Gn9YrwzIPKBWexzNigFv%2FiTfe%2BtobTJe9yWXD9ipNK7htlsn%2F%2BVgC5ZglxFuMyXhL5mK%2FVt9q9BliTOuKj5nDrUbftk5fxcxtyZTNgc8ezCImgqJY9Yvv%2BsT3qhvvFkCxW0KsaZVJleyf805j6rJS6So7EaimvRWjf8QXNyFLz1bh1QJ%2F6wnYZU2f5SvD6G0Rf5iJ1BuwDq9odMTpj9RoWzkn%2B4RdPrw23hYHanjcfxsAv9doI1sqogqwgowHtYmBSPDwZE2KenhIMUXcIsP0kvTY8uB2%2F33ITwK%2BD2JX0ykA8NbTrYI1HZLP3zTCStlzZsHxmpaNwcfHJ5W0yt6lKjI3S3G678Ttp5dc2Dn7VFsjrBLqSpbVQKlFHTDnxaO9nfQL%2FHEVcqMMXkmIFcJMMO3TLzdud%2F1LjsJQuVlE4UYwEMqZtxg77ucg3VxX6DYZs0VpP7gYphFQiDwi4ythnRBgz%2FjHUHzQUUnubzeXZkHaxPI3BWd8ehrEcWPxJ4YuUCczi2pTL58lAYB8HqeK54rP1Jc8uNsWIaQlAQrOG4C0EDtEfCiSF%2BZA9HdTSUr2VpF0I19dg25bE1HIy8EDj%2FiCuX3Mofs%3D--4%2BWhFioVvm5LsPky--1wDRIU3ji5SrzOYhqK6qhQ%3D%3D; path=/; HttpOnly; secure, _backend_session=v6t1wvwAJKE1AkL6RaczqHsruJDJtV%2Bwav9Nkli6SXIgD09aq9lvRxelTDgwu63mwlkDhMTyj7vxGM2gjDjXd%2Bp6abyq7N2CRRkHo1AH91YBDfyRw460aZIFcKtSQt14EcAHNFnpbEEaU2MpG5nfJ97kwhVy5HH%2F4vrSqauJjnDXCFAT0R48mZYR4geAgehZJWzLb85we4TUhemsqhPYIVi0Vlnevh0IOwOksr52mQsLD348FxjJG2RcET3OcJIZaDpBbYwLsUKYoyZLbSNStYV9XG0pm%2Bt53A3%2FzyzX3OQdsve2cvTd%2FOnIeVQuzgExgutHTWdvMuRgwj9f7H2DIyRUfhsWaV4DMpOtzPDQyVFcRj8S1%2FAjAFtG7WwQXGE5O4Gwtzw2RvX4xw2luqNIC5tduO19EytsipwzSi7b4NgWluIQrLM0eKwAoQa%2FTvS4%2BsHf7iCC0yD2co8v4jvaKjgS%2F6YrgzWtQrfyopFEm83Yt7uzbYfeVvmARNJO1AZ394Z4jdW5JLe7frn7JP7ajQ5UnjB%2Fo43Qt1xSg%2FDqRASXsHzxclDbFaWd%2F4zEDvSVO8KOSKMj1JJDDlL%2BZPNBy%2BzUROIbBBtCU1u5SD26uzHNVHwSSl9wXlnwCuu8ZuHtrougSoALL%2Bsm%2FAoEU%2F6Ef%2FFFy5wc1Rw4%2BoQWMJkKq11nhBP4kFwv4A%3D%3D--FcDgeYEbeJ5vOOdw--8eM38cbdXCAMBBCa4khO8w%3D%3D; path=/; HttpOnly; secure'
+            Etag: 'W/"766eb14d7190a9c9cf822e7963c135de"'
+            Cache-Control: 'max-age=0, private, must-revalidate'
+            X-Request-Id: c56355eb-9e39-4cc7-9e2a-23b6bf5debd4
+            X-Runtime: '1.409522'
+            Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
+            Transfer-Encoding: chunked
+            Via: '1.1 vegur'
+        body: '{"id":58,"title":"Canapé","description":"Carcassonne vers toulu","owner_id":2,"from_lat":43.212498,"to_lat":43.59912,"ga_sent":null,"price":57000,"created_at":"2020-06-02T21:45:26.200+02:00","updated_at":"2020-06-02T21:45:26.470+02:00","from_lng":2.350351,"to_lng":1.444391,"from_is_flexible":true,"from_pickup_date":"2020-06-13T16:21:21.000+02:00","to_is_flexible":true,"to_pickup_date":"2020-06-13T23:59:59.999+02:00","is_packaged":false,"is_passenger":false,"volume":1.5,"environment":"objects","deleted_at":null,"slug":"canape-293b6093-525b-401e-b3d5-ea60e8635df1","rider_extra_information":"Extra informations","from_need_help":false,"from_need_help_floor":0,"from_need_help_elevator":false,"from_need_help_furniture_lift":false,"to_need_help":false,"to_need_help_floor":0,"to_need_help_elevator":false,"to_need_help_furniture_lift":false,"state":"published","owner_status":"sender","moderated_by":null,"moderated_at":null,"moderated_reason_content":null,"completed_at":null,"published_at":"2020-06-02T21:45:26.456+02:00","gat_sent":false,"v2_id":null,"last_activity_at":"2020-06-02T21:45:26.200+02:00","fees":8700.0,"validated_by_id":null,"environment_kind":null,"api_application_id":1,"seller_tracking":"4372B4F5E2C7C7A1","buyer_tracking":"6CB8D6BB72B82D5C","external_id":null,"content_value":null,"rider_price":48300.0,"owner":{"id":2,"last_sign_in_at":"2020-05-14T17:21:22.688+02:00","nickname":"Sébastien F.","gender":"M","business_name":null,"phone_verified":true,"role":"developer","sign_up_finished":true,"v2_id":null,"rate":4.83,"rating_count":6,"email_verified":true,"response_percent":0.0,"api_application":{"id":1,"app_id":"e0611906","name":"Sebfie","description":null,"user_id":2,"created_at":"2020-04-20T18:15:12.542+02:00","updated_at":"2020-06-02T21:45:24.771+02:00","reserve_amount":0,"balance":3000000,"running_balance":1560300,"suffisant_balance?":true},"kyc_validated":false,"identity_validated":true,"role_label":"Partenaire de Cocolis"},"api_application":{"id":1,"app_id":"e0611906","name":"Sebfie","description":null,"user_id":2,"created_at":"2020-04-20T18:15:12.542+02:00","updated_at":"2020-06-02T21:45:24.771+02:00","reserve_amount":0,"balance":3000000,"running_balance":1560300,"suffisant_balance?":true},"previous_pay_in":false,"conversations":{"count":0,"unreaded_messages":0},"from_address":"Carcassonne, 11000","to_address":"Toulouse, 31000","offers_count":0,"photos":[],"ride_objects_attributes":[{"id":58,"ride_id":58,"qty":1,"title":"Canapé","length":null,"width":null,"height":null,"format":"xxl","integer":null,"created_at":"2020-06-02T21:45:26.272+02:00","updated_at":"2020-06-02T21:45:26.272+02:00","weight":"between_5_and_30_kg","external_url":null}],"application_name":"Sebfie"}'
