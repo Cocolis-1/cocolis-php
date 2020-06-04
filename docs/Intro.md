@@ -44,12 +44,23 @@ $result = $client->getRideClient()->canMatch(75000, 31400, 10);
 Une fois authentifié, vous pouvez effectuer des **requêtes annexes** à l'API de cette façon :
 
 ```php
-$client->callAuthentificated('app_auth/validate_token', 'GET', $body));
+$client->callAuthentificated('app_auth/validate_token', 'GET', $params);
 ```
 
 Dans cet exemple, `app_auth/validate_token` est équivalent à faire un appel vers : 
-`https://api.cocolis.fr/api/v1/app_auth/validate_token` de type `GET` avec le `$body` fourni sous la forme **d'un array**.
+`{cocolis_domain}/api/v1/app_auth/validate_token` de type `GET` avec le `$params` fourni sous la forme **d'un array**.
 
+## Validation du token
+
+A chaque début de communication avec l'API, vous devez vérifier si vos tokens sauvés et précedemment générés lors du `$client->signIn()` sont toujours valides. Pour cela, vous devez faire l'appel suivant :
+
+```php
+$client->validateToken($authinfo);
+```
+
+Le `$authinfo` n'est pas un paramètre obligatoire, il permet de tester la validité d'autres paramètres d'authentification.
+
+L'appel renvoie une réponse trouvable dans le `body` avec `"success": boolean` qui permet de déterminer la validité des informations d'authentification.
 
 ## Environnements
 
