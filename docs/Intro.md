@@ -4,6 +4,8 @@ Cette librairie a été concu pour aider les développeurs à intégrer les fonc
 
 Elle inclut toutes les fonctionnalités globales tel que **l'authentification**, la gestion des **Rides** et des **Webhooks**.
 
+Vous pouvez signaler des bugs sur cette [page](https://github.com/Cocolis-1/cocolis-php/issues).
+
 # Principe général
 
 > Avant toute chose, vous pouvez intégrer notre librairie à votre application grâce à 
