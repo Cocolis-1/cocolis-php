@@ -1,11 +1,5 @@
 # Implémentation standard
 
-TU REPRENDS LA MEME CHOSE MAIS AVEC LA LIB PHP
-
-
-
-
-
 L'implémentation de Cocolis se fait en général en respectant ces étapes :
 
 ## 1. Principe général
@@ -22,21 +16,19 @@ Vous pouvez demander la création d'un compte développeur en remplissant [ce fo
 
 ## 3. Authentification
 
-Toutes les requêtes API doivent être authentifiées pour pouvoir accéder aux ressources.
+Toutes les requêtes API doivent être authentifiées grâce à notre librairie PHP pour pouvoir accéder aux ressources.
 
 > Pour comprendre le fonctionnement de l'authentification, reportez vous à la [rubrique dédiée](../../Installation-et-utilisation/03-Authentification.md). En particulier, concernant la vérification de la validité de vos tokens.
 
 1. Faites un premier appel à l'API pour vous authentifier via :
 
-```json http
-{
-  "method": "post",
-  "url": "https://api.cocolis.fr/api/v1/app_auth/sign_in",
-  "body": {
-    "app_id": "your_app_id",
-    "password": "your_password"
-  }
-}
+```php
+$client = Client::create(array(
+    'app_id' => 'mon_appid',
+    'password' => 'mon_mot_de_passe',
+    'live' => false // Permet de choisir l'environnement
+  ));
+$client->signIn(); // Cet appel fait l'authentification
 ```
 
 2. Vous recevrez dans le header de la réponse les 4 infos suivantes :
@@ -48,28 +40,28 @@ expiry: 1586424091
 uid: 07b8c9c1
 ```
 
-Ces informations sont spécifiques à votre session. Elles vous permettront de rester authentifier lors de vos prochains appels. La session expire à la date fournie par le header `expiry`. [Convertir en ligne le timestamp en date](http://www.timestamp.fr/?)
+Ces informations sont spécifiques à votre session et elles sont conservées par notre librairie. Elles vous permettront de rester authentifier lors de vos prochains appels. La session expire à la date fournie par le header `expiry`. [Convertir en ligne le timestamp en date](http://www.timestamp.fr/?)
 
-- Lors de tous vos appels suivants, vous devez fournir ces 4 informations en header de vos appels pour vous authentifier:
-
-```json http
-{
-  "method": "get",
-  "url": "https://api.cocolis.fr/api/v1/rides/mine",
-  headers: {
-    Content-Type: application/json,
-    token-type: Bearer,
-    uid: uid_of_previous_request,
-    access-token: access_token_of_previous_request,
-    client: client_of_previous_request,
-    expiry: expiry_of_previous_request
-  }
-}
-```
+- Lors de tous vos appels suivants la librairie PHP enverra les 4 infos présentes dans le header de l'authentification.
 
 ## 4. Gérer l'expiration d'un token
 
-Si vous obtenez une réponse avec un code `401`, cela signifie que votre token a expiré. Il faut alors recommencer le processus au paragraphe 3.1 afin d'obtenir de nouveaux tokens.
+Si vous obtenez une réponse avec un code `401`, cela signifie que votre token a expiré.
+
+Pour prévenir de ce problème vous pouvez vérifier la validité des tokens :
+
+```php
+$authinfo = ["uid" => "e0611906", "access-token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "expiry" => "1590748027"]
+$client->validateToken($authinfo);
+```
+
+Le `$authinfo` n'est pas un paramètre obligatoire, il permet de tester la validité d'autres paramètres d'authentification.
+
+Si `$authinfo` n'est pas spécifié, ça utilisera ceux du dernier appel de `signIn()`
+
+L'appel renvoie une réponse trouvable dans le `body` avec `"success": boolean` ou bien un code HTTP 200 qui permet de déterminer la validité des informations d'authentification.
+
+Si le token n'est plus valide, il suffit de refaire un `$client->signIn()`
 
 ## 5. Eligibilité d'une livraison
 
@@ -82,7 +74,9 @@ title: Doc
 -->
 Pour savoir si la livraison Cocolis est éligible d'un point A à un point B, il faut appeler l'URL :
 
-`POST /api/v1/rides/can_match`
+```php
+$client->getRideClient()->canMatch(75000, 31400, 10); // Code postal de départ,Code postal d'arrivé, Volume en m3 de l'objet à transporter
+```
 
 ---
 
@@ -223,8 +217,10 @@ type: tab
 title: Doc
 -->
 
-`POST https://api.cocolis.fr/api/v1/rides`
-
+```php
+$rideClient = $client->getRideClient();
+$ride = $rideClient->create($params);
+```
 ---
 
 ```json json_schema
@@ -336,7 +332,6 @@ L'acheteur dispose d'une interface dédiée pour le suivi de la livraison. Lors 
 https://:domain/rides/buyer/:buyer_tracking
 ```
 
-
 <!--
 type: tab
 title: Paramètres
@@ -375,6 +370,11 @@ Le veudeur dispose d'une interface dédiée pour suivre la livraison. Lors de la
 
 ```
 https://:domain/rides/seller/:seller_tracking
+```
+
+```php
+$ride = $client->create($params);
+$ride->getSellerURL();
 ```
 
 <!--

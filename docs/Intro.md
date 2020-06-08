@@ -72,7 +72,7 @@ $client->validateToken($authinfo);
 
 Le `$authinfo` n'est pas un paramètre obligatoire, il permet de tester la validité d'autres paramètres d'authentification.
 
-Si `$authinfo` n'est pas spécifié, ca utilisera ceux du dernier appel de `signIn()`
+Si `$authinfo` n'est pas spécifié, ça utilisera ceux du dernier appel de `signIn()`
 
 L'appel renvoie une réponse trouvable dans le `body` avec `"success": boolean` ou bien un code HTTP 200 qui permet de déterminer la validité des informations d'authentification.
 
