@@ -1,32 +1,34 @@
 # Rides
 
-Une Ride correspond à une annonce chez Cocolis.
+Une Ride correspond à une annonce chez Cocolis. Vous trouverez plus de détail sur le model [ici](https://doc.cocolis.fr/docs/cocolis-api/docs/models/ride/ride-full.json)
 
 ### Le client
 
 Une fois le client authentifié, vous pouvez intéragir sur les Rides de cette façon :
 
 ```php
-$client->getRideClient()
+$rideClient = $client->getRideClient();
 ```
 
-### Récupérer toutes les Rides
+### Récupérer toutes mes Rides
 
-Vous pouvez récupérer toutes les Rides créées sous la forme d'un tableau :
+Vous pouvez récupérer toutes vos Rides créées sous la forme d'un tableau de `Cocolis\Api\Models\Ride` :
 
 ```php
 $rides = $client->getRideClient()->mine();
 ```
 
-
-
 ### Vérifier la possibilité de réaliser une Ride
 
-Vérifier si Cocolis sera disponible pour effectuer la livraison pour un trajet donné entre 2 points, avec le prix de l'assurance inclus.
+Vérifier si Cocolis sera disponible pour effectuer la livraison pour un trajet donné entre 2 points, avec l'option assurance si éligible.
 
 ```php
 $match = $client->getRideClient()->canMatch($zipfrom, $zipto, $volume, $value);
 ```
+
+<!-- theme: warning -->
+
+> Tous nos prix sont en centimes
 
 Voici un exemple de réponse en `JSON`:
 
@@ -74,6 +76,6 @@ $params = [
     "volume" => 15,
     ...
 ];
-$client = $client->getRideClient();
-$ride = $client->create($params);
+$rideClient = $client->getRideClient();
+$ride = $rideClient->create($params);
 ```

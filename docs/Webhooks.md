@@ -1,28 +1,32 @@
 # Webhooks
 
-Les webhooks sont là pour informer votre système des événements qui surviennent lors de la livraison. Ils vous permettent de les exploiter, par exemple pour informer votre acheteur et/ou votre vendeur de l'avancée de la livraison.
+Les webhooks sont là pour informer votre système des événements qui surviennent coté Cocolis pendant la vie de votre annonce. Ils vous permettent de les exploiter, par exemple pour informer votre acheteur et/ou votre vendeur de l'avancée de la livraison.
 
 ### Créer un Webhook
 
 Vous pouvez créer un webhook (en respectant les paramètres requis [ici](https://doc.cocolis.fr/docs/cocolis-api/docs/apidoc/schema_swagger_json.json/paths/~1applications~1webhooks/post)) :
 
 ```php
-$params = ['event' => 'ride_published', 
-           'url' => 'https://www.test.com/ride_webhook', 
-           'active' => true];
+$params = [
+  'event' => 'ride_published', 
+  'url' => 'https://www.test.com/ride_webhook', 
+  'active' => true
+];
 $client->getWebhookClient()->create($params);
 ```
 
-Les paramètres `$params` sont sous la forme d'un tableau, on reprends la même forme que la documentation de l'API.
+Les paramètres `$params` sont sous la forme d'un tableau, on utilise la même forme que la documentation de l'API.
 
 ### Mettre à jour un Webhook
 
 Vous pouvez mettre à jour un webhook (en respectant les paramètres requis [ici](https://doc.cocolis.fr/docs/cocolis-api/docs/apidoc/schema_swagger_json.json/paths/~1applications~1webhooks~1%7Bid%7D/put)) :
 
 ```php
-$params = ['event' => 'offer_accepted', 
-           'url' => 'https://www.test.com/ride_webhook', 
-           'active' => true];
+$params = [
+  'event' => 'offer_accepted', 
+  'url' => 'https://www.test.com/ride_webhook', 
+  'active' => true
+];
 $webhook = $client->getWebhookClient()->update($params, $id);
 ```
 
@@ -30,10 +34,10 @@ Nous reprenons la même forme que lors de la création d'un Webhook, cependant o
 
 ### Récupérer tous les Webhooks
 
-Vous pouvez récupérer la liste de tous les Webhooks sous la forme d'un tableau comprenant des **objets** (stdclass de chaque Webhook) avec `$id`, `$event`, etc ...
+Vous pouvez récupérer la liste de tous les Webhooks sous la forme d'un tableau de `Cocolis\Api\Models\Webhook` avec `$id`, `$event`, etc ...
 
 ```php
-$client->getWebhookClient()->getAll();
+$webhooks = $client->getWebhookClient()->getAll();
 ```
 
 ### Récupérer un Webhook
@@ -41,7 +45,7 @@ $client->getWebhookClient()->getAll();
 Il est possible de récupérer un Webhook précis sous la forme d'un objet en fournissant l'`$id` du Webhook en paramètre :
 
 ```php
-$client->getWebhookClient()->get($id);
+$webhook = $client->getWebhookClient()->get($id);
 ```
 
 ### Supprimer un Webhook
