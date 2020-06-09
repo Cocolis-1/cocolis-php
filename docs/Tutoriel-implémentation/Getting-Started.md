@@ -20,7 +20,7 @@ Toutes les requêtes API doivent être authentifiées grâce à notre librairie 
 
 > Pour comprendre le fonctionnement de l'authentification, reportez vous à la [rubrique dédiée](../../Installation-et-utilisation/03-Authentification.md). En particulier, concernant la vérification de la validité de vos tokens.
 
-1. Faites un premier appel à l'API pour vous authentifier via :
+1. Créez un Client HTTP avec notre API en vous authentifiant :
 
 ```php
 $client = Client::create(array(
@@ -31,18 +31,8 @@ $client = Client::create(array(
 $client->signIn(); // Cet appel fait l'authentification
 ```
 
-2. Vous recevrez dans le header de la réponse les 4 infos suivantes :
+> La librairie PHP se chargera d'utiliser vos tokens d'authentification pour vous authentifier lors de vos prochains appels
 
-```json
-access-token: v763753qcQGBjTn2HcnfUQ
-client: R3z_2Ed82uUvApIy4hqtxQ
-expiry: 1586424091
-uid: 07b8c9c1
-```
-
-Ces informations sont spécifiques à votre session et elles sont conservées par notre librairie. Elles vous permettront de rester authentifier lors de vos prochains appels. La session expire à la date fournie par le header `expiry`. [Convertir en ligne le timestamp en date](http://www.timestamp.fr/?)
-
-- Lors de tous vos appels suivants la librairie PHP enverra les 4 infos présentes dans le header de l'authentification.
 
 ## 4. Gérer l'expiration d'un token
 
@@ -55,7 +45,7 @@ $authinfo = ["uid" => "e0611906", "access-token" => "thisisnotavalidtoken", "cli
 $client->validateToken($authinfo);
 ```
 
-Le `$authinfo` n'est pas un paramètre obligatoire, il permet de tester la validité d'autres paramètres d'authentification.
+Le `$authinfo` n'est pas un paramètre obligatoire, il permet de tester la validité d'autres paramètres d'authentification au cas ou vous les ayez sauvegardé par vos propres moyens.
 
 Si `$authinfo` n'est pas spécifié, ça utilisera ceux du dernier appel de `signIn()`
 
@@ -72,7 +62,7 @@ Si le token n'est plus valide, il suffit de refaire un `$client->signIn()`
 type: tab
 title: Doc
 -->
-Pour savoir si la livraison Cocolis est éligible d'un point A à un point B, il faut appeler l'URL :
+Pour savoir si la livraison Cocolis est éligible d'un code postal A à un code postal B, il faut appeler l'URL :
 
 ```php
 $client->getRideClient()->canMatch(75000, 31400, 10); // Code postal de départ,Code postal d'arrivé, Volume en m3 de l'objet à transporter
@@ -131,6 +121,8 @@ type: tab
 title: Réponse
 -->
 
+La réponse sera un stdClass du format :
+
 ```json json_schema
 {
     "title": "Response",
@@ -175,34 +167,6 @@ title: Réponse
 }
 ```
 
-<!--
-type: tab
-title: Essayez-la
--->
-
-```json http
-{
-  "method": "post",
-  "url": "https://api.cocolis.fr/api/v1/rides/can_match",
-  headers: {
-    Content-Type: application/json,
-    token-type: Bearer,
-    uid: uid_of_previous_request,
-    access-token: access_token_of_previous_request,
-    client: client_of_previous_request,
-    expiry: expiry_of_previous_request
-  },
-  body: {
-    from: {
-      postal_code: 'code_postal_de_depart',
-    },
-    to: {
-      postal_code: 'code_postal_d_arrivee',
-    }
-  }
-}
-```
-
 <!-- type: tab-end -->
 
 ## 6. Création d'une annonce :
@@ -219,6 +183,58 @@ title: Doc
 
 ```php
 $rideClient = $client->getRideClient();
+$params = [
+  "description" => "Carcassonne vers toulu",
+  "from_lat" => 43.212498,
+  "to_lat" => 43.599120,
+  "from_address" => "Carcassonne",
+  "to_address" => "Toulouse",
+  "from_lng" => 2.350351,
+  "to_lng" => 1.444391,
+  "from_is_flexible" => true,
+  "from_pickup_date" => "2020-06-13T14:21:21+00:00",
+  "to_is_flexible" => true,
+  "to_pickup_date" => "2020-06-13T14:21:21+00:00",
+  "is_passenger" => false,
+  "is_packaged" => false,
+  "price" => 57000,
+  "volume" => 15,
+  "environment" => "objects",
+  "from_need_help" => false,
+  "from_need_help_floor" => "0",
+  "from_need_help_elevator" => false,
+  "from_need_help_furniture_lift" => false,
+  "to_need_help" => false,
+  "to_need_help_floor" => 0,
+  "to_need_help_elevator" => false,
+  "to_need_help_furniture_lift" => false,
+  "rider_extra_information" => "Extra informations",
+  "photos" => [],
+  "ride_objects_attributes" => [
+    [
+      "title" => "Canapé",
+      "qty" => 1,
+      "format" => "xxl"
+    ]
+  ],
+  "ride_delivery_information_attributes" => [
+    "from_address" => "14 rue des fleurs",
+    "from_postal_code" => "69000",
+    "from_city" => "Lyon",
+    "from_country" => "FR",
+    "from_contact_name" => "John Smith",
+    "from_contact_email" => "john.smith@gmail.com",
+    "from_contact_phone" => "06 01 02 02 02",
+    "from_extra_information" => "test",
+    "to_address" => "19 rue des champignons",
+    "to_postal_code" => "75000",
+    "to_city" => "Paris",
+    "to_country" => "FR",
+    "to_contact_name" => "John Doe",
+    "to_contact_email" => "john.doe@gmail.com",
+    "to_contact_phone" => "06 07 08 06 09"
+  ]
+];
 $ride = $rideClient->create($params);
 ```
 ---
@@ -240,81 +256,7 @@ type: tab
 title: Réponse
 -->
 
-```json json_schema
-{
-  "description": "Réponse",
-  "$ref": "../models/ride/ride-full.v1.json"
-}
-```
-
-<!--
-type: tab
-title: Essayez-la
--->
-
-```json http
-{
-  "method": "post",
-  "url": "https://api.cocolis.fr/api/v1/rides",
-  headers: {
-    Content-Type: application/json,
-    token-type: Bearer,
-    uid: uid_of_previous_request,
-    access-token: access_token_of_previous_request,
-    client: client_of_previous_request,
-    expiry: expiry_of_previous_request
-  },
-  body: {
-    ride: {
-      "description": "Carcassonne vers toulu",
-      "from_lat": "43.212498",
-      "to_lat": "43.599120",
-      "from_address": "Carcassonne",
-      "to_address": "Toulouse",
-      "from_lng": "2.350351",
-      "to_lng": "1.444391",
-      "from_is_flexible": true,
-      "from_pickup_date": "2020-04-13T14:21:21+00:00",
-      "to_is_flexible": true,
-      "to_pickup_date": "2020-04-13T14:21:21+00:00",
-      "is_passenger": false,
-      "is_packaged": false,
-      "from_availabilities": {
-        "weekdays_daytime": true,
-        "weekdays_evening": true,
-        "weekend_daytime": false,
-        "weekend_evening": true
-      },
-      "to_availabilities": {
-        "weekdays_daytime": true,
-        "weekdays_evening": true,
-        "weekend_daytime": false,
-        "weekend_evening": true
-      },
-      "price": "57000",
-      "volume": "15",
-      "environment": "objects",
-      "from_need_help": "false",
-      "from_need_help_floor": "0",
-      "from_need_help_elevator": "false",
-      "from_need_help_furniture_lift": "false",
-      "to_need_help": "false",
-      "to_need_help_floor": "0",
-      "to_need_help_elevator": "false",
-      "to_need_help_furniture_lift": "false",
-      "rider_extra_information": "Extra informations",
-      "photos": [],
-      "ride_objects_attributes": [
-        {
-          "title": "Canapé",
-          "qty": 1,
-          "format": "xxl"
-        }
-      ]
-    }
-  }
-}
-```
+La réponse sera un objet de classe `Cocolis\Api\Models\Ride`
 
 <!-- type: tab-end -->
 
