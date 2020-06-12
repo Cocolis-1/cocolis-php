@@ -12,6 +12,19 @@ jobs:
       with:
         php-version: '7.3'
         coverage: xdebug
+
+    - name: Install dependent libraries
+      run: |
+        sudo apt-get update
+        npm install
+
+    - name: Doc Production
+      run: |
+        node ./node_modules/.bin/stoplight  push --ci-token $STOPLIGHT_TOKEN --url http://doc.cocolis.fr
+      if: github.ref == 'refs/heads/master'
+      env:
+        STOPLIGHT_TOKEN: ${{ secrets.STOPLIGHT_TOKEN }}
+
     - name: Cache Packages
       uses: actions/cache@v1
       with:
