@@ -12,6 +12,8 @@ namespace Cocolis\Api;
 
 use Cocolis\Api\Clients\RideClient;
 use Cocolis\Api\Clients\WebhookClient;
+use GuzzleHttp\Client as GuzzleHttpClient;
+
 class Client
 {
   // Local informations
@@ -60,17 +62,17 @@ class Client
     return static::$_http_client;
   }
 
-  public static function setAppId(string $app_id)
+  public static function setAppId($app_id)
   {
     self::$_app_id = $app_id;
   }
 
-  public static function setPassword(string $password)
+  public static function setPassword($password)
   {
     self::$_password = $password;
   }
 
-  public static function setLive(bool $live)
+  public static function setLive($live)
   {
     self::$_live = $live;
   }
@@ -95,7 +97,7 @@ class Client
     return self::$_auth;
   }
 
-  public static function setCurrentAuthInfo(string $token, string $client, string $expiry, string $uid)
+  public static function setCurrentAuthInfo($token, $client, $expiry, $uid)
   {
     self::$_auth = array('access-token' => $token, 'client' => $client, 'expiry' => $expiry, 'uid' => $uid);
     return self::$_auth;
@@ -131,7 +133,7 @@ class Client
 
     $url = self::isLive() ? self::API_PROD : self::API_SANDBOX;
 
-    self::setHttpClient(new \GuzzleHttp\Client(['base_uri' => $url]));
+    self::setHttpClient(new GuzzleHttpClient(['base_uri' => $url]));
     self::setClient($client);
 
     return $client;
@@ -141,7 +143,11 @@ class Client
   public function signIn()
   {
     $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
-    return self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
+    if (is_array($res->getHeader('Access-Token'))) {
+      return self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
+    } else {
+      return self::setCurrentAuthInfo($res->getHeader('Access-Token'), $res->getHeader('Client'), $res->getHeader('Expiry'), $res->getHeader('Uid'));
+    }
   }
 
   public function validateToken($authinfo = array())

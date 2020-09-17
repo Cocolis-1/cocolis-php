@@ -53,7 +53,7 @@ abstract class AbstractClient
     return Client::isLive() ? Client::FRONTEND_PROD : Client::FRONTEND_SANDBOX;
   }
 
-  public function getRestPath(string $path)
+  public function getRestPath($path)
   {
     if (empty($this->_rest_path)) {
       throw new InvalidConfigurationException('The child class shoud defined $_rest_path');

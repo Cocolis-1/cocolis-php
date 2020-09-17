@@ -59,9 +59,9 @@ class ClientTest extends CocolisTest
     ));
     $result = $client->signIn();
     $this->assertEquals(array(
-      'access-token' => 'pMoVproO2Zky5ts0uV2EBQ',
-      'client' => 'OtCOLIScZXQX50rfO2WL1A',
-      'expiry' => '1591002082',
+      'access-token' => 'Z3y5y6PPDoQUz_0PMchHzQ',
+      'client' => 'WAzLC0nPxIWKK5DrMWhbDw',
+      'expiry' => '1601369385',
       'uid' => 'e0611906'
     ), $result);
   }
@@ -78,10 +78,11 @@ class ClientTest extends CocolisTest
 
   public function testAuthInfo()
   {
+    var_dump(Client::getCurrentAuthInfo());
     $this->assertEquals(array(
-      'access-token' => 'pMoVproO2Zky5ts0uV2EBQ',
-      'client' => 'OtCOLIScZXQX50rfO2WL1A',
-      'expiry' => '1591002082',
+      'access-token' => 'Z3y5y6PPDoQUz_0PMchHzQ',
+      'client' => 'WAzLC0nPxIWKK5DrMWhbDw',
+      'expiry' => '1601369385',
       'uid' => 'e0611906'
     ), Client::getCurrentAuthInfo());
   }
