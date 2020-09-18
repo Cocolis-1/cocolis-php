@@ -78,7 +78,6 @@ class ClientTest extends CocolisTest
 
   public function testAuthInfo()
   {
-    var_dump(Client::getCurrentAuthInfo());
     $this->assertEquals(array(
       'access-token' => 'Z3y5y6PPDoQUz_0PMchHzQ',
       'client' => 'WAzLC0nPxIWKK5DrMWhbDw',
