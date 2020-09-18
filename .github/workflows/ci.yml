@@ -36,7 +36,7 @@ jobs:
     - name: Run php-cs-fixer
       run: ./vendor/bin/php-cs-fixer fix ./ --diff --dry-run
     - name: Run phpunit
-      run: ./vendor/bin/phpunit
+      run: ./vendor/bin/phpunit --coverage-clover coverage.xml
     - name: Upload Coverage report
       run: |
         bash <(curl -s https://codecov.io/bash)
