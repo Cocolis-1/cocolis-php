@@ -6,4 +6,7 @@ composer.phar
 !.php_cs
 build/
 clover.xml
+crap4j.xml
+coverage.*
+xml-coverage
 node_modules
