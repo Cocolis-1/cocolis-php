@@ -143,6 +143,7 @@ class Client
   public function signIn()
   {
     $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
+
     if (is_array($res->getHeader('Access-Token'))) {
       return self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
     } else {

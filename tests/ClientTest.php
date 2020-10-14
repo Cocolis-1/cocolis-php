@@ -49,6 +49,35 @@ class ClientTest extends CocolisTest
     $this->assertEquals($result, false);
   }
 
+  public function testSignInWithgetHeaderReturningArray()
+  {
+    // Créer un bouchon pour la classe SomeClass.
+    $responseStub = $this->getMockBuilder('\GuzzleHttp\Psr7\Response')
+      ->setMethods(['getHeader'])
+      ->getMock();
+
+    // Configurer le bouchon.
+    $responseStub->method('getHeader')
+         ->willReturn('toto');
+
+    $client = $this->authenticatedClient(false);
+
+    $stub = $this->getMockBuilder('\Cocolis\Api\Client')
+      ->setMethods(['call'])
+      ->getMock();
+
+    // Configurer le bouchon.
+    $stub->method('call')
+         ->willReturn($responseStub);
+
+    $this->assertEquals(array(
+      'access-token' => 'toto',
+      'client' => 'toto',
+      'expiry' => 'toto',
+      'uid' => 'toto'
+    ), $stub->signIn());
+  }
+
 
   public function testStaticCreate()
   {
