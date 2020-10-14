@@ -1,8 +1,13 @@
 .vscode
+.history
 composer.phar
 /vendor/
 .php*
 !.php_cs
 build/
 clover.xml
+crap4j.xml
+coverage.*
+xml-coverage
+html-coverage
 node_modules

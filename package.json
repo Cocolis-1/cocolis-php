@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@stoplight/cli": "beta"
+    "@stoplight/cli": "^4.0.73",
+    "node-fetch": ">=2.6.1"
   }
 }

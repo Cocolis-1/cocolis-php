@@ -49,6 +49,35 @@ class ClientTest extends CocolisTest
     $this->assertEquals($result, false);
   }
 
+  public function testSignInWithgetHeaderReturningArray()
+  {
+    // Créer un bouchon pour la classe SomeClass.
+    $responseStub = $this->getMockBuilder('\GuzzleHttp\Psr7\Response')
+      ->setMethods(['getHeader'])
+      ->getMock();
+
+    // Configurer le bouchon.
+    $responseStub->method('getHeader')
+         ->willReturn('toto');
+
+    $client = $this->authenticatedClient(false);
+
+    $stub = $this->getMockBuilder('\Cocolis\Api\Client')
+      ->setMethods(['call'])
+      ->getMock();
+
+    // Configurer le bouchon.
+    $stub->method('call')
+         ->willReturn($responseStub);
+
+    $this->assertEquals(array(
+      'access-token' => 'toto',
+      'client' => 'toto',
+      'expiry' => 'toto',
+      'uid' => 'toto'
+    ), $stub->signIn());
+  }
+
 
   public function testStaticCreate()
   {
@@ -59,9 +88,9 @@ class ClientTest extends CocolisTest
     ));
     $result = $client->signIn();
     $this->assertEquals(array(
-      'access-token' => 'pMoVproO2Zky5ts0uV2EBQ',
-      'client' => 'OtCOLIScZXQX50rfO2WL1A',
-      'expiry' => '1591002082',
+      'access-token' => 'Z3y5y6PPDoQUz_0PMchHzQ',
+      'client' => 'WAzLC0nPxIWKK5DrMWhbDw',
+      'expiry' => '1601369385',
       'uid' => 'e0611906'
     ), $result);
   }
@@ -79,9 +108,9 @@ class ClientTest extends CocolisTest
   public function testAuthInfo()
   {
     $this->assertEquals(array(
-      'access-token' => 'pMoVproO2Zky5ts0uV2EBQ',
-      'client' => 'OtCOLIScZXQX50rfO2WL1A',
-      'expiry' => '1591002082',
+      'access-token' => 'Z3y5y6PPDoQUz_0PMchHzQ',
+      'client' => 'WAzLC0nPxIWKK5DrMWhbDw',
+      'expiry' => '1601369385',
       'uid' => 'e0611906'
     ), Client::getCurrentAuthInfo());
   }
