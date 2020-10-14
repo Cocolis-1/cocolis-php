@@ -22,7 +22,7 @@ class RideClient extends AbstractClient
     return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('mine'))->getBody(), true)["rides"]);
   }
 
-  public function canMatch(string $zipfrom, string $zipto, float $volume, int $value = null)
+  public function canMatch($zipfrom, $zipto, $volume, $value = null)
   {
     $params = ['from' => ['postal_code' => $zipfrom], 'to' => ['postal_code' => $zipto], 'volume' => $volume];
     if (!empty($value)) {

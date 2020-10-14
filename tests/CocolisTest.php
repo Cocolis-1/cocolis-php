@@ -32,14 +32,16 @@ class CocolisTest extends TestCase
     \VCR\VCR::turnOff();
   }
 
-  public function authenticatedClient()
+  public function authenticatedClient($runSignIn = true)
   {
     $client = Client::create(array(
       'app_id' => 'e0611906',
       'password' => 'sebfie',
       'live' => false
     ));
-    $client->signIn();
+    if ($runSignIn) {
+      $client->signIn();
+    }
     return $client;
   }
 }
