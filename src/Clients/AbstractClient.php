@@ -77,12 +77,12 @@ abstract class AbstractClient
     return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath(''), 'GET')->getBody(), true));
   }
 
-  public function get(string $id)
+  public function get($id)
   {
     return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/' . $id), 'GET')->getBody(), true));
   }
 
-  public function remove(string $id)
+  public function remove($id)
   {
     return json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/') . $id, 'DELETE')->getBody(), true);
   }
