@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@stoplight/cli": "~ 4.0"
+    "@stoplight/cli": "^4.0.73"
   }
 }
