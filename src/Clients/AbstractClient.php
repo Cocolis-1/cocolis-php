@@ -62,12 +62,12 @@ abstract class AbstractClient
     return $this->_rest_path . '/' . $path;
   }
 
-  public function create(array $params)
+  public function create($params)
   {
     return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath(''), 'POST', $params)->getBody(), true));
   }
 
-  public function update(array $params, string $id)
+  public function update($params, $id)
   {
     return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/') . $id, 'PUT', $params)->getBody(), true));
   }
