@@ -16,11 +16,11 @@ class Ride extends AbstractModel
 {
   public function getBuyerURL()
   {
-    return $this->getBaseURL() . 'rides/buyer/' . $this->buyer_tracking;
+    return $this->getBaseURL() . 'tracking/buyer/' . $this->buyer_tracking;
   }
 
   public function getSellerURL()
   {
-    return $this->getBaseURL() . 'rides/seller/' . $this->seller_tracking;
+    return $this->getBaseURL() . 'tracking/seller/' . $this->seller_tracking;
   }
 }
