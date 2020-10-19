@@ -29,12 +29,18 @@ class RideClient extends AbstractClient
       $params['content_value'] = $value;
     }
 
+    $result = $this->getCocolisClient()->callAuthentificated(
+      $this->getRestPath('can_match'),
+      'POST',
+      $params
+    );
+
     return $this->hydrate(json_decode(
       $this->getCocolisClient()->callAuthentificated(
         $this->getRestPath('can_match'),
         'POST',
         $params
-      )->getBody(),
+      )->text(),
       true
     ), false);
   }

@@ -2,42 +2,166 @@
 -
     request:
         method: GET
-        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token'
+        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&access-token=f2LNKLNDDSAyLI92KpdF1w&client=wFPP7k01OacAzC-tXni-fA&expiry=1604318220&uid=e0611906'
         headers:
             Host: sandbox-api.cocolis.fr
-            Expect: null
-            Accept-Encoding: null
-            User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
-            Content-Type: application/json
-            Accept: null
-        body: '{"token-type":"Bearer","uid":"e0611906","access-token":"Jy64iEiJ4vUgtp8TqhkTkQ","client":"HLSmEW1TIDqsSMiwuKjnQg","expiry":"1590748027"}'
+            access-token: nBfCK2mL3rp83hSjhUFLYg
+            client: g5z8dF58MvI4t5zoQzX9xA
+            expiry: '1604319132'
+            uid: e0611906
     response:
         status:
-            http_version: '1.1'
+            http_version: '2'
             code: '200'
-            message: OK
+            message: ''
         headers:
-            Server: Cowboy
-            Date: 'Mon, 18 May 2020 09:01:23 GMT'
-            Connection: keep-alive
-            X-Frame-Options: SAMEORIGIN
-            X-Xss-Protection: '1; mode=block'
-            X-Content-Type-Options: nosniff
-            X-Download-Options: noopen
-            X-Permitted-Cross-Domain-Policies: none
-            Referrer-Policy: strict-origin-when-cross-origin
-            Content-Type: 'application/json; charset=utf-8'
-            Access-Token: Jy64iEiJ4vUgtp8TqhkTkQ
-            Token-Type: Bearer
-            Client: HLSmEW1TIDqsSMiwuKjnQg
-            Expiry: '1590748027'
-            Uid: e0611906
-            Set-Cookie: '_session_id=wqGjUwXqQDv2RTjnk08zVMaS2ZRZqOPond8X4c%2F%2BH0dGOuRBxCwI2R4em1XaDWlauYQLbqUyq55fNNEnzcyzRZZOQ1FWEXW0pk%2BJ9B9xnXMNrYHLGyF%2BZR4gLxljBRfadccQAGJNZXvZsMbYNDoe2WYkNEhuMVXFvAyyKyxZ%2BI2To3S42pE1d1PJIqkNOXaoXsBj1hrqA61tq92uzPtfCctgud%2FbIbBugeVG7BHBFpR%2BeQTWK87AEsazSglbBk0mZDTo1lk%2F%2BeduXa8XyqW3%2FaQ%2BMcILUlmmujNow%2B2oCa7%2BOyLxc7sUCwn7D7r3zkI5KD%2BMEVM2f1akqXPc78F5cJ5Y5JEteTmcX2vHvzNdLLBRFJzzwgp0F3F40oRIyjjfSR4vjRGpIn2vyGU9kv8vrPk5sLza039jbuZh0xugVDN6Al1%2BDujGjzIsQ7MFZDXA9YesKO6CH3Z4JqEbQrZq9MTAEIg6VVQEH91%2BV7YCh4f8mxvXiu70Bf%2B5rDpqm5a2LF3qwV41CKIA6Ov2nAUAQ95RyZ2IGup9htlF7rhuVZmYik%2FtmNHBlZuxgSVHsyS0xbdse63kddYEm6wjttKCw6mAluTduZBCBw951MEyJZ0MLMoNu5aaKEnD0FbL1AJi42Ouno9d7T5rsh1LmQb8GxgPfJ8sn38jzOvPsXiGV51qCGI%3D--BMf57e6xQy7%2FZGaR--eryWvWTZTfN0tUNWS%2BOJ1w%3D%3D; path=/; HttpOnly; secure, _session_id=wqGjUwXqQDv2RTjnk08zVMaS2ZRZqOPond8X4c%2F%2BH0dGOuRBxCwI2R4em1XaDWlauYQLbqUyq55fNNEnzcyzRZZOQ1FWEXW0pk%2BJ9B9xnXMNrYHLGyF%2BZR4gLxljBRfadccQAGJNZXvZsMbYNDoe2WYkNEhuMVXFvAyyKyxZ%2BI2To3S42pE1d1PJIqkNOXaoXsBj1hrqA61tq92uzPtfCctgud%2FbIbBugeVG7BHBFpR%2BeQTWK87AEsazSglbBk0mZDTo1lk%2F%2BeduXa8XyqW3%2FaQ%2BMcILUlmmujNow%2B2oCa7%2BOyLxc7sUCwn7D7r3zkI5KD%2BMEVM2f1akqXPc78F5cJ5Y5JEteTmcX2vHvzNdLLBRFJzzwgp0F3F40oRIyjjfSR4vjRGpIn2vyGU9kv8vrPk5sLza039jbuZh0xugVDN6Al1%2BDujGjzIsQ7MFZDXA9YesKO6CH3Z4JqEbQrZq9MTAEIg6VVQEH91%2BV7YCh4f8mxvXiu70Bf%2B5rDpqm5a2LF3qwV41CKIA6Ov2nAUAQ95RyZ2IGup9htlF7rhuVZmYik%2FtmNHBlZuxgSVHsyS0xbdse63kddYEm6wjttKCw6mAluTduZBCBw951MEyJZ0MLMoNu5aaKEnD0FbL1AJi42Ouno9d7T5rsh1LmQb8GxgPfJ8sn38jzOvPsXiGV51qCGI%3D--BMf57e6xQy7%2FZGaR--eryWvWTZTfN0tUNWS%2BOJ1w%3D%3D; path=/; HttpOnly; secure, _backend_session=h%2BkWBNpyP4M0Dnoy5pmqCKBs83i6%2FEYSsm8mL5l9ZpDu%2FyBjlMF0tjGy1aGneerqyWO7vDeh33g0Znr5tsoRpg7MNZPS29HgW7DuBFGcAvJ9MTc2asSnU%2FQ%2FfpPdt0nOoBm5ajwFerZvjs1p3QCW9QVP8MvP0pIQbLeW2ulaHHV4Zeso4uHtJm%2Fv5s5TW676RgAjxpiVWfDS%2BZlWtfidZ58jvuvJx6jmyLkbsitf9g%2FhV9GrrP%2B%2FyXwCXV60XOOuLPBtFL0Y8rVyDMMyJLfwmWLkhiTDR2IQydPDh29EzqBJQbMIhs3CfhDTnDMZP%2B88QlqVMW%2B%2FA6FR%2FuNj2kzmE0kK4ezX6XLPcdOjid9FmDOpu0k4qmmvthCvvwjwpO28fN4O5IJULrtSSaOwYNE8j3EC8w5Fv8JQPN%2FsScme27C%2F2goQFldZib4am8cfh2feI5DkhpWB%2BJJyWFWD52mFVeEYvo8WtXcqUGv9cg8GGQMsKj%2BvB6%2FSHCw1f3pnAPHEjoGRUUwkZDCXc%2BOim2bEVg2fD5OP72cPBYrPa21sCwNuSyoo8FmNGQnDMi8SWa2rBLlw0oNpmhN4bplhILX89nMvx9wzeEq4SKDbnzUbisP4pIL7q1%2BsQFZup4BF%2FSkb4ZXZVX4NqaPgSm1QliqMSEdpzyll0mg91NRqrZSfANnH1hWGG7BKBA%3D%3D--Vseoyga7Vxp0puxD--OJ1Gd2Rxlz1u0%2FE7C24OFg%3D%3D; path=/; HttpOnly; secure'
-            Etag: 'W/"4e4a79a537368d57050ecb3bad94500c"'
-            Cache-Control: 'max-age=0, private, must-revalidate'
-            X-Request-Id: 9873191b-0cf8-4f17-8aa5-12f5c97fb214
-            X-Runtime: '0.464029'
-            Strict-Transport-Security: 'max-age=31536000; includeSubDomains'
-            Transfer-Encoding: chunked
-            Via: '1.1 vegur'
-        body: '{"success":true,"data":{"id":1,"app_id":"e0611906","name":"Sebfie","description":null,"user_id":2,"created_at":"2020-04-20T18:15:12.542+02:00","updated_at":"2020-05-18T11:01:22.578+02:00","reserve_amount":0,"balance":3000000,"running_balance":884600,"suffisant_balance?":true}}'
+            date: 'Mon, 19 Oct 2020 11:12:13 GMT'
+            content-type: 'application/json; charset=utf-8'
+            set-cookie: ['__cfduid=d4ac15e21b7f098733c1e916e0a25138d1603105933; expires=Wed, 18-Nov-20 11:12:13 GMT; path=/; domain=.cocolis.fr; HttpOnly; SameSite=Lax', '_session_id=a3WA7ZaxgQqblWlwQ%2B5cURhLbdk%2Fx37WA2gGp1w2CHINmRqF1d1NX58LuRPwACNOY%2B681PXyptxtEUsYhvOMtvjiEqRb5%2F%2FYdZ0cKyitIz38os%2FULNyOM4Y90QvLGwMwvm7fHhlzn%2B8fkEHqBFa8xtSTA2UV9QVepy2WBx89A9SNya9FmrqshkXdakJk%2BuEM280Zy8R2xmqF%2BKjittK4ZWuuQxjLi%2FBr7L%2FYXWYJROvvulIlolDpsuXJmJX1nH2LhGEymV55rCvJB00gP0ANhq0B7K%2B1BXPy40pWwHf3JKo5p7oxckZdTeRVWa3t7GUXDsLjFbJbGIYxc%2FoWsFXmWNBEFs7LEgiDDMTRHOsgvqM5N12r5zu%2BGkXJnA3N52RAXbVHaAyowl7Y46ew2C80Lyga2BhqVzDYvuYU0tfcx%2Fk78iRzfeQMNdWk0YfP46zpKPgtGtYBsfqhLEHmJ%2FjE0xZdiHhLAUihYwd5nmaUz0I6jWlNcowiD2QEdrCtKP9FqfAEEcB8PEuodxbzVDWE%2Faf7%2BA9E6jk5Lk65HaAEgw3zA1Ci6m9I9P1DAnCxGgj7cw1m1Bk1Zen1%2BF4jpw4SLgSz36Je%2FS8IzAJUeyTsfGiSoG8%2FaE4h%2FCfgokQL1QkEPnkbc%2BL3juhwOZwuCfIpluC4YuW6LTpSoSGHQGlvr6fGjzY%3D--sp91I9dOOyJLflqx--qJ%2BNWFJvH20A7aFmMbnxpw%3D%3D; path=/; HttpOnly; secure', '_session_id=a3WA7ZaxgQqblWlwQ%2B5cURhLbdk%2Fx37WA2gGp1w2CHINmRqF1d1NX58LuRPwACNOY%2B681PXyptxtEUsYhvOMtvjiEqRb5%2F%2FYdZ0cKyitIz38os%2FULNyOM4Y90QvLGwMwvm7fHhlzn%2B8fkEHqBFa8xtSTA2UV9QVepy2WBx89A9SNya9FmrqshkXdakJk%2BuEM280Zy8R2xmqF%2BKjittK4ZWuuQxjLi%2FBr7L%2FYXWYJROvvulIlolDpsuXJmJX1nH2LhGEymV55rCvJB00gP0ANhq0B7K%2B1BXPy40pWwHf3JKo5p7oxckZdTeRVWa3t7GUXDsLjFbJbGIYxc%2FoWsFXmWNBEFs7LEgiDDMTRHOsgvqM5N12r5zu%2BGkXJnA3N52RAXbVHaAyowl7Y46ew2C80Lyga2BhqVzDYvuYU0tfcx%2Fk78iRzfeQMNdWk0YfP46zpKPgtGtYBsfqhLEHmJ%2FjE0xZdiHhLAUihYwd5nmaUz0I6jWlNcowiD2QEdrCtKP9FqfAEEcB8PEuodxbzVDWE%2Faf7%2BA9E6jk5Lk65HaAEgw3zA1Ci6m9I9P1DAnCxGgj7cw1m1Bk1Zen1%2BF4jpw4SLgSz36Je%2FS8IzAJUeyTsfGiSoG8%2FaE4h%2FCfgokQL1QkEPnkbc%2BL3juhwOZwuCfIpluC4YuW6LTpSoSGHQGlvr6fGjzY%3D--sp91I9dOOyJLflqx--qJ%2BNWFJvH20A7aFmMbnxpw%3D%3D; path=/; HttpOnly; secure', '_backend_session=tOqM4%2BxOPIB6GlBybxf%2BDX46cizNm%2FEl8nj2dO8w%2F7jlx0qW2z6jRM7A%2BOaEYDAP44r5N%2Fz75hWI3NkQtdDZVrnTrXN1wMtMEltlPn2oCczjIH1cvH38jAue9MOLzcFJpZ8OoplkDf1jBsLLligrWTJydUY2IK38t%2FVOEDBbJ9uEuuBPyjO2ZPkijRECDQHDy5PBsEujkwPSH2FAzOIdrihITsWRxFPlzfJpmZGQgEtskmDuJo9vVysEgJktH1hMoRvdf76e%2BzZFhL3exOcDfadcOwFtf5ngK9Y2yDb5Tlbxk0XEOvjMe3HgKTqPiPhQvWIQTfowZW0boaR%2Ba%2BK1T%2BD65d4PhBhbMRsQ1C%2FETSiyfl3o9f44gIdpYzhVgdryBueja0jjxPAm3xS3Z97Hvd0FYdyW9i1LPTRRFAYTe5cvfaGTsZHXBVmFrJDvSc5gTg1q16XUACTSUeY6W8gCnx5kQIK%2BrrFTSr1USysIem0Re8rvDaz3UZNCs1bdHojg1lSd%2FnVfnmvwgztu3To1lgkigr1zhosds%2BW4%2FfU5FnRyX3ujxVlZ0TNupWLO3aCTYqhzEWDvqJ6ICVTw1gxULQOrOIgCvAvg0XOSaNp8kc%2FoUn3zAAmIi3YuHquQCUCa8NraXh8O%2F13G7GRmeJzCuMbRx9eqvnuB0b%2BAEn8RpfQ%2FuScY97mkpA%3D%3D--Bpc4zGYc0Cia5YLL--2MAXQPK0E2JzE9jwaUON2A%3D%3D; path=/; HttpOnly; secure']
+            x-frame-options: SAMEORIGIN
+            x-xss-protection: '1; mode=block'
+            x-content-type-options: nosniff
+            x-download-options: noopen
+            x-permitted-cross-domain-policies: none
+            referrer-policy: strict-origin-when-cross-origin
+            access-token: nBfCK2mL3rp83hSjhUFLYg
+            token-type: Bearer
+            client: g5z8dF58MvI4t5zoQzX9xA
+            expiry: '1604319132'
+            uid: e0611906
+            etag: 'W/"7520f2a198e5438cf81a1de2785e0e4a"'
+            cache-control: 'max-age=0, private, must-revalidate'
+            x-request-id: 42058734-55a9-4ad4-b210-cdaad35a6d1d
+            x-runtime: '0.130112'
+            strict-transport-security: 'max-age=31536000; includeSubDomains'
+            via: '1.1 vegur'
+            cf-cache-status: DYNAMIC
+            cf-request-id: 05e2285f4a00000853a285e000000001
+            expect-ct: 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
+            report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?lkg-colo=19&lkg-time=1603105933"}],"group":"cf-nel","max_age":604800}'
+            nel: '{"report_to":"cf-nel","max_age":604800}'
+            server: cloudflare
+            cf-ray: 5e4a10120cf60853-CDG
+            content-encoding: br
+        body: '{"success":true,"data":{"id":1,"app_id":"e0611906","name":"Selency","description":null,"user_id":2,"created_at":"2020-04-20T18:15:12.542+02:00","updated_at":"2020-10-19T13:12:12.983+02:00","reserve_amount":0,"balance":3000000,"running_balance":1860839,"suffisant_balance?":true}}'
+        curl_info:
+            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&access-token=f2LNKLNDDSAyLI92KpdF1w&client=wFPP7k01OacAzC-tXni-fA&expiry=1604318220&uid=e0611906'
+            content_type: 'application/json; charset=utf-8'
+            http_code: 200
+            header_size: 3799
+            request_size: 369
+            filetime: -1
+            ssl_verify_result: 0
+            redirect_count: 0
+            total_time: 0.30932
+            namelookup_time: 0.002294
+            connect_time: 0.019274
+            pretransfer_time: 0.048957
+            size_upload: !!float 0
+            size_download: !!float 181
+            speed_download: !!float 585
+            speed_upload: !!float 0
+            download_content_length: !!float -1
+            upload_content_length: !!float -1
+            starttransfer_time: 0.307839
+            redirect_time: !!float 0
+            redirect_url: ''
+            primary_ip: 104.26.7.43
+            certinfo: {  }
+            primary_port: 443
+            local_ip: 192.168.1.81
+            local_port: 65347
+            http_version: 3
+            protocol: 2
+            ssl_verifyresult: 0
+            scheme: HTTPS
+            appconnect_time_us: 48873
+            connect_time_us: 19274
+            namelookup_time_us: 2294
+            pretransfer_time_us: 48957
+            redirect_time_us: 0
+            starttransfer_time_us: 307839
+            total_time_us: 309320
+-
+    request:
+        method: GET
+        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&access-token=nBfCK2mL3rp83hSjhUFLYg&client=wFPP7k01OacAzC-tXni-fA&expiry=1604318220&uid=e0611906'
+        headers:
+            Host: sandbox-api.cocolis.fr
+            access-token: nBfCK2mL3rp83hSjhUFLYg
+            client: g5z8dF58MvI4t5zoQzX9xA
+            expiry: '1604319132'
+            uid: e0611906
+    response:
+        status:
+            http_version: '2'
+            code: '200'
+            message: ''
+        headers:
+            date: 'Mon, 19 Oct 2020 11:14:17 GMT'
+            content-type: 'application/json; charset=utf-8'
+            set-cookie: ['__cfduid=d4bc113720bdcfd1eaffa58312ce708301603106056; expires=Wed, 18-Nov-20 11:14:16 GMT; path=/; domain=.cocolis.fr; HttpOnly; SameSite=Lax', '_session_id=CQdZVebm9aZSMm0K8qxAIa13KLizwmOd8TgC%2B95ixsQDnCVyx1G4quOBmhaBJo40PeUxY9gORWOEM%2Bn3QJIxT%2BIkKW75HLzyAGM%2BfBXdOW5UC%2BkCC%2BMVO2bM6JFS%2BEanuvnbIency8Qp8XFJXsM6hydfukiUDlG1Kbaz6kzbDbA5jlL0hpX7XLSk0Kx12RVccqmK3zSTY4BLTJwin%2FLOIEwazcZ3k1PzPwvqahkNp0i06i4N3G9Hkv7O6DTImcMf0iwBA8TkmiVeFwyReZNXJg503k6IawUlFVCMxdWYydHkI0UaP0ghWNneTKCIOga5ULz9uS5hD%2BV6Wwvpth7lW0umxjNBEJHcf7V59ySmhbpdjuGIlQvRZ0yTk32wOCyArxyKL1TqsqzpSIlFdk0MVBfeBsfeAp7FcRd0eq2mV9W8c9oaeWAl0G3Detr4VJD79YUKbaTdd5RoLciuAyTRUXYuVbxFMzbgyQ5Kfk8rYbFhLu2yq4BQr9n0Ihi%2Bnx6ybUoe0RHPiFOgb9rGGiyqIy1O5HN%2FlIlqU0bEEwhS%2BOFKBzkxPAnVfC11ps0P3ECkMedOV%2FIaExfcZ8IfxhyGJNEf%2F2HXwvMHw4zrQ62uEMNi8jJnIuj2EzTFLFUO5IWhUFQtsj%2BPswX3aDHuxqPWjzLxClzC00XgIOFIn4pxJn0ZVd4%3D--Drl%2Fwo1gQtNZKX%2FJ--hogBeosHxFN4K9dJH6ssIA%3D%3D; path=/; HttpOnly; secure', '_session_id=CQdZVebm9aZSMm0K8qxAIa13KLizwmOd8TgC%2B95ixsQDnCVyx1G4quOBmhaBJo40PeUxY9gORWOEM%2Bn3QJIxT%2BIkKW75HLzyAGM%2BfBXdOW5UC%2BkCC%2BMVO2bM6JFS%2BEanuvnbIency8Qp8XFJXsM6hydfukiUDlG1Kbaz6kzbDbA5jlL0hpX7XLSk0Kx12RVccqmK3zSTY4BLTJwin%2FLOIEwazcZ3k1PzPwvqahkNp0i06i4N3G9Hkv7O6DTImcMf0iwBA8TkmiVeFwyReZNXJg503k6IawUlFVCMxdWYydHkI0UaP0ghWNneTKCIOga5ULz9uS5hD%2BV6Wwvpth7lW0umxjNBEJHcf7V59ySmhbpdjuGIlQvRZ0yTk32wOCyArxyKL1TqsqzpSIlFdk0MVBfeBsfeAp7FcRd0eq2mV9W8c9oaeWAl0G3Detr4VJD79YUKbaTdd5RoLciuAyTRUXYuVbxFMzbgyQ5Kfk8rYbFhLu2yq4BQr9n0Ihi%2Bnx6ybUoe0RHPiFOgb9rGGiyqIy1O5HN%2FlIlqU0bEEwhS%2BOFKBzkxPAnVfC11ps0P3ECkMedOV%2FIaExfcZ8IfxhyGJNEf%2F2HXwvMHw4zrQ62uEMNi8jJnIuj2EzTFLFUO5IWhUFQtsj%2BPswX3aDHuxqPWjzLxClzC00XgIOFIn4pxJn0ZVd4%3D--Drl%2Fwo1gQtNZKX%2FJ--hogBeosHxFN4K9dJH6ssIA%3D%3D; path=/; HttpOnly; secure', '_backend_session=CM9xd3Au8t%2F0YpBTSphtfz%2BP%2FnV7JUBjO4zHa3tgINrU8UiJPaCDn9qZKS8JN%2FQrWQ4vP11nUaCA9CSMBCkOf%2FHv09YBLAQT99kCZnFjbycRMjkrfLE5D1dftgzDwrxTPzOLi8qGfUK3y3039hMe6NxrK5Q63F7d4ifUSuW%2BKzilZeul6Px%2B3EPBtJFwlv3OtExIG5jMvVO0jALdKsD3XdW42r4Oly2GbKRnU8xb8RZ%2Bg%2FUfqKHccsgcFDc10zz6VnYIszz1w71Nkda%2FvnRSPteU%2BYaMwkihB6EKpDmhoAYXea9jZB4qzuppfCwYzwFUikhX1gBnEwbr1HRSQiVY0V8Muw0yxxPSed2z8DecfJWmy7PGXPiDbjQV26vi486G5UQptsc36rUcuFCCQcye8ANd4eDJ%2BifeoIzL3cj%2FiXDLjWjrFc27WJDyPVh83DtlaA35qE2m3KPpx8uDQXJnwkDzbpsmvvOlBfo1SJSy5c0oBoVuQz0sWcQlFeUxeXrdOgePhx8W%2BoU4D%2FCUhCQmEkZG9%2Fwq49i2FsYpnZDCoEHLEqfTh%2BcdaLC3W551HBCWbMYnoYCethhnuAUkW2b8KJvmT%2FCizPBRc2bEl7CN%2FW1NMCnHnu%2Bb%2FqWpyCvD0dZ%2Fmj3GNuE5AlsLPX3D7MZ%2FKFwen1oKopfJRF8I60u05Pf2SEaCeBHi%2BQ%3D%3D--XoIpAb8po4FKayIy--NnR4zWAkQb0lFWMnD005WQ%3D%3D; path=/; HttpOnly; secure']
+            x-frame-options: SAMEORIGIN
+            x-xss-protection: '1; mode=block'
+            x-content-type-options: nosniff
+            x-download-options: noopen
+            x-permitted-cross-domain-policies: none
+            referrer-policy: strict-origin-when-cross-origin
+            access-token: nBfCK2mL3rp83hSjhUFLYg
+            token-type: Bearer
+            client: g5z8dF58MvI4t5zoQzX9xA
+            expiry: '1604319132'
+            uid: e0611906
+            etag: 'W/"17341dcfdd77cfc37bb03846070058be"'
+            cache-control: 'max-age=0, private, must-revalidate'
+            x-request-id: aebf9897-c6cf-4b8b-91fc-5b75e7165f42
+            x-runtime: '0.153870'
+            strict-transport-security: 'max-age=31536000; includeSubDomains'
+            via: '1.1 vegur'
+            cf-cache-status: DYNAMIC
+            cf-request-id: 05e22a42340000a843f5bf3000000001
+            expect-ct: 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"'
+            report-to: '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?lkg-colo=19&lkg-time=1603106057"}],"group":"cf-nel","max_age":604800}'
+            nel: '{"report_to":"cf-nel","max_age":604800}'
+            server: cloudflare
+            cf-ray: 5e4a1316bafba843-CDG
+            content-encoding: br
+        body: '{"success":true,"data":{"id":1,"app_id":"e0611906","name":"Selency","description":null,"user_id":2,"created_at":"2020-04-20T18:15:12.542+02:00","updated_at":"2020-10-19T13:12:14.024+02:00","reserve_amount":0,"balance":3000000,"running_balance":1860839,"suffisant_balance?":true}}'
+        curl_info:
+            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&access-token=nBfCK2mL3rp83hSjhUFLYg&client=wFPP7k01OacAzC-tXni-fA&expiry=1604318220&uid=e0611906'
+            content_type: 'application/json; charset=utf-8'
+            http_code: 200
+            header_size: 3779
+            request_size: 369
+            filetime: -1
+            ssl_verify_result: 0
+            redirect_count: 0
+            total_time: 0.328073
+            namelookup_time: 0.00132
+            connect_time: 0.016115
+            pretransfer_time: 0.0456
+            size_upload: !!float 0
+            size_download: !!float 179
+            speed_download: !!float 545
+            speed_upload: !!float 0
+            download_content_length: !!float -1
+            upload_content_length: !!float -1
+            starttransfer_time: 0.327913
+            redirect_time: !!float 0
+            redirect_url: ''
+            primary_ip: 172.67.73.171
+            certinfo: {  }
+            primary_port: 443
+            local_ip: 192.168.1.81
+            local_port: 49513
+            http_version: 3
+            protocol: 2
+            ssl_verifyresult: 0
+            scheme: HTTPS
+            appconnect_time_us: 45366
+            connect_time_us: 16115
+            namelookup_time_us: 1320
+            pretransfer_time_us: 45600
+            redirect_time_us: 0
+            starttransfer_time_us: 327913
+            total_time_us: 328073
