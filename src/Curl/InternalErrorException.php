@@ -1,4 +1,6 @@
 <?php
 namespace Cocolis\Api\Curl;
 
-class InternalErrorException extends \Exception {}
+class InternalErrorException extends \Exception
+{
+}

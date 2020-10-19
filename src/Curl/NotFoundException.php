@@ -1,4 +1,6 @@
 <?php
 namespace Cocolis\Api\Curl;
 
-class NotFoundException extends \Exception {}
+class NotFoundException extends \Exception
+{
+}
