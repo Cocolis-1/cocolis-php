@@ -20,8 +20,8 @@ Voici un exemple de code :
 
 ```php
 try {
-    echo "Aucune erreur est survenue";
-} catch (\Cocolis\Api\Curl\UnauthorizedException::class $e) {
+    $webhookClient->get(6546545640)
+} catch (\Cocolis\Api\Curl\UnauthorizedException $e) {
     echo "Erreur d'authentification survenue";
 }
 ```
@@ -34,8 +34,8 @@ Un exemple de code dans une situation similaire que pour l'exception **Unauthori
 
 ``` php
 try {
-    echo "Aucune erreur est survenue";
-} catch (\Cocolis\Api\Curl\NotFoundException::class $e) {
+    $webhookClient->get(6546545640)
+} catch (\Cocolis\Api\Curl\NotFoundException $e) {
     echo "Erreur 404";
 }
 ```
@@ -48,8 +48,8 @@ Un exemple de code dans une situation similaire que pour l'exception **NotFoundE
 
 ``` php
 try {
-    echo "Aucune erreur est survenue";
-} catch (\Cocolis\Api\Curl\InternalErrorException::class $e) {
+    $webhookClient->get(6546545640)
+} catch (\Cocolis\Api\Curl\InternalErrorException $e) {
     echo "Erreur interne à l'API";
 }
 ```
