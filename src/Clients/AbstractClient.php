@@ -18,6 +18,7 @@ abstract class AbstractClient
 {
   private $_cocolis_client;
   public $_rest_path;
+  public $_root_key;
 
   public function __construct(\Cocolis\Api\Client $cocolisClient)
   {
@@ -64,6 +65,11 @@ abstract class AbstractClient
 
   public function create(array $params)
   {
+    if ($this->_root_key) {
+      $paramsTemp = array();
+      $paramsTemp[$this->_root_key] = $params;
+      $params = $paramsTemp;
+    }
     return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath(''), 'POST', $params)->text(), true));
   }
 

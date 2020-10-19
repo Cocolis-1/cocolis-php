@@ -16,6 +16,7 @@ class RideClient extends AbstractClient
 {
   public $_rest_path = 'rides';
   public $_model_class = 'Cocolis\Api\Models\Ride';
+  public $_root_key = 'ride';
 
   public function mine()
   {
