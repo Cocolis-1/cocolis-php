@@ -9,22 +9,22 @@ class WebhookClientTest extends CocolisTest
   public function testCreate()
   {
     $client = $this->authenticatedClient();
-    $webhook = $client->getWebhookClient()->create(['event' => 'ride_published', 'url' => 'https://www.test.com/ride_webhook', 'active' => true]);
+    $webhook = $client->getWebhookClient()->create(['webhook' => ['event' => 'ride_published', 'url' => 'https://www.test.com/ride_webhook', 'active' => true]]);
     $this->assertNotEmpty($webhook);
     $this->assertInstanceOf('Cocolis\Api\Models\Webhook', $webhook);
     $this->assertNotNull($webhook->id);
-    $this->assertEquals($webhook->id, 3);
+    $this->assertEquals($webhook->id, 10);
   }
 
   public function testUpdate()
   {
     $client = $this->authenticatedClient();
-    $webhook = $client->getWebhookClient()->update(['event' => 'offer_accepted', 'url' => 'https://www.test.com/ride_webhook', 'active' => true], '3');
+    $webhook = $client->getWebhookClient()->update(['webhook' => ['event' => 'ride_published', 'url' => 'https://www.test.com/ride_webhook', 'active' => true]], '9');
     $this->assertNotEmpty($webhook);
     $this->assertInstanceOf('Cocolis\Api\Models\Webhook', $webhook);
     $this->assertNotNull($webhook->id);
-    $this->assertEquals($webhook->id, 3);
-    $this->assertEquals($webhook->event, 'offer_accepted');
+    $this->assertEquals($webhook->id, 9);
+    $this->assertEquals($webhook->event, 'ride_published');
   }
 
   public function testGetAll()
@@ -39,14 +39,14 @@ class WebhookClientTest extends CocolisTest
   public function testGet()
   {
     $client = $this->authenticatedClient();
-    $webhook = $client->getWebhookClient()->get('3');
+    $webhook = $client->getWebhookClient()->get('10');
     $this->assertInstanceOf('Cocolis\Api\Models\Webhook', $webhook);
   }
 
   public function testRemove()
   {
     $client = $this->authenticatedClient();
-    $result = $client->getWebhookClient()->remove('3');
+    $result = $client->getWebhookClient()->remove('10');
     $this->assertEmpty($result);
   }
 }

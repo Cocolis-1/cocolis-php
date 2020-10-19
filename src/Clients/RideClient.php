@@ -19,7 +19,7 @@ class RideClient extends AbstractClient
 
   public function mine()
   {
-    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('mine'))->getBody(), true)["rides"]);
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('mine'))->text(), true)["rides"]);
   }
 
   public function canMatch($zipfrom, $zipto, $volume, $value = null)

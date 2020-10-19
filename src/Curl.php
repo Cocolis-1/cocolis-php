@@ -109,20 +109,24 @@ class Curl {
      * @return bool
      */
     public function put($url, $params = array(), $curlOptions = array()) {
-        $file = $params['file'];
-        if (!is_file($file)){
+        if (isset($params['file'])) {
+          $file = $params['file'];
+          if (!is_file($file)) {
             return null;
+          }
+          $fp   = fopen($file, 'r');
+          $size = filesize($file);
+          $curlOptions['CURLOPT_INFILESIZE'] = $size;
+          $curlOptions['CURLOPT_INFILE']     = $fp;
         }
-        $fp   = fopen($file, 'r');
-        $size = filesize($file);
         $curlOptions['CURLOPT_PUT']        = 1;
-        $curlOptions['CURLOPT_INFILESIZE'] = $size;
-        $curlOptions['CURLOPT_INFILE']     = $fp;
         if (!isset($this->curlOptions['CURLOPT_USERPWD'])){
             $curlOptions['CURLOPT_USERPWD'] = self::DEFAULT_USERPWD;
         }
         $ret = $this->request($url, $curlOptions);
-        fclose($fp);
+        if (isset($params['file'])) {
+          fclose($fp);
+        }
         return $ret;
     }
 
@@ -354,6 +358,18 @@ class Curl {
         if ($this->debug){
             var_dump($this->info);
             var_dump($this->error);
+        }
+
+        $responseCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+        if ($responseCode > 400 && $responseCode < 500) {
+          if ($responseCode == 404) {
+            throw new \Cocolis\Api\Curl\NotFoundException;
+          }
+          throw new \Cocolis\Api\Curl\UnauthorizedException;
+        }
+        if ($responseCode > 500) {
+          throw new \Cocolis\Api\Curl\InternalErrorException;
         }
 
         curl_close($curl);

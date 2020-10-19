@@ -38,7 +38,7 @@ class ClientTest extends CocolisTest
 
   public function testSignInWithWrongCredentials()
   {
-    // $this->expectException(\GuzzleHttp\Exception\ClientException::class);
+    $this->expectException(\Cocolis\Api\Curl\UnauthorizedException::class);
 
     $client = Client::create(array(
       'app_id' => 'e0611906',
@@ -128,6 +128,8 @@ class ClientTest extends CocolisTest
 
   public function testTokenInvalid()
   {
+    $this->expectException(\Cocolis\Api\Curl\UnauthorizedException::class);
+
     $client = Client::create(array(
       'app_id' => 'e0611906',
       'password' => 'sebfie',

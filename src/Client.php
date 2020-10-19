@@ -169,6 +169,7 @@ class Client
   public function callAuthentificated($url, $method = 'GET', $body = array())
   {
     $client = $this->getHttpClient();
+
     if (self::getCurrentAuthInfo()) {
       foreach (self::getCurrentAuthInfo() as $key => $value) {
         $client->appendRequestHeader($key, $value);
