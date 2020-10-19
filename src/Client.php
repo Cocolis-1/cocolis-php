@@ -145,9 +145,7 @@ class Client
   {
     $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
 
-    if (isset($res->headers['access-token'])) {
-      return self::setCurrentAuthInfo($res->headers['access-token'], $res->headers['client'], $res->headers['expiry'], $res->headers['uid']);
-    }
+    return self::setCurrentAuthInfo($res->headers['access-token'], $res->headers['client'], $res->headers['expiry'], $res->headers['uid']);
   }
 
   public function validateToken($authinfo = array())
