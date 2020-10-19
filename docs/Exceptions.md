@@ -12,28 +12,21 @@ Lorsque les requêtes vers l'API de Cocolis renvoie des codes d'erreurs supérie
 
 ### Types d'exception
 
-#### UnauthorizedException
+#### \Cocolis\Api\Curl\UnauthorizedException
 
 Les exceptions **UnauthorizedException** signifies des erreurs d'authentification comme par exemple des erreurs 401 Unauthorized.
 
-Voici un exemple dans un environnement de test unitaire (PHPUnit) :
+Voici un exemple de code :
 
 ```php
-public function testSignInWithWrongCredentials()
-  {
-    $this->expectException(\Cocolis\Api\Curl\UnauthorizedException::class); // L'erreur est interceptée ici
-
-    $client = Client::create(array(
-      'app_id' => '****',
-      'password' => '****',
-      'live' => false
-    ));
-    $result = $client->signIn();
-    $this->assertEquals($result, false);
-  }
+try {
+    echo "Aucune erreur est survenue";
+} catch (\Cocolis\Api\Curl\UnauthorizedException::class $e) {
+    echo "Erreur d'authentification survenue";
+}
 ```
 
-#### NotFoundException
+#### \Cocolis\Api\Curl\NotFoundException
 
 Les exceptions **NotFoundException** signifies une erreur 404 Page Not Found du côté de l'API de Cocolis.
 
@@ -43,9 +36,9 @@ Un exemple de code dans une situation similaire que pour l'exception **Unauthori
 $this->expectException(\Cocolis\Api\Curl\NotFoundException::class);
 ```
 
-#### InternalErrorException
+#### \Cocolis\Api\Curl\InternalErrorException
 
-Enfin, les erreurs internes renvoyées par l'API de Cocolis au-delà du code d'erreur 500 génère des **InternalErrorException** dans la librairie PHP.
+Enfin, les erreurs internes renvoyées par l'API de Cocolis au-delà du code d'erreur 500 génèrent des **InternalErrorException** dans la librairie PHP.
 
 Un exemple de code dans une situation similaire que pour l'exception **NotFoundException** :
 
