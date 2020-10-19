@@ -381,25 +381,29 @@ class Curl
       var_dump($this->error);
     }
 
-    $responseCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-
-    if ($responseCode > 400 && $responseCode < 500) {
-      if ($responseCode == 404) {
-        throw new \Cocolis\Api\Curl\NotFoundException;
-      }
-      throw new \Cocolis\Api\Curl\UnauthorizedException;
-    }
-    if ($responseCode > 500) {
-      throw new \Cocolis\Api\Curl\InternalErrorException;
-    }
-
     curl_close($curl);
 
     $response = new CurlHttpResponse($this->info['http_code'], $this->responseHeaders, $httpbody);
 
-    if (!empty($this->error)) {
-      throw new \Exception($this->error);
+    $responseCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+    if ($responseCode > 400 && $responseCode < 500) {
+      if ($responseCode == 404) {
+        throw new \Cocolis\Api\Errors\NotFoundException($response->text());
+      }
+      if ($responseCode == 422) {
+        throw new \Cocolis\Api\Errors\UnprocessableEntityException($response->text());
+      }
+      throw new \Cocolis\Api\Errors\UnauthorizedException($response->text());
     }
+    if ($responseCode > 500) {
+      throw new \Cocolis\Api\Errors\InternalErrorException($response->text());
+    }
+
+    if (!empty($this->error)) {
+      throw new \Cocolis\Api\Errors\CocolisException($this->error);
+    }
+
     return $response;
   }
 
