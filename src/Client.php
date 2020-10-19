@@ -30,7 +30,7 @@ class Client
   const API_SANDBOX = "https://sandbox-api.cocolis.fr/api/v1/"; //  Test environment during your implementation
   const API_PROD = "https://api.cocolis.fr/api/v1/"; // Online environment (in production, be careful what you do with this)
 
-  const FRONTEND_PROD = "https://cocolis.fr/";
+  const FRONTEND_PROD = "https://www.cocolis.fr/";
   const FRONTEND_SANDBOX = "https://sandbox.cocolis.fr/";
 
   public static function isLive()

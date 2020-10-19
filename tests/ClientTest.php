@@ -38,7 +38,7 @@ class ClientTest extends CocolisTest
 
   public function testSignInWithWrongCredentials()
   {
-    $this->expectException(\Cocolis\Api\Curl\UnauthorizedException::class);
+    $this->expectException(\Cocolis\Api\Errors\UnauthorizedException::class);
 
     $client = Client::create(array(
       'app_id' => 'e0611906',
@@ -126,9 +126,11 @@ class ClientTest extends CocolisTest
     $client->validateToken();
   }
 
+
   public function testTokenInvalid()
   {
-    $this->expectException(\Cocolis\Api\Curl\UnauthorizedException::class);
+    $this->expectException(\Cocolis\Api\Errors\UnauthorizedException::class);
+    $this->expectExceptionMessage('{"success":false,"errors":["Mot de passe ou identifiant invalide."]}');
 
     $client = Client::create(array(
       'app_id' => 'e0611906',
