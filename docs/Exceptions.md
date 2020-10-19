@@ -8,7 +8,7 @@ Certaines requêtes vers l'API de Cocolis peuvent mener à des erreurs parfois i
 
 ### Détection des exceptions
 
-Lorsque les requêtes vers l'API de Cocolis renvoie des codes d'erreurs supérieurs à 400, la librairie PHP génère des **Exceptions**.
+Lorsque les requêtes vers l'API de Cocolis renvoient des codes d'erreurs supérieurs à 400, la librairie PHP génère des **Exceptions**.
 
 ### Types d'exception
 
@@ -19,10 +19,16 @@ Les exceptions **UnauthorizedException** surviennent lorsque l'authentification 
 Voici un exemple de code :
 
 ```php
+$client = Client::create(array(
+  'app_id' => 'mon_appid',
+  'password' => 'mon_mot_de_passe',
+  'live' => false // Permet de choisir l'environnement
+));
+
 try {
-    $webhookClient->get(6546545640)
+  $client->signIn();
 } catch (\Cocolis\Api\Curl\UnauthorizedException $e) {
-    echo "Erreur d'authentification survenue";
+  echo "Erreur d'authentification survenue";
 }
 ```
 
@@ -33,10 +39,16 @@ Les exceptions **NotFoundException** surviennent lorsque la route demandée est 
 Un exemple de code dans une situation similaire que pour l'exception **UnauthorizedException** :
 
 ``` php
+$client = Client::create(array(
+  'app_id' => 'mon_appid',
+  'password' => 'mon_mot_de_passe',
+  'live' => false // Permet de choisir l'environnement
+));
+
 try {
-    $webhookClient->get(6546545640)
+  $client->getWebhookClient()->get(6546545640)
 } catch (\Cocolis\Api\Curl\NotFoundException $e) {
-    echo "Erreur 404";
+  echo "Erreur 404";
 }
 ```
 
@@ -44,13 +56,21 @@ try {
 
 Enfin, les erreurs internes renvoyées par l'API de Cocolis au-delà du code d'erreur 500 génèrent des exceptions du type : **InternalErrorException**.
 
-Un exemple de code dans une situation similaire que pour l'exception **NotFoundException** :
+Cette erreur peut survenir si vous envoyez des mauvais paramètres par exemple :
+
 
 ``` php
+$client = Client::create(array(
+    'app_id' => 'mon_appid',
+    'password' => 'mon_mot_de_passe',
+    'live' => false // Permet de choisir l'environnement
+  ));
+$client->signIn();
+
 try {
-    $webhookClient->get(6546545640)
+  $client->getRideClient()->canMatch('Paris', 31400, 'Volume de 10m3');
 } catch (\Cocolis\Api\Curl\InternalErrorException $e) {
-    echo "Erreur interne à l'API";
+  echo "Erreur interne à l'API";
 }
 ```
 
