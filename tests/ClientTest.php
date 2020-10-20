@@ -58,10 +58,10 @@ class ClientTest extends CocolisTest
     ));
     $result = $client->signIn();
     $this->assertEquals(array(
-      'access-token' => 'nBfCK2mL3rp83hSjhUFLYg',
+      'Access-Token' => 'nBfCK2mL3rp83hSjhUFLYg',
       'client' => 'g5z8dF58MvI4t5zoQzX9xA',
-      'expiry' => '1604319132',
-      'uid' => 'e0611906'
+      'Expiry' => '1604319132',
+      'Uid' => 'e0611906'
     ), $result);
   }
 
@@ -78,10 +78,10 @@ class ClientTest extends CocolisTest
   public function testAuthInfo()
   {
     $this->assertEquals(array(
-      'access-token' => 'nBfCK2mL3rp83hSjhUFLYg',
+      'Access-Token' => 'nBfCK2mL3rp83hSjhUFLYg',
       'client' => 'g5z8dF58MvI4t5zoQzX9xA',
-      'expiry' => '1604319132',
-      'uid' => 'e0611906'
+      'Expiry' => '1604319132',
+      'Uid' => 'e0611906'
     ), Client::getCurrentAuthInfo());
   }
 
@@ -103,10 +103,10 @@ class ClientTest extends CocolisTest
       'live' => false
     ));
     $result = $client->validateToken(array(
-      'access-token' => 'nBfCK2mL3rp83hSjhUFLYg',
+      'Access-Token' => 'nBfCK2mL3rp83hSjhUFLYg',
       'client' => 'wFPP7k01OacAzC-tXni-fA',
-      'expiry' => '1604318220',
-      'uid' => 'e0611906'
+      'Expiry' => '1604318220',
+      'Uid' => 'e0611906'
     ));
     $this->assertEquals($result, true);
   }
@@ -139,7 +139,7 @@ class ClientTest extends CocolisTest
     ));
 
     // Invalid params
-    $result = $client->validateToken(["uid" => "e0611906", "access-token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "expiry" => "1590748027"]);
+    $result = $client->validateToken(["Uid" => "e0611906", "Access-Token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "Expiry" => "1590748027"]);
     $this->assertEquals($result, false);
   }
 

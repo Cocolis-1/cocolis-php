@@ -9,10 +9,10 @@
             Accept-Encoding: null
             User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
             Content-Type: application/json
-            access-token: eT00t6RMIeZRqDV0qH-9yw
-            client: mghSYiwe0EsUyP6qxi6ZIg
-            expiry: '1591008268'
-            uid: e0611906
+            Access-Token: eT00t6RMIeZRqDV0qH-9yw
+            Client: mghSYiwe0EsUyP6qxi6ZIg
+            Expiry: '1591008268'
+            Uid: e0611906
             Accept: null
         body: '[]'
     response:

@@ -23,11 +23,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: n-eXq6DUwK3GM85rRpceEA
+            Access-Token: n-eXq6DUwK3GM85rRpceEA
             token-type: Bearer
-            client: dnedxTZK4Hg0WB3OV74eUg
-            expiry: '1604320196'
-            uid: e0611906
+            Client: dnedxTZK4Hg0WB3OV74eUg
+            Expiry: '1604320196'
+            Uid: e0611906
             etag: 'W/"aaef50c5e1b58a07808b21a88eb7d9fc"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 64fe30c1-43e3-43d6-99d4-13f7bb741857
@@ -87,10 +87,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/applications/webhooks//3'
         headers:
             Host: sandbox-api.cocolis.fr
-            access-token: n-eXq6DUwK3GM85rRpceEA
-            client: dnedxTZK4Hg0WB3OV74eUg
-            expiry: '1604320196'
-            uid: e0611906
+            Access-Token: n-eXq6DUwK3GM85rRpceEA
+            Client: dnedxTZK4Hg0WB3OV74eUg
+            Expiry: '1604320196'
+            Uid: e0611906
     response:
         status:
             http_version: '2'
@@ -164,10 +164,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/applications/webhooks//9'
         headers:
             Host: sandbox-api.cocolis.fr
-            access-token: n-eXq6DUwK3GM85rRpceEA
-            client: dnedxTZK4Hg0WB3OV74eUg
-            expiry: '1604320196'
-            uid: e0611906
+            Access-Token: n-eXq6DUwK3GM85rRpceEA
+            Client: dnedxTZK4Hg0WB3OV74eUg
+            Expiry: '1604320196'
+            Uid: e0611906
     response:
         status:
             http_version: '2'
@@ -183,11 +183,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: n-eXq6DUwK3GM85rRpceEA
+            Access-Token: n-eXq6DUwK3GM85rRpceEA
             token-type: Bearer
-            client: dnedxTZK4Hg0WB3OV74eUg
-            expiry: '1604320196'
-            uid: e0611906
+            Client: dnedxTZK4Hg0WB3OV74eUg
+            Expiry: '1604320196'
+            Uid: e0611906
             etag: 'W/"25ec73bcb16212e58c53241ba6b8dddd"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 2beff695-5b36-46ce-a6f9-4a4cb9526e68
@@ -263,11 +263,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: XS7d4vEvlq6fx1cSZxGsZw
+            Access-Token: XS7d4vEvlq6fx1cSZxGsZw
             token-type: Bearer
-            client: mHUWV51B5LbDdSMJGS1ijg
-            expiry: '1604320753'
-            uid: e0611906
+            Client: mHUWV51B5LbDdSMJGS1ijg
+            Expiry: '1604320753'
+            Uid: e0611906
             etag: 'W/"feb0b9c9ea1a7cdaac1afdd29f40efde"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 8e16aa97-d717-41f9-a25c-74582a869b2e

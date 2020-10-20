@@ -51,10 +51,10 @@
             Accept-Encoding: null
             User-Agent: 'GuzzleHttp/Guzzle curl/7.70.0 PHP/7.3.18'
             Content-Type: application/json
-            access-token: kk5piR6uL90AOHA9UUTIkg
-            client: x_sxKlDIl-mbclCTE2ohkg
-            expiry: '1592336937'
-            uid: e0611906
+            Access-Token: kk5piR6uL90AOHA9UUTIkg
+            Client: x_sxKlDIl-mbclCTE2ohkg
+            Expiry: '1592336937'
+            Uid: e0611906
             Accept: null
         body: '[]'
     response:
@@ -111,11 +111,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: Bw2y0WPFdvml6il0_mHc4A
+            Access-Token: Bw2y0WPFdvml6il0_mHc4A
             token-type: Bearer
-            client: b9fi-hVA1gaW7dUOSnsS_Q
-            expiry: '1604319486'
-            uid: e0611906
+            Client: b9fi-hVA1gaW7dUOSnsS_Q
+            Expiry: '1604319486'
+            Uid: e0611906
             etag: 'W/"cd9133e51eb8a4111ee273fc2644e4d9"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: e2198bd9-124b-40cf-8574-a8be08de81c8
@@ -175,10 +175,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/rides/mine'
         headers:
             Host: sandbox-api.cocolis.fr
-            access-token: Bw2y0WPFdvml6il0_mHc4A
-            client: b9fi-hVA1gaW7dUOSnsS_Q
-            expiry: '1604319486'
-            uid: e0611906
+            Access-Token: Bw2y0WPFdvml6il0_mHc4A
+            Client: b9fi-hVA1gaW7dUOSnsS_Q
+            Expiry: '1604319486'
+            Uid: e0611906
     response:
         status:
             http_version: '2'
@@ -194,11 +194,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: Bw2y0WPFdvml6il0_mHc4A
+            Access-Token: Bw2y0WPFdvml6il0_mHc4A
             token-type: Bearer
-            client: b9fi-hVA1gaW7dUOSnsS_Q
-            expiry: '1604319486'
-            uid: e0611906
+            Client: b9fi-hVA1gaW7dUOSnsS_Q
+            Expiry: '1604319486'
+            Uid: e0611906
             etag: 'W/"4d02afaf1e19c9b10dd025fd83cdeef1"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 57dcf17a-9472-4528-8d87-66e75703b3d0
@@ -274,11 +274,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: c1SlR1iLxuJ7_CKvNFHB6w
+            Access-Token: c1SlR1iLxuJ7_CKvNFHB6w
             token-type: Bearer
-            client: qXl9YWHwcwRpljVB0AdqdQ
-            expiry: '1604320749'
-            uid: e0611906
+            Client: qXl9YWHwcwRpljVB0AdqdQ
+            Expiry: '1604320749'
+            Uid: e0611906
             etag: 'W/"8f07d8d568fe15cc86e8c4435f0af9bf"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 803ee557-da46-432b-b111-34c2656a7a26

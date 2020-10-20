@@ -23,11 +23,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: _ATAtxrUN5uOlxHa1u1HHg
+            Access-Token: _ATAtxrUN5uOlxHa1u1HHg
             token-type: Bearer
-            client: nPQC4V31aOrjidaqZglAww
-            expiry: '1604319134'
-            uid: e0611906
+            Client: nPQC4V31aOrjidaqZglAww
+            Expiry: '1604319134'
+            Uid: e0611906
             etag: 'W/"cac9ff829e9caba86460fe6e398b2396"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: dee257c6-88e9-4bf7-993c-9eaa4527a7b0
@@ -84,13 +84,13 @@
 -
     request:
         method: GET
-        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&access-token=_ATAtxrUN5uOlxHa1u1HHg&client=nPQC4V31aOrjidaqZglAww&expiry=1604319134&uid=e0611906'
+        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&Access-Token=_ATAtxrUN5uOlxHa1u1HHg&Client=nPQC4V31aOrjidaqZglAww&Expiry=1604319134&Uid=e0611906'
         headers:
             Host: sandbox-api.cocolis.fr
-            access-token: _ATAtxrUN5uOlxHa1u1HHg
-            client: nPQC4V31aOrjidaqZglAww
-            expiry: '1604319134'
-            uid: e0611906
+            Access-Token: _ATAtxrUN5uOlxHa1u1HHg
+            Client: nPQC4V31aOrjidaqZglAww
+            Expiry: '1604319134'
+            Uid: e0611906
     response:
         status:
             http_version: '2'
@@ -106,11 +106,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: _ATAtxrUN5uOlxHa1u1HHg
+            Access-Token: _ATAtxrUN5uOlxHa1u1HHg
             token-type: Bearer
-            client: nPQC4V31aOrjidaqZglAww
-            expiry: '1604319134'
-            uid: e0611906
+            Client: nPQC4V31aOrjidaqZglAww
+            Expiry: '1604319134'
+            Uid: e0611906
             etag: 'W/"17341dcfdd77cfc37bb03846070058be"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 3341a449-86b3-41de-bba2-221ec0903a24
@@ -127,7 +127,7 @@
             content-encoding: br
         body: '{"success":true,"data":{"id":1,"app_id":"e0611906","name":"Selency","description":null,"user_id":2,"created_at":"2020-04-20T18:15:12.542+02:00","updated_at":"2020-10-19T13:12:14.024+02:00","reserve_amount":0,"balance":3000000,"running_balance":1860839,"suffisant_balance?":true}}'
         curl_info:
-            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&access-token=_ATAtxrUN5uOlxHa1u1HHg&client=nPQC4V31aOrjidaqZglAww&expiry=1604319134&uid=e0611906'
+            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&Access-Token=_ATAtxrUN5uOlxHa1u1HHg&Client=nPQC4V31aOrjidaqZglAww&Expiry=1604319134&Uid=e0611906'
             content_type: 'application/json; charset=utf-8'
             http_code: 200
             header_size: 3805
@@ -186,11 +186,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: yND7G0jRhk4rkiC_C16EOg
+            Access-Token: yND7G0jRhk4rkiC_C16EOg
             token-type: Bearer
-            client: ykmqltg5yzg8c_KR4ykj-w
-            expiry: '1604320748'
-            uid: e0611906
+            Client: ykmqltg5yzg8c_KR4ykj-w
+            Expiry: '1604320748'
+            Uid: e0611906
             etag: 'W/"663dc1abc32fc165052116e988ee3ff9"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: d707e4dc-8d0f-45b1-acfd-a5e6481e94ee
@@ -247,7 +247,7 @@
 -
     request:
         method: GET
-        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&access-token=yND7G0jRhk4rkiC_C16EOg&client=ykmqltg5yzg8c_KR4ykj-w&expiry=1604320748&uid=e0611906'
+        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&Access-Token=yND7G0jRhk4rkiC_C16EOg&Client=ykmqltg5yzg8c_KR4ykj-w&Expiry=1604320748&Uid=e0611906'
         headers:
             Host: sandbox-api.cocolis.fr
     response:
@@ -265,11 +265,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: yND7G0jRhk4rkiC_C16EOg
+            Access-Token: yND7G0jRhk4rkiC_C16EOg
             token-type: Bearer
-            client: ykmqltg5yzg8c_KR4ykj-w
-            expiry: '1604320748'
-            uid: e0611906
+            Client: ykmqltg5yzg8c_KR4ykj-w
+            Expiry: '1604320748'
+            Uid: e0611906
             etag: 'W/"63c52df97059f6c673c9fd8abb9c2fcd"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 40fdc4d5-dea7-41f8-b90c-f1e3a0b93782
@@ -286,7 +286,7 @@
             content-encoding: br
         body: '{"success":true,"data":{"id":1,"app_id":"e0611906","name":"Selency","description":null,"user_id":2,"created_at":"2020-04-20T18:15:12.542+02:00","updated_at":"2020-10-19T13:39:08.730+02:00","reserve_amount":0,"balance":3000000,"running_balance":1974839,"suffisant_balance?":true}}'
         curl_info:
-            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&access-token=yND7G0jRhk4rkiC_C16EOg&client=ykmqltg5yzg8c_KR4ykj-w&expiry=1604320748&uid=e0611906'
+            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&Access-Token=yND7G0jRhk4rkiC_C16EOg&Client=ykmqltg5yzg8c_KR4ykj-w&Expiry=1604320748&Uid=e0611906'
             content_type: 'application/json; charset=utf-8'
             http_code: 200
             header_size: 3815

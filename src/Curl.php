@@ -688,7 +688,7 @@ class curl_cache
   /**
    * Remove cache files
    *
-   * @param int $expire The number os seconds before expiry
+   * @param int $expire The number os seconds before Expiry
    */
   public function cleanup($expire)
   {

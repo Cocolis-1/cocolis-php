@@ -96,9 +96,9 @@ class Client
     return self::$_auth;
   }
 
-  public static function setCurrentAuthInfo($token, $client, $expiry, $uid)
+  public static function setCurrentAuthInfo($token, $client, $Expiry, $Uid)
   {
-    self::$_auth = array('Access-Token' => $token, 'Client' => $client, 'Expiry' => $expiry, 'Uid' => $uid);
+    self::$_auth = array('Access-Token' => $token, 'Client' => $client, 'Expiry' => $Expiry, 'Uid' => $Uid);
     return self::$_auth;
   }
 

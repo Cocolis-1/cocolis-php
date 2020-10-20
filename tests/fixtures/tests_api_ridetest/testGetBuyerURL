@@ -9,10 +9,10 @@
             Accept-Encoding: null
             User-Agent: 'GuzzleHttp/Guzzle curl/7.57.0 PHP/7.3.7'
             Content-Type: application/json
-            access-token: eT00t6RMIeZRqDV0qH-9yw
-            client: mghSYiwe0EsUyP6qxi6ZIg
-            expiry: '1591008268'
-            uid: e0611906
+            Access-Token: eT00t6RMIeZRqDV0qH-9yw
+            Client: mghSYiwe0EsUyP6qxi6ZIg
+            Expiry: '1591008268'
+            Uid: e0611906
             Accept: null
         body: '[]'
     response:
@@ -46,10 +46,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/rides//1'
         headers:
             Host: sandbox-api.cocolis.fr
-            access-token: fS1zFsneqetmmWC-gvm64g
-            client: oFjgBoX-NacILoPo-Kz81Q
-            expiry: '1604319868'
-            uid: e0611906
+            Access-Token: fS1zFsneqetmmWC-gvm64g
+            Client: oFjgBoX-NacILoPo-Kz81Q
+            Expiry: '1604319868'
+            Uid: e0611906
     response:
         status:
             http_version: '2'
@@ -65,11 +65,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: fS1zFsneqetmmWC-gvm64g
+            Access-Token: fS1zFsneqetmmWC-gvm64g
             token-type: Bearer
-            client: oFjgBoX-NacILoPo-Kz81Q
-            expiry: '1604319868'
-            uid: e0611906
+            Client: oFjgBoX-NacILoPo-Kz81Q
+            Expiry: '1604319868'
+            Uid: e0611906
             etag: 'W/"70bc4e5063835240de1007acccbc1acf"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 42deab31-d54f-49dd-a00f-22abfb388b00
@@ -279,10 +279,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/rides//1'
         headers:
             Host: sandbox-api.cocolis.fr
-            access-token: k535AMv4LKjsKeqeULKhhw
-            client: 5Qlozec04hJorzuGunGvwA
-            expiry: '1604321337'
-            uid: e0611906
+            Access-Token: k535AMv4LKjsKeqeULKhhw
+            Client: 5Qlozec04hJorzuGunGvwA
+            Expiry: '1604321337'
+            Uid: e0611906
     response:
         status:
             http_version: '2'
@@ -298,11 +298,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: k535AMv4LKjsKeqeULKhhw
+            Access-Token: k535AMv4LKjsKeqeULKhhw
             token-type: Bearer
-            client: 5Qlozec04hJorzuGunGvwA
-            expiry: '1604321337'
-            uid: e0611906
+            Client: 5Qlozec04hJorzuGunGvwA
+            Expiry: '1604321337'
+            Uid: e0611906
             etag: 'W/"70bc4e5063835240de1007acccbc1acf"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 0cb9eb34-1274-4fd7-81f4-8ed94714467d
@@ -362,10 +362,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/rides//1'
         headers:
             Host: sandbox-api.cocolis.fr
-            access-token: Bip3N8OlkmtqL5ojiOOQ6Q
-            client: XhInmD60O8cJLW5ljC4ePg
-            expiry: '1604321623'
-            uid: e0611906
+            Access-Token: Bip3N8OlkmtqL5ojiOOQ6Q
+            Client: XhInmD60O8cJLW5ljC4ePg
+            Expiry: '1604321623'
+            Uid: e0611906
     response:
         status:
             http_version: '2'
@@ -381,11 +381,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: Bip3N8OlkmtqL5ojiOOQ6Q
+            Access-Token: Bip3N8OlkmtqL5ojiOOQ6Q
             token-type: Bearer
-            client: XhInmD60O8cJLW5ljC4ePg
-            expiry: '1604321623'
-            uid: e0611906
+            Client: XhInmD60O8cJLW5ljC4ePg
+            Expiry: '1604321623'
+            Uid: e0611906
             etag: 'W/"70bc4e5063835240de1007acccbc1acf"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 57b29161-9a83-4c9f-92fc-ff541ec4afd5
@@ -445,10 +445,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/rides//1'
         headers:
             Host: sandbox-api.cocolis.fr
-            access-token: ohkhfbCZzxfCrTlzzqWmEw
-            client: S89BjvJRIF2HlPCd8p44gw
-            expiry: '1604321670'
-            uid: e0611906
+            Access-Token: ohkhfbCZzxfCrTlzzqWmEw
+            Client: S89BjvJRIF2HlPCd8p44gw
+            Expiry: '1604321670'
+            Uid: e0611906
     response:
         status:
             http_version: '2'
@@ -464,11 +464,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: ohkhfbCZzxfCrTlzzqWmEw
+            Access-Token: ohkhfbCZzxfCrTlzzqWmEw
             token-type: Bearer
-            client: S89BjvJRIF2HlPCd8p44gw
-            expiry: '1604321670'
-            uid: e0611906
+            Client: S89BjvJRIF2HlPCd8p44gw
+            Expiry: '1604321670'
+            Uid: e0611906
             etag: 'W/"70bc4e5063835240de1007acccbc1acf"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 681e7f47-c8f8-4262-b9cb-72dcbfa9712e

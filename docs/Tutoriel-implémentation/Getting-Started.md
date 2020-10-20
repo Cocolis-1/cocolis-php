@@ -43,7 +43,7 @@ Si vous obtenez une réponse avec un code `401`, cela signifie que votre token a
 Pour prévenir de ce problème vous pouvez vérifier la validité des tokens :
 
 ```php
-$authinfo = ["uid" => "e0611906", "access-token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "expiry" => "1590748027"]
+$authinfo = ["Uid" => "e0611906", "Access-Token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "Expiry" => "1590748027"]
 $client->validateToken($authinfo);
 ```
 

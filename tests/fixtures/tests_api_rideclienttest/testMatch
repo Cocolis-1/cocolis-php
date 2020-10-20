@@ -51,10 +51,10 @@
             Accept-Encoding: null
             User-Agent: 'GuzzleHttp/Guzzle curl/7.70.0 PHP/7.3.18'
             Content-Type: application/json
-            access-token: avyMAbINZN964E-eS3KLaw
-            client: iy7L1HAOFi9PbhofiIkWog
-            expiry: '1592337484'
-            uid: e0611906
+            Access-Token: avyMAbINZN964E-eS3KLaw
+            Client: iy7L1HAOFi9PbhofiIkWog
+            Expiry: '1592337484'
+            Uid: e0611906
             Accept: null
         body: '{"from":{"postal_code":"75015"},"to":{"postal_code":"31400"},"volume":10,"content_value":150100}'
     response:
@@ -111,11 +111,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: emUXP57Bhy3KZrXfh__jOg
+            Access-Token: emUXP57Bhy3KZrXfh__jOg
             token-type: Bearer
-            client: 6kTkpHPQiWWKTmxfJl4G2A
-            expiry: '1604319488'
-            uid: e0611906
+            Client: 6kTkpHPQiWWKTmxfJl4G2A
+            Expiry: '1604319488'
+            Uid: e0611906
             etag: 'W/"0d86f5f5d6e86b4f6d7d4ff54ebfef24"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 0625c808-5491-465a-a466-c5ed05115494
@@ -175,10 +175,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/rides/can_match'
         headers:
             Host: sandbox-api.cocolis.fr
-            access-token: emUXP57Bhy3KZrXfh__jOg
-            client: 6kTkpHPQiWWKTmxfJl4G2A
-            expiry: '1604319488'
-            uid: e0611906
+            Access-Token: emUXP57Bhy3KZrXfh__jOg
+            Client: 6kTkpHPQiWWKTmxfJl4G2A
+            Expiry: '1604319488'
+            Uid: e0611906
         body: 'from%5Bpostal_code%5D=75015&to%5Bpostal_code%5D=31400&volume=10&content_value=150100'
     response:
         status:
@@ -195,11 +195,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: emUXP57Bhy3KZrXfh__jOg
+            Access-Token: emUXP57Bhy3KZrXfh__jOg
             token-type: Bearer
-            client: 6kTkpHPQiWWKTmxfJl4G2A
-            expiry: '1604319488'
-            uid: e0611906
+            Client: 6kTkpHPQiWWKTmxfJl4G2A
+            Expiry: '1604319488'
+            Uid: e0611906
             etag: 'W/"3f2ea96666a2e61ef2fdf3c5820910cf"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: ca99444f-d8b5-4b0f-98ba-54e4730b3ec6
@@ -275,11 +275,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            access-token: 56UHzQlg48m1Ha5zNWK-Nw
+            Access-Token: 56UHzQlg48m1Ha5zNWK-Nw
             token-type: Bearer
-            client: j8Y2hRliiHRICCM1CAF1Ag
-            expiry: '1604320750'
-            uid: e0611906
+            Client: j8Y2hRliiHRICCM1CAF1Ag
+            Expiry: '1604320750'
+            Uid: e0611906
             etag: 'W/"f5130d3e4d7bab767cb236b501bcab35"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 3f433d3d-cc01-4b23-ab03-bbf0041cabb1

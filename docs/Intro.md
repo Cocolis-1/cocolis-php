@@ -66,7 +66,7 @@ Dans cet exemple, `app_auth/validate_token` est équivalent à faire un appel ve
 A chaque début de communication avec l'API, vous pouvez vérifier si vos tokens sauvés et précedemment générés lors du `$client->signIn()` sont toujours valides. Pour cela, vous devez faire l'appel suivant :
 
 ```php
-$authinfo = ["uid" => "e0611906", "access-token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "expiry" => "1590748027"]
+$authinfo = ["Uid" => "e0611906", "Access-Token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "Expiry" => "1590748027"]
 $client->validateToken($authinfo);
 ```
 
