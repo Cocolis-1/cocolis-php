@@ -104,7 +104,7 @@ class ClientTest extends CocolisTest
     ));
     $result = $client->validateToken(array(
       'Access-Token' => 'nBfCK2mL3rp83hSjhUFLYg',
-      'client' => 'wFPP7k01OacAzC-tXni-fA',
+      'Client' => 'wFPP7k01OacAzC-tXni-fA',
       'Expiry' => '1604318220',
       'Uid' => 'e0611906'
     ));
