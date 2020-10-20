@@ -381,8 +381,6 @@ class Curl
       var_dump($this->error);
     }
 
-    curl_close($curl);
-
     $response = new CurlHttpResponse($this->info['http_code'], $this->responseHeaders, $httpbody);
 
     $responseCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
@@ -403,6 +401,8 @@ class Curl
     if (!empty($this->error)) {
       throw new \Cocolis\Api\Errors\CocolisException($this->error);
     }
+
+    curl_close($curl);
 
     return $response;
   }

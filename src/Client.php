@@ -98,7 +98,7 @@ class Client
 
   public static function setCurrentAuthInfo($token, $client, $expiry, $uid)
   {
-    self::$_auth = array('access-token' => $token, 'client' => $client, 'expiry' => $expiry, 'uid' => $uid);
+    self::$_auth = array('Access-Token' => $token, 'Client' => $client, 'Expiry' => $expiry, 'Uid' => $uid);
     return self::$_auth;
   }
 
@@ -145,7 +145,7 @@ class Client
   {
     $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
 
-    return self::setCurrentAuthInfo($res->headers['access-token'], $res->headers['client'], $res->headers['expiry'], $res->headers['uid']);
+    return self::setCurrentAuthInfo($res->headers['Access-Token'], $res->headers['Client'], $res->headers['Expiry'], $res->headers['Uid']);
   }
 
   public function validateToken($authinfo = array())
