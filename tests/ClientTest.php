@@ -59,7 +59,7 @@ class ClientTest extends CocolisTest
     $result = $client->signIn();
     $this->assertEquals(array(
       'Access-Token' => 'nBfCK2mL3rp83hSjhUFLYg',
-      'client' => 'g5z8dF58MvI4t5zoQzX9xA',
+      'Client' => 'g5z8dF58MvI4t5zoQzX9xA',
       'Expiry' => '1604319132',
       'Uid' => 'e0611906'
     ), $result);
@@ -79,7 +79,7 @@ class ClientTest extends CocolisTest
   {
     $this->assertEquals(array(
       'Access-Token' => 'nBfCK2mL3rp83hSjhUFLYg',
-      'client' => 'g5z8dF58MvI4t5zoQzX9xA',
+      'Client' => 'g5z8dF58MvI4t5zoQzX9xA',
       'Expiry' => '1604319132',
       'Uid' => 'e0611906'
     ), Client::getCurrentAuthInfo());
