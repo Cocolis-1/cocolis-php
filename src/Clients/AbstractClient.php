@@ -75,6 +75,11 @@ abstract class AbstractClient
 
   public function update(array $params, string $id)
   {
+    if ($this->_root_key) {
+      $paramsTemp = array();
+      $paramsTemp[$this->_root_key] = $params;
+      $params = $paramsTemp;
+    }
     return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/') . $id, 'PUT', $params)->text(), true));
   }
 
