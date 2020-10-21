@@ -19,12 +19,12 @@ class WebhookClientTest extends CocolisTest
   public function testUpdate()
   {
     $client = $this->authenticatedClient();
-    $webhook = $client->getWebhookClient()->update(['event' => 'ride_published', 'url' => 'https://www.test.com/ride_webhook', 'active' => true], '9');
+    $webhook = $client->getWebhookClient()->update(['url' => 'https://www.test.com/ride_webhook', 'active' => true], '9');
     $this->assertNotEmpty($webhook);
     $this->assertInstanceOf('Cocolis\Api\Models\Webhook', $webhook);
     $this->assertNotNull($webhook->id);
     $this->assertEquals($webhook->id, 9);
-    $this->assertEquals($webhook->event, 'ride_published');
+    $this->assertEquals($webhook->event, 'offer_completed');
   }
 
   public function testGetAll()

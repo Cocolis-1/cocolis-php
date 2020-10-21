@@ -125,11 +125,20 @@ class Curl
       $curlOptions['CURLOPT_INFILESIZE'] = $size;
       $curlOptions['CURLOPT_INFILE']     = $fp;
     }
-    $curlOptions['CURLOPT_PUT']        = 1;
+    // $curlOptions['CURLOPT_PUT']  = 1;
+    $curlOptions['CURLOPT_CUSTOMREQUEST']  = 'PUT';
+
+    if (is_array($params)) {
+      $params = http_build_query($params);
+    }
+    $curlOptions['CURLOPT_POSTFIELDS']  = $params;
+
     if (!isset($this->curlOptions['CURLOPT_USERPWD'])) {
       $curlOptions['CURLOPT_USERPWD'] = self::DEFAULT_USERPWD;
     }
+
     $ret = $this->request($url, $curlOptions);
+
     if (isset($params['file'])) {
       fclose($fp);
     }
