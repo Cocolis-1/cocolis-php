@@ -518,7 +518,7 @@ class Curl
     //$this->count++;
     if (strlen($header) > 2) {
       list($key, $value) = explode(" ", rtrim($header, "\r\n"), 2);
-      $key = rtrim($key, ':');
+      $key = strtolower(rtrim($key, ':'));
       if (!empty($this->responseHeaders[$key])) {
         if (is_array($this->responseHeaders[$key])) {
           $this->responseHeaders[$key][] = $value;

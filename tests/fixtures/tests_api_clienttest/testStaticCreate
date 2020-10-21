@@ -23,11 +23,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: nBfCK2mL3rp83hSjhUFLYg
+            access-token: nBfCK2mL3rp83hSjhUFLYg
             token-type: Bearer
-            Client: g5z8dF58MvI4t5zoQzX9xA
-            Expiry: '1604319132'
-            Uid: e0611906
+            client: g5z8dF58MvI4t5zoQzX9xA
+            expiry: '1604319132'
+            uid: e0611906
             etag: 'W/"a96fd07b723d629080db83baee9d4f0f"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 73a50a36-9b8c-4040-8e68-91834ee44295
@@ -103,11 +103,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: 5FclRo1OJZEdHhFgJ4184Q
+            access-token: 5FclRo1OJZEdHhFgJ4184Q
             token-type: Bearer
-            Client: k-_IzPSCVZQ2LZ-5wLq1pg
-            Expiry: '1604320747'
-            Uid: e0611906
+            client: k-_IzPSCVZQ2LZ-5wLq1pg
+            expiry: '1604320747'
+            uid: e0611906
             etag: 'W/"b0fe64d14c4522ec768dab0158519566"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 29143115-ecc1-4cf9-b38a-ee8f7d3ea5ad

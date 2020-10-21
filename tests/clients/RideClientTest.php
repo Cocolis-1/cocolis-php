@@ -21,7 +21,7 @@ class RideClientTest extends CocolisTest
     $result = $client->getRideClient()->canMatch(75015, 31400, 10, 150100);
     $this->assertNotEmpty($result);
     $this->assertInstanceOf('stdClass', $result);
-    $this->assertEquals(97500, $result->estimated_prices->regular);
+    $this->assertEquals(95500, $result->estimated_prices->regular);
   }
 
   public function testCreate()

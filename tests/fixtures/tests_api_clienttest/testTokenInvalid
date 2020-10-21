@@ -2,7 +2,7 @@
 -
     request:
         method: GET
-        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&Uid=e0611906&Access-Token=thisisnotavalidtoken&Client=HLSmEW1TIDqsSMiwuKjnQg&Expiry=1590748027'
+        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&uid=e0611906&access-token=thisisnotavalidtoken&client=HLSmEW1TIDqsSMiwuKjnQg&Expiry=1590748027'
         headers:
             Host: sandbox-api.cocolis.fr
             User-Agent: cURL
@@ -36,7 +36,7 @@
             cf-ray: 5e4a10141afcee85-CDG
         body: '{"success":false,"errors":["Mot de passe ou identifiant invalide."]}'
         curl_info:
-            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&Uid=e0611906&Access-Token=thisisnotavalidtoken&Client=HLSmEW1TIDqsSMiwuKjnQg&Expiry=1590748027'
+            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&uid=e0611906&access-token=thisisnotavalidtoken&client=HLSmEW1TIDqsSMiwuKjnQg&Expiry=1590748027'
             content_type: 'application/json; charset=utf-8'
             http_code: 401
             header_size: 1961
@@ -76,7 +76,7 @@
 -
     request:
         method: GET
-        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&Uid=e0611906&Access-Token=thisisnotavalidtoken&Client=HLSmEW1TIDqsSMiwuKjnQg&Expiry=1590748027'
+        url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&uid=e0611906&access-token=thisisnotavalidtoken&client=HLSmEW1TIDqsSMiwuKjnQg&Expiry=1590748027'
         headers:
             Host: sandbox-api.cocolis.fr
     response:
@@ -108,7 +108,7 @@
             cf-ray: 5e4a377febc132c8-CDG
         body: '{"success":false,"errors":["Mot de passe ou identifiant invalide."]}'
         curl_info:
-            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&Uid=e0611906&Access-Token=thisisnotavalidtoken&Client=HLSmEW1TIDqsSMiwuKjnQg&Expiry=1590748027'
+            url: 'https://sandbox-api.cocolis.fr/api/v1/app_auth/validate_token?token-type=Bearer&uid=e0611906&access-token=thisisnotavalidtoken&client=HLSmEW1TIDqsSMiwuKjnQg&Expiry=1590748027'
             content_type: 'application/json; charset=utf-8'
             http_code: 401
             header_size: 1955

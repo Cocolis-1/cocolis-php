@@ -23,11 +23,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: U0tNsHsV3dtR_NBEUnF52w
+            access-token: U0tNsHsV3dtR_NBEUnF52w
             token-type: Bearer
-            Client: AeSGKWN8QqsGJsVuBvm0vw
-            Expiry: '1604321577'
-            Uid: e0611906
+            client: AeSGKWN8QqsGJsVuBvm0vw
+            expiry: '1604321577'
+            uid: e0611906
             etag: 'W/"372ae795f17b900505619fbd46e3345f"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 065cf521-6dea-4db2-80cf-e8629b622aac
@@ -87,10 +87,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/applications/webhooks/'
         headers:
             Host: sandbox-api.cocolis.fr
-            Access-Token: U0tNsHsV3dtR_NBEUnF52w
-            Client: AeSGKWN8QqsGJsVuBvm0vw
-            Expiry: '1604321577'
-            Uid: e0611906
+            access-token: U0tNsHsV3dtR_NBEUnF52w
+            client: AeSGKWN8QqsGJsVuBvm0vw
+            expiry: '1604321577'
+            uid: e0611906
         body: 'webhook%5Bevent%5D=ride_published&webhook%5Burl%5D=https%3A%2F%2Fwww.test.com%2Fride_webhook&webhook%5Bactive%5D=1'
     response:
         status:
@@ -107,11 +107,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: U0tNsHsV3dtR_NBEUnF52w
+            access-token: U0tNsHsV3dtR_NBEUnF52w
             token-type: Bearer
-            Client: AeSGKWN8QqsGJsVuBvm0vw
-            Expiry: '1604321577'
-            Uid: e0611906
+            client: AeSGKWN8QqsGJsVuBvm0vw
+            expiry: '1604321577'
+            uid: e0611906
             etag: 'W/"e8176c068c7e5cf5f3ea7122cb71715c"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 429f96e2-319d-4587-9154-daf750af7ad6

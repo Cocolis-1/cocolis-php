@@ -23,11 +23,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: LQq5Ot-deHpnEGsTV24Rfw
+            access-token: LQq5Ot-deHpnEGsTV24Rfw
             token-type: Bearer
-            Client: gzuOowOCAzIlzq9VbDwqXw
-            Expiry: '1604320152'
-            Uid: e0611906
+            client: gzuOowOCAzIlzq9VbDwqXw
+            expiry: '1604320152'
+            uid: e0611906
             etag: 'W/"1ae09310bd67d30dfbd429bca2a9ab7c"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: fd259ae3-8761-4592-b40a-46e390a7be52
@@ -87,10 +87,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/applications/webhooks/'
         headers:
             Host: sandbox-api.cocolis.fr
-            Access-Token: LQq5Ot-deHpnEGsTV24Rfw
-            Client: gzuOowOCAzIlzq9VbDwqXw
-            Expiry: '1604320152'
-            Uid: e0611906
+            access-token: LQq5Ot-deHpnEGsTV24Rfw
+            client: gzuOowOCAzIlzq9VbDwqXw
+            expiry: '1604320152'
+            uid: e0611906
     response:
         status:
             http_version: '2'
@@ -106,11 +106,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: LQq5Ot-deHpnEGsTV24Rfw
+            access-token: LQq5Ot-deHpnEGsTV24Rfw
             token-type: Bearer
-            Client: gzuOowOCAzIlzq9VbDwqXw
-            Expiry: '1604320152'
-            Uid: e0611906
+            client: gzuOowOCAzIlzq9VbDwqXw
+            expiry: '1604320152'
+            uid: e0611906
             etag: 'W/"5c9f4b092f2305bc4ede79054d2a127d"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 3bb70e05-eb91-47fd-b949-754334832253
@@ -186,11 +186,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: xFeQxr-AOIqiQz1sDF6q-g
+            access-token: xFeQxr-AOIqiQz1sDF6q-g
             token-type: Bearer
-            Client: _c_fXN-J8yAHLLZMqWEoVg
-            Expiry: '1604320753'
-            Uid: e0611906
+            client: _c_fXN-J8yAHLLZMqWEoVg
+            expiry: '1604320753'
+            uid: e0611906
             etag: 'W/"057286b202fa7dd134da990004cf692b"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 16ad2975-1e9a-4a72-a324-152ca307239d

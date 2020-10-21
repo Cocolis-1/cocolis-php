@@ -27,11 +27,11 @@
             X-Permitted-Cross-Domain-Policies: none
             Referrer-Policy: strict-origin-when-cross-origin
             Content-Type: 'application/json; charset=utf-8'
-            Access-Token: kk5piR6uL90AOHA9UUTIkg
+            access-token: kk5piR6uL90AOHA9UUTIkg
             Token-Type: Bearer
-            Client: x_sxKlDIl-mbclCTE2ohkg
-            Expiry: '1592336937'
-            Uid: e0611906
+            client: x_sxKlDIl-mbclCTE2ohkg
+            expiry: '1592336937'
+            uid: e0611906
             Set-Cookie: '_session_id=eMhfaIoicyMO6kZS3SmqNyC8QcDTGlSEkJ2zkW5PXlmC9inj6URZZU8YVNVwSUCa2i2yxrpvQVwQb3w2diByWR7oX7KVjBq%2FXy0RbX9bVAAKQT2%2BzFz0ks80GM1kZok954A0GUzSgciS35EVATpYlc0Lje0LbJYF8VxOJfIvtILUUK8%3D--tdx9t3de3wuinwVe--HpOnR9vapVyXe73iqk36OA%3D%3D; path=/; HttpOnly; secure, _session_id=eMhfaIoicyMO6kZS3SmqNyC8QcDTGlSEkJ2zkW5PXlmC9inj6URZZU8YVNVwSUCa2i2yxrpvQVwQb3w2diByWR7oX7KVjBq%2FXy0RbX9bVAAKQT2%2BzFz0ks80GM1kZok954A0GUzSgciS35EVATpYlc0Lje0LbJYF8VxOJfIvtILUUK8%3D--tdx9t3de3wuinwVe--HpOnR9vapVyXe73iqk36OA%3D%3D; path=/; HttpOnly; secure, _backend_session=j1AZtQTIBOh0FIrTivAhjypXgV5b%2FZT52VaSoj29l5pRp4uPShqk6mHf0incRSKUb5yi3WITESl6owbkcWSLq6OFrlpvdtd4wSS5kY6K%2FDdYRCyPIfX3QIF8M8O3rFEMzhVb8AvsfCY%2FKK3Yjr8FOrWU9d4s4cgc2dQz1aydPYvDtRbRxcLzXw%3D%3D--gbNlTkGIci%2FGRvDG--ZD57ejtMl%2F820tGBAW1r5Q%3D%3D; path=/; HttpOnly; secure'
             Etag: 'W/"f966522ce8089fad0a78f29d268d25d0"'
             Cache-Control: 'max-age=0, private, must-revalidate'
@@ -51,10 +51,10 @@
             Accept-Encoding: null
             User-Agent: 'GuzzleHttp/Guzzle curl/7.70.0 PHP/7.3.18'
             Content-Type: application/json
-            Access-Token: kk5piR6uL90AOHA9UUTIkg
-            Client: x_sxKlDIl-mbclCTE2ohkg
-            Expiry: '1592336937'
-            Uid: e0611906
+            access-token: kk5piR6uL90AOHA9UUTIkg
+            client: x_sxKlDIl-mbclCTE2ohkg
+            expiry: '1592336937'
+            uid: e0611906
             Accept: null
         body: '[]'
     response:
@@ -73,11 +73,11 @@
             X-Permitted-Cross-Domain-Policies: none
             Referrer-Policy: strict-origin-when-cross-origin
             Content-Type: 'application/json; charset=utf-8'
-            Access-Token: kk5piR6uL90AOHA9UUTIkg
+            access-token: kk5piR6uL90AOHA9UUTIkg
             Token-Type: Bearer
-            Client: x_sxKlDIl-mbclCTE2ohkg
-            Expiry: '1592336937'
-            Uid: e0611906
+            client: x_sxKlDIl-mbclCTE2ohkg
+            expiry: '1592336937'
+            uid: e0611906
             Set-Cookie: '_session_id=wDa72ZiGaxRb1rM5bQsvPWjqVtE5E6AKHvsLTCJBzA1qt6eRmKn1PyLAk6ONmEcJaSenqGpUdk%2F%2F02MolXgzAPOt%2BUzYy%2FAiLAuNjzJiBN%2F%2FMdN4e5ipm4XRC32f0DSOp%2Fgru7DU49vGSw3BgSKUPIFaIIggSa0PBf8r%2FXvToqtR2PG8%2Fm2dicZMJb0OBm6qvQtAzNSf%2Fql7KnD%2FqEwJV3X7Ii90uKKwS3Of6onRVEGPbSmrGwjPKPE%2FpS1i8lW%2B3uQXFrMeTnD1pYEv4x%2BnbhfCB1h%2Bj9n%2F9zHn1gPUsO0w0YF5FCsEsoXC849nN8qHG%2Bi8idSOGnAakIM1XK67VLUpThgOlgtkW8de1tt9cLhpmdZEiRqDdX5bAFmN54GXy0JDMedRa52%2BYda5sAuHu0X174%2FodRK1zgf3QKuywcdElwrk%2FSOSr7mH2liPpyIrBBLJDlDD2xaTetEtzDG9NnWA34JTDAod8OF0GqvnwXpzVOozZGfW701Z8vMfDbaILc1G3kz2JijXFUcOAENYYETKHVnxIgo0nCdyBo70hGKEwgliD9rezYB%2BU0x0t%2FWjM4AzsFKDopYgE89rJFqLSf%2BvR%2FveY94UuQcxNn4blOVq0rYTJ5SyFbMWdiGRg1BmY%2BA7sukzAqZxufd1UFCoFk9uTrRdOKE3lFgpN6GzTm46brY%3D--4vs2KeaS17A%2FjR1A--Psp3BdZNj8t8f4GBAhAaJA%3D%3D; path=/; HttpOnly; secure, _session_id=wDa72ZiGaxRb1rM5bQsvPWjqVtE5E6AKHvsLTCJBzA1qt6eRmKn1PyLAk6ONmEcJaSenqGpUdk%2F%2F02MolXgzAPOt%2BUzYy%2FAiLAuNjzJiBN%2F%2FMdN4e5ipm4XRC32f0DSOp%2Fgru7DU49vGSw3BgSKUPIFaIIggSa0PBf8r%2FXvToqtR2PG8%2Fm2dicZMJb0OBm6qvQtAzNSf%2Fql7KnD%2FqEwJV3X7Ii90uKKwS3Of6onRVEGPbSmrGwjPKPE%2FpS1i8lW%2B3uQXFrMeTnD1pYEv4x%2BnbhfCB1h%2Bj9n%2F9zHn1gPUsO0w0YF5FCsEsoXC849nN8qHG%2Bi8idSOGnAakIM1XK67VLUpThgOlgtkW8de1tt9cLhpmdZEiRqDdX5bAFmN54GXy0JDMedRa52%2BYda5sAuHu0X174%2FodRK1zgf3QKuywcdElwrk%2FSOSr7mH2liPpyIrBBLJDlDD2xaTetEtzDG9NnWA34JTDAod8OF0GqvnwXpzVOozZGfW701Z8vMfDbaILc1G3kz2JijXFUcOAENYYETKHVnxIgo0nCdyBo70hGKEwgliD9rezYB%2BU0x0t%2FWjM4AzsFKDopYgE89rJFqLSf%2BvR%2FveY94UuQcxNn4blOVq0rYTJ5SyFbMWdiGRg1BmY%2BA7sukzAqZxufd1UFCoFk9uTrRdOKE3lFgpN6GzTm46brY%3D--4vs2KeaS17A%2FjR1A--Psp3BdZNj8t8f4GBAhAaJA%3D%3D; path=/; HttpOnly; secure, _backend_session=9GIUSE4WSQHNwd722Suqtn5jUICEZMXC0WbGIu6VrJZkxg8%2F7D4IqyeDcrX55neiIMnscGGUuvZKDuHo4ht1FcTFNS0nAtVuJ5w8UW23AnunMFebF8D7yZA9F8Siw8meo8QapbbkKtRp3ASZ0YDr55jhXW5mUXguj8FtoYuOQjizd1aZHH2ZaUyyL7UmW9yeIDc8pOzo8wjUi11I2DH3%2BsU10YcYDkCRLHTNs0xuHK6w8dddGv%2F3HK8LZCyN7tu7o24G3cOuUwhPx7YilsoD5%2Bodpu2AeCO%2FOJMWSW%2BLDW1u%2BFe5dwr2Ltk2rdJBZJ9e6T1XedoaM128zztvj5eMWo1cV0UzGLLF2XGf9iJUhLMvRCmLmlQvAGs9NtS52Rfyj1u6WDDkyhWd7ueVGHfOwpqd4c%2FdMNUHhALvVSsSd1KFgoWMr7ZVtI%2BMDpKCAPOnFnVIu8P%2BMHJSwr7hs993rTjb8OEuzGJREQV6eRbxBoYLIzkNaRdw%2BPnGjbt8Md6qSsqJnQIeHi8KfvBQdRYxJuOb%2Fd5Ply1G2Ya%2B1DXGKcoj0L%2Bqxb4uezDSJbeMhhTWLBzY8%2BFzfyeJI4hkyoQqRf5e6pPQUK7cQLQ4g3ZI9GBXb4nxRJcPJlycTpqbimUKlDW7h90ZlJgC3G0cU%2F55jENdvGbinkiM4jdkPJ77zmmUuJyt3l8ewg%3D%3D--H0dr1UqHPuD00dfn--wi4gpA3csjGG0zWugfbXhA%3D%3D; path=/; HttpOnly; secure'
             Etag: 'W/"89c194593a36d5e02aa3d01eb4fff9d6"'
             Cache-Control: 'max-age=0, private, must-revalidate'
@@ -111,11 +111,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: Bw2y0WPFdvml6il0_mHc4A
+            access-token: Bw2y0WPFdvml6il0_mHc4A
             token-type: Bearer
-            Client: b9fi-hVA1gaW7dUOSnsS_Q
-            Expiry: '1604319486'
-            Uid: e0611906
+            client: b9fi-hVA1gaW7dUOSnsS_Q
+            expiry: '1604319486'
+            uid: e0611906
             etag: 'W/"cd9133e51eb8a4111ee273fc2644e4d9"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: e2198bd9-124b-40cf-8574-a8be08de81c8
@@ -175,10 +175,10 @@
         url: 'https://sandbox-api.cocolis.fr/api/v1/rides/mine'
         headers:
             Host: sandbox-api.cocolis.fr
-            Access-Token: Bw2y0WPFdvml6il0_mHc4A
-            Client: b9fi-hVA1gaW7dUOSnsS_Q
-            Expiry: '1604319486'
-            Uid: e0611906
+            access-token: Bw2y0WPFdvml6il0_mHc4A
+            client: b9fi-hVA1gaW7dUOSnsS_Q
+            expiry: '1604319486'
+            uid: e0611906
     response:
         status:
             http_version: '2'
@@ -194,11 +194,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: Bw2y0WPFdvml6il0_mHc4A
+            access-token: Bw2y0WPFdvml6il0_mHc4A
             token-type: Bearer
-            Client: b9fi-hVA1gaW7dUOSnsS_Q
-            Expiry: '1604319486'
-            Uid: e0611906
+            client: b9fi-hVA1gaW7dUOSnsS_Q
+            expiry: '1604319486'
+            uid: e0611906
             etag: 'W/"4d02afaf1e19c9b10dd025fd83cdeef1"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 57dcf17a-9472-4528-8d87-66e75703b3d0
@@ -274,11 +274,11 @@
             x-download-options: noopen
             x-permitted-cross-domain-policies: none
             referrer-policy: strict-origin-when-cross-origin
-            Access-Token: c1SlR1iLxuJ7_CKvNFHB6w
+            access-token: c1SlR1iLxuJ7_CKvNFHB6w
             token-type: Bearer
-            Client: qXl9YWHwcwRpljVB0AdqdQ
-            Expiry: '1604320749'
-            Uid: e0611906
+            client: qXl9YWHwcwRpljVB0AdqdQ
+            expiry: '1604320749'
+            uid: e0611906
             etag: 'W/"8f07d8d568fe15cc86e8c4435f0af9bf"'
             cache-control: 'max-age=0, private, must-revalidate'
             x-request-id: 803ee557-da46-432b-b111-34c2656a7a26
