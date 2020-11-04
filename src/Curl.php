@@ -98,7 +98,7 @@ class Curl
   public function post($url, $params = '', $curlOptions = array())
   {
     if (is_array($params)) {
-      $params = http_build_query($params);
+      $params = preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', http_build_query($params));
     }
     $curlOptions['CURLOPT_POST'] = 1;
     $curlOptions['CURLOPT_POSTFIELDS'] = $params;
