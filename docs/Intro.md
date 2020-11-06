@@ -8,7 +8,7 @@ Vous pouvez signaler des bugs sur cette [page](https://github.com/Cocolis-1/coco
 
 # Installation
 
-Installation en utilisant composer : 
+Installation en utilisant composer :
 
 ```bash
 composer require cocolis/php
@@ -18,7 +18,7 @@ composer require cocolis/php
 
 La librairie est essentiellement constituée de classes dont l'une des plus importante, **Cocolis\Api\Client**. Celle-ci permet d'instancier l'authentification et de récupérer les tokens nécessaires pour chaque appel API.
 
-Il existe deux autres classes, **Cocolis\Api\Clients\RideClient** et **Cocolis\Api\Clients\WebhookClient**. Celles-ci permettent d'effectuer tous les appels pour créer une Ride, vérifier la compatibilité d'un trajet, etc ... 
+Il existe deux autres classes, **Cocolis\Api\Clients\RideClient** et **Cocolis\Api\Clients\WebhookClient**. Celles-ci permettent d'effectuer tous les appels pour créer une Ride, vérifier la compatibilité d'un trajet, etc ...
 
 Le principe général de cette librairie est : Un Cocolis Client par model (endpoint REST)
 
@@ -30,7 +30,7 @@ Le principe de la librairie étant essentiellement basé sur la **documentation 
 
 ## Authentification
 
-> Avant toute chose, vous devez avoir un compte développeur, vous trouverez plus d'information ici : 
+> Avant toute chose, vous devez avoir un compte développeur, vous trouverez plus d'information ici :
 > [Demander un compte développeur](https://doc.cocolis.fr/docs/cocolis-api/docs/Tutoriel-impl%C3%A9mentation/Getting-Started.md#2-demander-un-compte-d%C3%A9veloppeur)
 
 Avec la librairie, vous pouvez vous authentifier facilement de cette façon et **une seule fois** :
@@ -58,7 +58,7 @@ Une fois authentifié, vous pouvez effectuer des **requêtes annexes** à l'API 
 $client->callAuthentificated('app_auth/validate_token', 'GET', $params);
 ```
 
-Dans cet exemple, `app_auth/validate_token` est équivalent à faire un appel vers : 
+Dans cet exemple, `app_auth/validate_token` est équivalent à faire un appel vers :
 `{cocolis_domain}/api/v1/app_auth/validate_token` de type `GET` avec les `$params` fournis sous la forme d'un **array**.
 
 ## Validation du token

@@ -11,3 +11,4 @@ coverage.*
 xml-coverage
 html-coverage
 node_modules
+.DS_Store

@@ -16,10 +16,11 @@ class RideClient extends AbstractClient
 {
   public $_rest_path = 'rides';
   public $_model_class = 'Cocolis\Api\Models\Ride';
+  public $_root_key = 'ride';
 
   public function mine()
   {
-    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('mine'))->getBody(), true)["rides"]);
+    return $this->hydrate(json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('mine'))->text(), true)["rides"]);
   }
 
   public function canMatch($zipfrom, $zipto, $volume, $value = null)
@@ -34,7 +35,7 @@ class RideClient extends AbstractClient
         $this->getRestPath('can_match'),
         'POST',
         $params
-      )->getBody(),
+      )->text(),
       true
     ), false);
   }

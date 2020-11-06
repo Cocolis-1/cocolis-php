@@ -15,6 +15,9 @@
       <include>
         <directory suffix=".php">src</directory>
       </include>
+      <exclude>
+          <file>src/Curl.php</file>
+      </exclude>
 
       <report>
         <clover outputFile="clover.xml"/>

@@ -13,18 +13,18 @@ class WebhookClientTest extends CocolisTest
     $this->assertNotEmpty($webhook);
     $this->assertInstanceOf('Cocolis\Api\Models\Webhook', $webhook);
     $this->assertNotNull($webhook->id);
-    $this->assertEquals($webhook->id, 3);
+    $this->assertEquals($webhook->id, 10);
   }
 
   public function testUpdate()
   {
     $client = $this->authenticatedClient();
-    $webhook = $client->getWebhookClient()->update(['event' => 'offer_accepted', 'url' => 'https://www.test.com/ride_webhook', 'active' => true], '3');
+    $webhook = $client->getWebhookClient()->update(['url' => 'https://www.test.com/ride_webhook', 'active' => true], '9');
     $this->assertNotEmpty($webhook);
     $this->assertInstanceOf('Cocolis\Api\Models\Webhook', $webhook);
     $this->assertNotNull($webhook->id);
-    $this->assertEquals($webhook->id, 3);
-    $this->assertEquals($webhook->event, 'offer_accepted');
+    $this->assertEquals($webhook->id, 9);
+    $this->assertEquals($webhook->event, 'offer_completed');
   }
 
   public function testGetAll()
@@ -39,14 +39,14 @@ class WebhookClientTest extends CocolisTest
   public function testGet()
   {
     $client = $this->authenticatedClient();
-    $webhook = $client->getWebhookClient()->get('3');
+    $webhook = $client->getWebhookClient()->get('10');
     $this->assertInstanceOf('Cocolis\Api\Models\Webhook', $webhook);
   }
 
   public function testRemove()
   {
     $client = $this->authenticatedClient();
-    $result = $client->getWebhookClient()->remove('3');
+    $result = $client->getWebhookClient()->remove('10');
     $this->assertEmpty($result);
   }
 }

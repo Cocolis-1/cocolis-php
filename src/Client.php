@@ -12,7 +12,7 @@ namespace Cocolis\Api;
 
 use Cocolis\Api\Clients\RideClient;
 use Cocolis\Api\Clients\WebhookClient;
-use GuzzleHttp\Client as GuzzleHttpClient;
+use Cocolis\Api\Curl as CurlClient;
 
 class Client
 {
@@ -30,7 +30,7 @@ class Client
   const API_SANDBOX = "https://sandbox-api.cocolis.fr/api/v1/"; //  Test environment during your implementation
   const API_PROD = "https://api.cocolis.fr/api/v1/"; // Online environment (in production, be careful what you do with this)
 
-  const FRONTEND_PROD = "https://cocolis.fr/";
+  const FRONTEND_PROD = "https://www.cocolis.fr/";
   const FRONTEND_SANDBOX = "https://sandbox.cocolis.fr/";
 
   public static function isLive()
@@ -59,7 +59,11 @@ class Client
 
   public function getHttpClient()
   {
-    return static::$_http_client;
+    $options = array();
+    if (!self::isLive()) {
+      // $options['debug'] = true;
+    }
+    return new CurlClient($options);
   }
 
   public static function setAppId($app_id)
@@ -75,11 +79,6 @@ class Client
   public static function setLive($live)
   {
     self::$_live = $live;
-  }
-
-  public static function setHttpClient($http_client)
-  {
-    self::$_http_client = $http_client;
   }
 
   public static function setClient($client)
@@ -131,12 +130,14 @@ class Client
     self::setAppId($auth['app_id']);
     self::setPassword($auth['password']);
 
-    $url = self::isLive() ? self::API_PROD : self::API_SANDBOX;
-
-    self::setHttpClient(new GuzzleHttpClient(['base_uri' => $url]));
     self::setClient($client);
 
     return $client;
+  }
+
+  public static function getBaseUrl()
+  {
+    return self::isLive() ? self::API_PROD : self::API_SANDBOX;
   }
 
   // Connect to the API
@@ -144,11 +145,7 @@ class Client
   {
     $res = $this->call('app_auth/sign_in', 'POST', ['app_id' => self::getAppId(), 'password' => self::getPassword()]);
 
-    if (is_array($res->getHeader('Access-Token'))) {
-      return self::setCurrentAuthInfo($res->getHeader('Access-Token')[0], $res->getHeader('Client')[0], $res->getHeader('Expiry')[0], $res->getHeader('Uid')[0]);
-    } else {
-      return self::setCurrentAuthInfo($res->getHeader('Access-Token'), $res->getHeader('Client'), $res->getHeader('Expiry'), $res->getHeader('Uid'));
-    }
+    return self::setCurrentAuthInfo($res->headers['access-token'], $res->headers['client'], $res->headers['expiry'], $res->headers['uid']);
   }
 
   public function validateToken($authinfo = array())
@@ -159,16 +156,23 @@ class Client
     } else {
       $res = $this->callAuthentificated('app_auth/validate_token', 'GET', array_merge(['token-type' => 'Bearer'], $auth));
     }
-    return json_decode($res->getBody(), true);
+    return json_decode($res->text())->success === true;
   }
 
   public function call($url, $method = 'GET', $body = array())
   {
-    return $this->getHttpClient()->request($method, $url, ['json' => $body]);
+    return $this->getHttpClient()->$method(self::getBaseUrl() . $url, $body);
   }
 
   public function callAuthentificated($url, $method = 'GET', $body = array())
   {
-    return $this->getHttpClient()->request($method, $url, ['headers' => self::getCurrentAuthInfo(), 'json' => $body]);
+    $client = $this->getHttpClient();
+
+    if (self::getCurrentAuthInfo()) {
+      foreach (self::getCurrentAuthInfo() as $key => $value) {
+        $client->appendRequestHeader($key, $value);
+      }
+    }
+    return $client->$method(self::getBaseUrl() . $url, $body);
   }
 }
