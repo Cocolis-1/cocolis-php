@@ -17,5 +17,5 @@
       "include": ["docs/models", "docs/models/**"]
     }
   },
-  "exclude": ["tests"]
+  "exclude": ["tests",".history"]
 }
