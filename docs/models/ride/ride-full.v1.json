@@ -49,7 +49,7 @@
           "type": "object"
         },
         "owner": {
-          "$ref": "../user/public_user.json"
+          "$ref": "../user/public_user.v1.json"
         }
       },
       "required": [
@@ -59,7 +59,7 @@
       ]
     },
     {
-      "$ref": "./create.json"
+      "$ref": "./ride-create.v1.json"
     }
   ],
   "x-examples": {
