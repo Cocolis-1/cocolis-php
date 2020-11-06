@@ -2,13 +2,8 @@
   "items": [
     {
       "type": "item",
-      "title": "Introduction",
-      "uri": "docs/Intro.md"
-    },
-    {
-      "type": "item",
-      "title": "Rides",
-      "uri": "docs/Rides.md"
+      "title": "CHANGELOG",
+      "uri": "CHANGELOG.md"
     },
     {
       "type": "item",
@@ -17,16 +12,21 @@
     },
     {
       "type": "item",
-      "title": "CHANGELOG",
-      "uri": "CHANGELOG.md"
-    },
-    {
-      "type": "divider",
-      "title": "Tutoriel d'implémentation"
+      "title": "Intro",
+      "uri": "docs/Intro.md"
     },
     {
       "type": "item",
-      "title": "Getting Started",
+      "title": "Rides",
+      "uri": "docs/Rides.md"
+    },
+    {
+      "type": "divider",
+      "title": "Tutoriel-implémentation"
+    },
+    {
+      "type": "item",
+      "title": "Implémentation standard",
       "uri": "docs/Tutoriel-implémentation/Getting-Started.md"
     },
     {
@@ -47,6 +47,11 @@
       "type": "item",
       "title": "ride",
       "uri": "docs/models/ride/ride-full.v1.json"
+    },
+    {
+      "type": "item",
+      "title": "public_user",
+      "uri": "docs/models/user/public_user.v1.json"
     }
   ]
 }
