@@ -19,7 +19,6 @@
   },
   "exclude": [
     "tests",
-    ".history",
-    "toc.json"
+    ".history"
   ]
 }
