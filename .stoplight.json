@@ -17,5 +17,9 @@
       "include": ["docs/models", "docs/models/**"]
     }
   },
-  "exclude": ["tests",".history"]
+  "exclude": [
+    "tests",
+    ".history",
+    "toc.json"
+  ]
 }
