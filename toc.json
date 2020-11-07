@@ -9,49 +9,6 @@
       "type": "item",
       "title": "Exceptions",
       "uri": "docs/Exceptions.md"
-    },
-    {
-      "type": "item",
-      "title": "Intro",
-      "uri": "docs/Intro.md"
-    },
-    {
-      "type": "item",
-      "title": "Rides",
-      "uri": "docs/Rides.md"
-    },
-    {
-      "type": "divider",
-      "title": "Tutoriel-implémentation"
-    },
-    {
-      "type": "item",
-      "title": "Implémentation standard",
-      "uri": "docs/Tutoriel-implémentation/Getting-Started.md"
-    },
-    {
-      "type": "item",
-      "title": "Webhooks",
-      "uri": "docs/Webhooks.md"
-    },
-    {
-      "type": "item",
-      "title": "README",
-      "uri": "README.md"
-    },
-    {
-      "type": "divider",
-      "title": "Models"
-    },
-    {
-      "type": "item",
-      "title": "ride",
-      "uri": "docs/models/ride/ride-full.v1.json"
-    },
-    {
-      "type": "item",
-      "title": "public_user",
-      "uri": "docs/models/user/public_user.v1.json"
     }
   ]
 }
