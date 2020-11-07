@@ -6,6 +6,7 @@
   "description": "Afficher le détail d'une ride",
   "allOf": [
     {
+      "title": "ride_fields",
       "type": "object",
       "properties": {
         "id": {
