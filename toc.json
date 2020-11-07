@@ -6,18 +6,22 @@
       "uri": "docs/Introduction.md"
     },
     {
-      "type": "item",
-      "title": "Rides",
-      "uri": "docs/Rides.md"
-    },
-    {
       "type": "divider",
       "title": "Tutoriels"
     },
     {
       "type": "item",
       "title": "Implémentation Standard",
-      "uri": "docs/Tutoriel-implémentation/Getting-Started.md"
+      "uri": "docs/Tutorials/Getting-Started.md"
+    },
+    {
+      "type": "divider",
+      "title": "Architectures et détails"
+    },
+    {
+      "type": "item",
+      "title": "Rides",
+      "uri": "docs/Rides.md"
     },
     {
       "type": "item",
