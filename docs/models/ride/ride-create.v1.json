@@ -10,7 +10,6 @@
       "description": "Description de l'annonce, à vous de générer quelque chose de pertinent. C'est ce qui apparaitra sur l'annonce chez Cocolis.fr"
     },
     "from_lat": {
-      "type": "number",
       "type": [
         "number",
         "null"
