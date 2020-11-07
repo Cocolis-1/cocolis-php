@@ -3,7 +3,20 @@
     {
       "type": "item",
       "title": "Introduction",
-      "uri": "docs/Intro.md"
+      "uri": "docs/Introduction.md"
+    },
+    {
+      "type": "divider",
+      "title": "Tutoriels"
+    },
+    {
+      "type": "item",
+      "title": "Implémentation Standard",
+      "uri": "docs/Tutorials/Getting-Started.md"
+    },
+    {
+      "type": "divider",
+      "title": "Architectures et détails"
     },
     {
       "type": "item",
@@ -12,32 +25,13 @@
     },
     {
       "type": "item",
-      "title": "Exceptions",
-      "uri": "docs/Exceptions.md"
-    },
-    {
-      "type": "item",
-      "title": "CHANGELOG",
-      "uri": "CHANGELOG.md"
-    },
-    {
-      "type": "divider",
-      "title": "Tutoriel d'implémentation"
-    },
-    {
-      "type": "item",
-      "title": "Getting Started",
-      "uri": "docs/Tutoriel-implémentation/Getting-Started.md"
-    },
-    {
-      "type": "item",
       "title": "Webhooks",
       "uri": "docs/Webhooks.md"
     },
     {
       "type": "item",
-      "title": "README",
-      "uri": "README.md"
+      "title": "Exceptions",
+      "uri": "docs/Exceptions.md"
     },
     {
       "type": "divider",
@@ -47,6 +41,25 @@
       "type": "item",
       "title": "ride",
       "uri": "docs/models/ride/ride-full.v1.json"
+    },
+    {
+      "type": "item",
+      "title": "ride_create_params",
+      "uri": "docs/models/ride/ride-create.v1.json"
+    },
+    {
+      "type": "item",
+      "title": "public_user",
+      "uri": "docs/models/user/public_user.v1.json"
+    },
+    {
+      "type": "divider",
+      "title": "VERSIONS"
+    },
+    {
+      "type": "item",
+      "title": "CHANGELOG",
+      "uri": "CHANGELOG.md"
     }
   ]
 }

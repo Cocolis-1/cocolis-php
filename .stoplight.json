@@ -1,21 +1,32 @@
 {
   "formats": {
-    "openapi": {
-      "rootDir": "docs/apidoc",
-      "include": ["docs/apidoc", "docs/apidoc/**"]
-    },
-    "markdown": {
-      "rootDir": "docs",
-      "include": ["docs", "docs/**"]
-    },
-    "image": {
-      "rootDir": "docs/assets/images",
-      "include": ["docs/assets/images", "docs/assets/**"]
-    },
-    "json_schema": {
-      "rootDir": "docs/models",
-      "include": ["docs/models", "docs/models/**"]
-    }
+      "openapi": {
+          "rootDir": "reference",
+          "include": [
+              "**"
+          ]
+      },
+      "markdown": {
+          "rootDir": "docs",
+          "include": [
+              "**"
+          ]
+      },
+      "image": {
+          "rootDir": "assets/images",
+          "include": [
+              "**"
+          ]
+      },
+      "json_schema": {
+          "rootDir": "models",
+          "include": [
+              "**"
+          ]
+      }
   },
-  "exclude": ["tests",".history"]
+  "exclude": [
+      "tests",
+      ".history"
+  ]
 }
