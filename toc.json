@@ -44,6 +44,11 @@
     },
     {
       "type": "item",
+      "title": "ride_create_params",
+      "uri": "docs/models/ride/ride-create.v1.json"
+    },
+    {
+      "type": "item",
       "title": "public_user",
       "uri": "docs/models/user/public_user.v1.json"
     },
