@@ -6,6 +6,9 @@
   "description": "Afficher le détail d'une ride",
   "allOf": [
     {
+      "$ref": "./ride-create.v1.json"
+    },
+    {
       "title": "ride_fields",
       "type": "object",
       "properties": {
@@ -58,9 +61,6 @@
         "created_at",
         "updated_at"
       ]
-    },
-    {
-      "$ref": "./ride-create.v1.json"
     }
   ],
   "x-examples": {
