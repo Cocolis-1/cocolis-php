@@ -2,18 +2,8 @@
   "items": [
     {
       "type": "item",
-      "title": "CHANGELOG",
-      "uri": "CHANGELOG.md"
-    },
-    {
-      "type": "item",
-      "title": "Exceptions",
-      "uri": "docs/Exceptions.md"
-    },
-    {
-      "type": "item",
-      "title": "Intro",
-      "uri": "docs/Intro.md"
+      "title": "Introduction",
+      "uri": "docs/Introduction.md"
     },
     {
       "type": "item",
@@ -22,11 +12,11 @@
     },
     {
       "type": "divider",
-      "title": "Tutoriel-implémentation"
+      "title": "Tutoriels"
     },
     {
       "type": "item",
-      "title": "Implémentation standard",
+      "title": "Implémentation Standard",
       "uri": "docs/Tutoriel-implémentation/Getting-Started.md"
     },
     {
@@ -36,8 +26,8 @@
     },
     {
       "type": "item",
-      "title": "README",
-      "uri": "README.md"
+      "title": "Exceptions",
+      "uri": "docs/Exceptions.md"
     },
     {
       "type": "divider",
@@ -52,6 +42,15 @@
       "type": "item",
       "title": "public_user",
       "uri": "docs/models/user/public_user.v1.json"
+    },
+    {
+      "type": "divider",
+      "title": "VERSIONS"
+    },
+    {
+      "type": "item",
+      "title": "CHANGELOG",
+      "uri": "CHANGELOG.md"
     }
   ]
 }
