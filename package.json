@@ -1,6 +1,13 @@
 {
   "dependencies": {
-    "@stoplight/cli": "^4.0.73",
-    "node-fetch": ">=2.6.1"
-  }
+    "@stoplight/cli": "^4.0.0",
+    "graphql": "^14.7.0",
+    "ini": "^1.3.8",
+    "node-fetch": ">=2.6.1",
+    "ra-data-graphql-simple": "^3.11.4",
+    "react": "^16.14.0",
+    "react-admin": "^3.12.1",
+    "react-dom": "^16.14.0"
+  },
+  "name": "cocolis-php"
 }
