@@ -12,6 +12,7 @@ jobs:
       with:
         php-version: '7.3'
         coverage: xdebug
+        extensions: soap
 
     - name: Install dependent libraries
       run: |
