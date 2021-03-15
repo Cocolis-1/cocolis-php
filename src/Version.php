@@ -14,6 +14,6 @@ class Version
 {
   public function __toString(): string
   {
-    return '2.0.1';
+    return '2.0.2';
   }
 }
