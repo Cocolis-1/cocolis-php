@@ -12,3 +12,4 @@ xml-coverage
 html-coverage
 node_modules
 .DS_Store
+composer.lock
