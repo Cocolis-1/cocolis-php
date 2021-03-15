@@ -6,7 +6,7 @@ final class VersionTest extends \Tests\Api\CocolisTest
   public function testCanBeUsedAsString(): void
   {
     $this->assertEquals(
-      '2.0.1',
+      '2.0.2',
       (string) new Version()
     );
   }
