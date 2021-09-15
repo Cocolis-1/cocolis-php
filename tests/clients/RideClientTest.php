@@ -150,13 +150,14 @@ class RideClientTest extends CocolisTest
     $client = $client->getRideClient();
     $ride = $client->create($params);
   }
-  
+
 
   public function testRemove()
   {
-    $this->expectException(Exception::class);
-    $client = new Client();
-    $client = $client->getRideClient()->remove('1');
+    $client = $this->authenticatedClient();
+    $client->signIn();
+    $result = $client->getRideClient()->remove("589");
+    $this->assertEmpty($result);
   }
 
   public function testUpdate()

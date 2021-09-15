@@ -40,11 +40,6 @@ class RideClient extends AbstractClient
     ), false);
   }
 
-  public function remove(string $id)
-  {
-    return $this->notSupported();
-  }
-
   public function update(array $params, string $id)
   {
     return $this->notSupported();
