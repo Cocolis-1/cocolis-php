@@ -18,6 +18,14 @@ Vous pouvez récupérer toutes vos Rides créées sous la forme d'un tableau de 
 $rides = $client->getRideClient()->mine();
 ```
 
+### Annuler une ride
+
+Vous pouvez annuler une ride de cette façon :
+
+```php
+$rides = $client->getRideClient()->remove($id);
+```
+
 ### Vérifier la possibilité de réaliser une Ride
 
 Vérifier si Cocolis sera disponible pour effectuer la livraison pour un trajet donné entre 2 points, avec l'option assurance si éligible.
@@ -34,16 +42,16 @@ Voici un exemple de réponse en `JSON`:
 
 ```json
 {
-"result":true,
-"estimated_prices": {
-  "regular":95500,
-  "with_insurance":96728
-},
-"insurance_detail":{
-  "amount":150100,
-  "conditions_url":"https://sandbox.cocolis.fr/assurance/conditions-assurance-optionnelle-jusqu-a-3000.pdf"
-},
-"rider_count":0
+  "result": true,
+  "estimated_prices": {
+    "regular": 95500,
+    "with_insurance": 96728
+  },
+  "insurance_detail": {
+    "amount": 150100,
+    "conditions_url": "https://sandbox.cocolis.fr/assurance/conditions-assurance-optionnelle-jusqu-a-3000.pdf"
+  },
+  "rider_count": 0
 }
 ```
 
