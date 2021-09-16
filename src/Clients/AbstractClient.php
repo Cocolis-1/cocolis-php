@@ -95,7 +95,7 @@ abstract class AbstractClient
 
   public function remove(string $id)
   {
-    return json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('/') . $id, 'DELETE')->text(), true);
+    return json_decode($this->getCocolisClient()->callAuthentificated($this->getRestPath('') . $id, 'DELETE')->text(), true);
   }
 
   public function notSupported()
