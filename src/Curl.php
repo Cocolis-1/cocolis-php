@@ -1,4 +1,5 @@
 <?php
+
 namespace Cocolis\Api;
 
 /**
@@ -21,8 +22,8 @@ if (!function_exists('curl_file_create')) {
 
 class Curl
 {
-  const VERSION = '0.2.2';
-  const DEFAULT_USERPWD = 'anonymous: anonymous@domain.com';
+  public const VERSION = '0.2.2';
+  public const DEFAULT_USERPWD = 'anonymous: anonymous@domain.com';
   /** @var bool */
   public $proxy = false;
   /** @var object */

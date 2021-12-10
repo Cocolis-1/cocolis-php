@@ -18,6 +18,14 @@ Vous pouvez récupérer toutes vos Rides créées sous la forme d'un tableau de 
 $rides = $client->getRideClient()->mine();
 ```
 
+### Récupérer une ride
+
+Vous pouvez récupérer une ride créées sous la forme d'un tableau de `Cocolis\Api\Models\Ride` :
+
+```php
+$rides = $client->getRideClient()->get(":id");
+```
+
 ### Annuler une ride
 
 Vous pouvez annuler une ride de cette façon :

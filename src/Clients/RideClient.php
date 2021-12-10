@@ -32,10 +32,10 @@ class RideClient extends AbstractClient
 
     return $this->hydrate(json_decode(
       $this->getCocolisClient()->callAuthentificated(
-        $this->getRestPath('can_match'),
-        'POST',
-        $params
-      )->text(),
+              $this->getRestPath('can_match'),
+              'POST',
+              $params
+            )->text(),
       true
     ), false);
   }
