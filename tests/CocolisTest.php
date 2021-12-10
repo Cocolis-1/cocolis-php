@@ -34,11 +34,11 @@ class CocolisTest extends TestCase
 
   public function authenticatedClient($runSignIn = true)
   {
-    $client = Client::create(array(
+    $client = Client::create([
       'app_id' => 'e0611906',
       'password' => 'sebfie',
       'live' => false
-    ));
+    ]);
     if ($runSignIn) {
       $client->signIn();
     }

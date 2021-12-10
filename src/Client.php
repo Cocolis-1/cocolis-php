@@ -48,7 +48,7 @@ class Client
     return self::$_password;
   }
 
-  public static function getClient(array $auth = array())
+  public static function getClient(array $auth = [])
   {
     if (!static::$_client) {
       static::$_client = static::create($auth);
@@ -59,7 +59,7 @@ class Client
 
   public function getHttpClient()
   {
-    $options = array();
+    $options = [];
     if (!self::isLive()) {
       // $options['debug'] = true;
     }
@@ -98,7 +98,7 @@ class Client
 
   public static function setCurrentAuthInfo($token, $client, $expiry, $uid)
   {
-    self::$_auth = array('access-token' => $token, 'client' => $client, 'expiry' => $expiry, 'uid' => $uid);
+    self::$_auth = ['access-token' => $token, 'client' => $client, 'expiry' => $expiry, 'uid' => $uid];
     return self::$_auth;
   }
 
@@ -148,7 +148,7 @@ class Client
     return self::setCurrentAuthInfo($res->headers['access-token'], $res->headers['client'], $res->headers['expiry'], $res->headers['uid']);
   }
 
-  public function validateToken($authinfo = array())
+  public function validateToken($authinfo = [])
   {
     $auth = !empty($authinfo) ? $authinfo : self::getCurrentAuthInfo();
     if (empty($authinfo) && empty($auth)) {
@@ -159,12 +159,12 @@ class Client
     return json_decode($res->text())->success === true;
   }
 
-  public function call($url, $method = 'GET', $body = array())
+  public function call($url, $method = 'GET', $body = [])
   {
     return $this->getHttpClient()->$method(self::getBaseUrl() . $url, $body);
   }
 
-  public function callAuthentificated($url, $method = 'GET', $body = array())
+  public function callAuthentificated($url, $method = 'GET', $body = [])
   {
     $client = $this->getHttpClient();
 

@@ -10,11 +10,11 @@ class ClientTest extends CocolisTest
 {
   public function testEmptyClient()
   {
-    $client = Client::getClient(array(
+    $client = Client::getClient([
       'app_id' => 'e0611906',
       'password' => 'sebfie',
       'live' => false
-    ));
+    ]);
     $this->assertNotEmpty($client);
   }
 
@@ -27,11 +27,11 @@ class ClientTest extends CocolisTest
 
   public function testClient()
   {
-    $client = Client::create(array(
+    $client = Client::create([
       'app_id' => 'e0611906',
       'password' => 'sebfie',
       'live' => false
-    ));
+    ]);
     $this->assertNotEmpty($client);
   }
 
@@ -40,84 +40,84 @@ class ClientTest extends CocolisTest
   {
     $this->expectException(\Cocolis\Api\Errors\UnauthorizedException::class);
 
-    $client = Client::create(array(
+    $client = Client::create([
       'app_id' => 'e0611906',
       'password' => 'notsebfie',
       'live' => false
-    ));
+    ]);
     $result = $client->signIn();
     $this->assertEquals($result, false);
   }
 
   public function testStaticCreate()
   {
-    $client = Client::create(array(
+    $client = Client::create([
       'app_id' => 'e0611906',
       'password' => 'sebfie',
       'live' => false
-    ));
+    ]);
     $result = $client->signIn();
-    $this->assertEquals(array(
+    $this->assertEquals([
       'access-token' => 'nBfCK2mL3rp83hSjhUFLYg',
       'client' => 'g5z8dF58MvI4t5zoQzX9xA',
       'expiry' => '1604319132',
       'uid' => 'e0611906'
-    ), $result);
+    ], $result);
   }
 
   public function testAppIdException()
   {
     $this->expectException(InvalidArgumentException::class);
     $this->expectExceptionMessage('Key app_id is missing');
-    Client::create(array(
+    Client::create([
       'app_id' => '',
       'password' => 'test'
-    ));
+    ]);
   }
 
   public function testAuthInfo()
   {
-    $this->assertEquals(array(
+    $this->assertEquals([
       'access-token' => 'nBfCK2mL3rp83hSjhUFLYg',
       'client' => 'g5z8dF58MvI4t5zoQzX9xA',
       'expiry' => '1604319132',
       'uid' => 'e0611906'
-    ), Client::getCurrentAuthInfo());
+    ], Client::getCurrentAuthInfo());
   }
 
   public function testPasswordException()
   {
     $this->expectException(InvalidArgumentException::class);
     $this->expectExceptionMessage('Key password is missing');
-    Client::create(array(
+    Client::create([
       'app_id' => 'test',
       'password' => ''
-    ));
+    ]);
   }
 
   public function testTokenValid()
   {
-    $client = Client::create(array(
+    $client = Client::create([
       'app_id' => 'e0611906',
       'password' => 'sebfie',
       'live' => false
-    ));
-    $result = $client->validateToken(array(
+    ]);
+    $result = $client->validateToken([
       'access-token' => 'nBfCK2mL3rp83hSjhUFLYg',
       'client' => 'wFPP7k01OacAzC-tXni-fA',
       'expiry' => '1604318220',
       'uid' => 'e0611906'
-    ));
+    ]);
     $this->assertEquals($result, true);
   }
 
   public function testTokenNoArgs()
   {
-    $client = Client::create(array(
+    $client = Client::create([
       'app_id' => 'e0611906',
       'password' => 'sebfie',
       'live' => false
-    ));
+    ]);
     // Clear auth
     $client->setAuth(null);
 
@@ -132,11 +132,11 @@ class ClientTest extends CocolisTest
     $this->expectException(\Cocolis\Api\Errors\UnauthorizedException::class);
     $this->expectExceptionMessage('{"success":false,"errors":["Mot de passe ou identifiant invalide."]}');
 
-    $client = Client::create(array(
+    $client = Client::create([
       'app_id' => 'e0611906',
       'password' => 'sebfie',
       'live' => false
-    ));
+    ]);
 
     // Invalid params
     $result = $client->validateToken(["uid" => "e0611906", "access-token" => "thisisnotavalidtoken", "client" => "HLSmEW1TIDqsSMiwuKjnQg", "expiry" => "1590748027"]);
@@ -145,11 +145,11 @@ class ClientTest extends CocolisTest
 
   public function testTokenNoAuth()
   {
-    $client = Client::create(array(
+    $client = Client::create([
       'app_id' => 'e0611906',
       'password' => 'sebfie',
       'live' => false
-    ));
+    ]);
     $client->signIn();
     $result = $client->validateToken();
     $this->assertNotEmpty($result);
