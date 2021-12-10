@@ -4,6 +4,7 @@ composer.phar
 /vendor/
 .php*
 !.php_cs
+!.php-cs-fixer.php
 build/
 clover.xml
 crap4j.xml
