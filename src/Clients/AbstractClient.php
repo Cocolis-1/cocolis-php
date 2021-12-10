@@ -30,7 +30,7 @@ abstract class AbstractClient
     $transformedToStdClass = json_decode(json_encode($array));
     if ($transformToModel) {
       if (is_array($transformedToStdClass)) {
-        $result = array();
+        $result = [];
         foreach ($transformedToStdClass as $item) {
           array_push($result, new $this->_model_class($item, $this));
         }
@@ -66,7 +66,7 @@ abstract class AbstractClient
   public function create(array $params)
   {
     if ($this->_root_key) {
-      $paramsTemp = array();
+      $paramsTemp = [];
       $paramsTemp[$this->_root_key] = $params;
       $params = $paramsTemp;
     }
@@ -76,7 +76,7 @@ abstract class AbstractClient
   public function update(array $params, string $id)
   {
     if ($this->_root_key) {
-      $paramsTemp = array();
+      $paramsTemp = [];
       $paramsTemp[$this->_root_key] = $params;
       $params = $paramsTemp;
     }
