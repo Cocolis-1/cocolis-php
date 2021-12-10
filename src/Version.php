@@ -7,7 +7,6 @@
  * with this source code in the file LICENSE.
  */
 
-
 namespace Cocolis\Api;
 
 class Version

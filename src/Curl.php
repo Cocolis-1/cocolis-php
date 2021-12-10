@@ -1,4 +1,5 @@
 <?php
+
 namespace Cocolis\Api;
 
 /**
@@ -21,15 +22,15 @@ if (!function_exists('curl_file_create')) {
 
 class Curl
 {
-  const VERSION = '0.2.2';
-  const DEFAULT_USERPWD = 'anonymous: anonymous@domain.com';
+  public const VERSION = '0.2.2';
+  public const DEFAULT_USERPWD = 'anonymous: anonymous@domain.com';
   /** @var bool */
   public $proxy = false;
   /** @var object */
   public $cacheInstance = null;
   /** @var array */
-  public $responseHeaders = array();
-  public $requestHeaders  = array();
+  public $responseHeaders = [];
+  public $requestHeaders  = [];
   /** @var string */
   public $info;
   public $error;
@@ -44,7 +45,7 @@ class Curl
   /**
    * @param array $options
    */
-  public function __construct($options = array())
+  public function __construct($options = [])
   {
     if (!function_exists('curl_init')) {
       throw new \Exception('cURL module must be enabled!');
@@ -76,7 +77,7 @@ class Curl
    * @param array $curlOptions
    * @return bool
    */
-  public function get($url, $params = array(), $curlOptions = array())
+  public function get($url, $params = [], $curlOptions = [])
   {
     $curlOptions['CURLOPT_HTTPGET'] = 1;
 
@@ -95,7 +96,7 @@ class Curl
    * @param array $curlOptions
    * @return bool
    */
-  public function post($url, $params = '', $curlOptions = array())
+  public function post($url, $params = '', $curlOptions = [])
   {
     if (is_array($params)) {
       $params = preg_replace('/%5B[0-9]+%5D/simU', '%5B%5D', http_build_query($params));
@@ -113,7 +114,7 @@ class Curl
    * @param array $curlOptions
    * @return bool
    */
-  public function put($url, $params = array(), $curlOptions = array())
+  public function put($url, $params = [], $curlOptions = [])
   {
     if (isset($params['file'])) {
       $file = $params['file'];
@@ -153,7 +154,7 @@ class Curl
    * @param array $curlOptions
    * @return bool
    */
-  public function delete($url, $param = array(), $curlOptions = array())
+  public function delete($url, $param = [], $curlOptions = [])
   {
     $curlOptions['CURLOPT_CUSTOMREQUEST'] = 'DELETE';
     if (!isset($curlOptions['CURLOPT_USERPWD'])) {
@@ -169,7 +170,7 @@ class Curl
    * @param array $curlOptions
    * @return bool
    */
-  public function trace($url, $curlOptions = array())
+  public function trace($url, $curlOptions = [])
   {
     $curlOptions['CURLOPT_CUSTOMREQUEST'] = 'TRACE';
     $ret = $this->request($url, $curlOptions);
@@ -182,7 +183,7 @@ class Curl
    * @param array $curlOptions
    * @return bool
    */
-  public function options($url, $curlOptions = array())
+  public function options($url, $curlOptions = [])
   {
     $curlOptions['CURLOPT_CUSTOMREQUEST'] = 'OPTIONS';
     $ret = $this->request($url, $curlOptions);
@@ -198,7 +199,7 @@ class Curl
    * @param array $options
    * @return bool
    */
-  public function head($url, $options = array())
+  public function head($url, $options = [])
   {
     $curlOptions['CURLOPT_HTTPGET'] = 0;
     $curlOptions['CURLOPT_HEADER']  = 1;
@@ -223,7 +224,7 @@ class Curl
    * @param array $options An array of options to set
    * @return array An array of results
    */
-  public function download($requests, $options = array())
+  public function download($requests, $options = [])
   {
     $options['CURLOPT_BINARYTRANSFER'] = 1;
     $options['RETURNTRANSFER'] = false;
@@ -266,7 +267,7 @@ class Curl
    * @param array $curlOptions If array is null, this function will
    *                       reset the options to default value.
    */
-  public function addCurlOptions($curlOptions = array())
+  public function addCurlOptions($curlOptions = [])
   {
     if (is_array($curlOptions)) {
       foreach ($curlOptions as $name => $val) {
@@ -326,11 +327,11 @@ class Curl
    * @param array $options An array of options to set
    * @return array An array of results
    */
-  protected function multi($requests, $options = array())
+  protected function multi($requests, $options = [])
   {
     $count   = count($requests);
-    $handles = array();
-    $results = array();
+    $handles = [];
+    $results = [];
     $main    = curl_multi_init();
     for ($i = 0; $i < $count; $i++) {
       $url = $requests[$i];
@@ -366,7 +367,7 @@ class Curl
    * @param array $options
    * @return bool
    */
-  protected function request($url, $curlOptions = array())
+  protected function request($url, $curlOptions = [])
   {
     // create curl instance
     $curl = curl_init($url);
@@ -427,7 +428,7 @@ class Curl
     if (is_object($postdata) && !self::isCurlFile($postdata)) {
       $postdata = (array)$postdata;
     }
-    $postFields = array();
+    $postFields = [];
     foreach ($postdata as $name => $value) {
       $name = urlencode($name);
       if (is_object($value) && !self::isCurlFile($value)) {
@@ -524,7 +525,7 @@ class Curl
           $this->responseHeaders[$key][] = $value;
         } else {
           $tmp = $this->responseHeaders[$key];
-          $this->responseHeaders[$key] = array();
+          $this->responseHeaders[$key] = [];
           $this->responseHeaders[$key][] = $tmp;
           $this->responseHeaders[$key][] = $value;
         }
@@ -558,14 +559,14 @@ class Curl
     $this->addCurlOptions($curlOptions);
     // set headers
     if (empty($this->requestHeaders)) {
-      $this->appendRequestHeaders(array(
+      $this->appendRequestHeaders([
                 ['User-Agent', $this->curlOptions['CURLOPT_USERAGENT']],
                 ['Accept-Charset', 'UTF-8']
-            ));
+            ]);
     }
 
     self::applyCurlOption($curl, $this->curlOptions);
-    curl_setopt($curl, CURLOPT_HEADERFUNCTION, array(&$this, 'handleResponseHeaders'));
+    curl_setopt($curl, CURLOPT_HEADERFUNCTION, [&$this, 'handleResponseHeaders']);
     curl_setopt($curl, CURLOPT_HTTPHEADER, self::prepareRequestHeaders($this->requestHeaders));
 
     if ($this->debug) {
@@ -587,7 +588,7 @@ class Curl
 
   private static function prepareRequestHeaders($headers)
   {
-    $processedHeaders = array();
+    $processedHeaders = [];
     foreach ($headers as $header) {
       $processedHeaders[] = urlencode($header[0]) . ': ' . urlencode($header[1]);
     }
@@ -602,7 +603,7 @@ class Curl
 
 class CurlHttpResponse
 {
-  public $headers = array();
+  public $headers = [];
   public $statusCode;
   public $text = '';
 

@@ -160,6 +160,14 @@ class RideClientTest extends CocolisTest
     $this->assertEmpty($result);
   }
 
+  public function testGet()
+  {
+    $client = $this->authenticatedClient();
+    $client->signIn();
+    $result = $client->getRideClient()->get("231");
+    $this->assertNotEmpty($result);
+  }
+
   public function testUpdate()
   {
     $this->expectException(Exception::class);
