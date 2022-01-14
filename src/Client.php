@@ -19,6 +19,7 @@ class Client
   // Local informations
   private static $_app_id;
   private static $_password;
+  private static $_api_key;
   private static $_live = false;
 
   private static $_client;
@@ -91,6 +92,16 @@ class Client
     self::$_auth = $auth;
   }
 
+  public static function getApiKey()
+  {
+    return self::$_api_key;
+  }
+
+  public static function setApiKey($api_key)
+  {
+    self::$_api_key = $api_key;
+  }
+
   public static function getCurrentAuthInfo()
   {
     return self::$_auth;
@@ -117,9 +128,9 @@ class Client
   {
     $client = new static();
 
-    if (!isset($auth['app_id']) || empty($auth['app_id'])) {
+    if (empty($auth['app_id']) && empty($auth['api_key'])) {
       throw new \InvalidArgumentException('Key app_id is missing');
-    } elseif (!isset($auth['password']) || empty($auth['password'])) {
+    } elseif (empty($auth['password']) && empty($auth['api_key'])) {
       throw new \InvalidArgumentException('Key password is missing');
     }
 
@@ -127,8 +138,14 @@ class Client
       self::setLive($auth['live']);
     }
 
-    self::setAppId($auth['app_id']);
-    self::setPassword($auth['password']);
+    if (!empty($auth['api_key'])) {
+      self::setApiKey($auth['api_key']);
+    }
+
+    if (!empty($auth['password']) && !empty($auth['app_id'])) {
+      self::setAppId($auth['app_id']);
+      self::setPassword($auth['password']);
+    }
 
     self::setClient($client);
 
@@ -168,11 +185,14 @@ class Client
   {
     $client = $this->getHttpClient();
 
-    if (self::getCurrentAuthInfo()) {
+    if (self::getApiKey()) {
+      $client->appendRequestHeader('X-API-KEY', self::getApiKey());
+    } else if (self::getCurrentAuthInfo()) {
       foreach (self::getCurrentAuthInfo() as $key => $value) {
         $client->appendRequestHeader($key, $value);
       }
     }
+
     return $client->$method(self::getBaseUrl() . $url, $body);
   }
 }

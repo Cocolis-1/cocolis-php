@@ -58,9 +58,9 @@ class ClientTest extends CocolisTest
     ]);
     $result = $client->signIn();
     $this->assertEquals([
-      'access-token' => 'nBfCK2mL3rp83hSjhUFLYg',
-      'client' => 'g5z8dF58MvI4t5zoQzX9xA',
-      'expiry' => '1604319132',
+      'access-token' => 'pq915g6fXYsZwByHh2Tr7g',
+      'client' => 'FdTizxGOBSm9fXrkShOVdw',
+      'expiry' => '1643332505',
       'uid' => 'e0611906'
     ], $result);
   }
@@ -73,16 +73,6 @@ class ClientTest extends CocolisTest
       'app_id' => '',
       'password' => 'test'
     ]);
-  }
-
-  public function testAuthInfo()
-  {
-    $this->assertEquals([
-      'access-token' => 'nBfCK2mL3rp83hSjhUFLYg',
-      'client' => 'g5z8dF58MvI4t5zoQzX9xA',
-      'expiry' => '1604319132',
-      'uid' => 'e0611906'
-    ], Client::getCurrentAuthInfo());
   }
 
   public function testPasswordException()
@@ -153,5 +143,28 @@ class ClientTest extends CocolisTest
     $client->signIn();
     $result = $client->validateToken();
     $this->assertNotEmpty($result);
+  }
+
+  public function testApiKey()
+  {
+    $client = Client::create(
+      [
+        'api_key' => 'd699daaeeb9a4303bee8dd6d3652ee05',
+        'live' => false
+      ]
+    );
+    $rides = $client->getRideClient()->mine();
+    $this->assertNotEmpty($rides);
+  }
+
+
+  public function testApiKeyException()
+  {
+    $this->expectException(InvalidArgumentException::class);
+    $this->expectExceptionMessage('Key app_id is missing');
+    Client::create([
+      'api_key' => '',
+      'live' => false
+    ]);
   }
 }
