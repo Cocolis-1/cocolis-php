@@ -187,7 +187,7 @@ class Client
 
     if (self::getApiKey()) {
       $client->appendRequestHeader('X-API-KEY', self::getApiKey());
-    } else if (self::getCurrentAuthInfo()) {
+    } elseif (self::getCurrentAuthInfo()) {
       foreach (self::getCurrentAuthInfo() as $key => $value) {
         $client->appendRequestHeader($key, $value);
       }
