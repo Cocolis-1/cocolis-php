@@ -161,7 +161,7 @@ class ClientTest extends CocolisTest
   public function testApiKeyException()
   {
     $this->expectException(InvalidArgumentException::class);
-    $this->expectExceptionMessage('Key app_id is missing');
+    $this->expectExceptionMessage('Key api_key is missing or your app_id and password are missing');
     Client::create([
       'api_key' => '',
       'live' => false
