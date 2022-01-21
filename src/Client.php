@@ -130,7 +130,7 @@ class Client
 
     if (empty($auth['api_key']) && empty($auth['app_id']) && empty($auth['password'])) {
       throw new \InvalidArgumentException('Key api_key is missing or your app_id and password are missing');
-    } else if (empty($auth['app_id']) && !empty($auth['password'])) {
+    } elseif (empty($auth['app_id']) && !empty($auth['password'])) {
       throw new \InvalidArgumentException('Key app_id is missing');
     } elseif (empty($auth['password']) && !empty($auth['app_id'])) {
       throw new \InvalidArgumentException('Key password is missing');
