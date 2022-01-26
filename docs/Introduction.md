@@ -35,6 +35,27 @@ Le principe de la librairie étant essentiellement basé sur la **documentation 
 
 Avec la librairie, vous pouvez vous authentifier facilement de cette façon et **une seule fois** :
 
+<!--
+type: tab
+title: Authentification recommandée (API KEY)
+-->
+
+```php
+$client = Client::create(
+  [
+    'api_key' => 'mon_api_key',
+    'live' => false
+  ]
+);
+
+// Contrairement à l'authentification dépréciée, celle-ci ne nécessite pas un sign-in.
+```
+
+<!--
+type: tab
+title: Authentification dépréciée (Tokens)
+-->
+
 ```php
 $client = Client::create(array(
     'app_id' => 'mon_appid',
@@ -44,7 +65,9 @@ $client = Client::create(array(
 $client->signIn(); // Cet appel fait l'authentification
 ```
 
-Vous n'avez plus qu'à utiliser l'objet `$client` pour effectuer un appel.
+<!-- type: tab-end -->
+
+Vous n'avez plus qu'à utiliser l'objet `$client` pour effectuer un appel. Pour savoir comment obtenir votre token d'authentification vous pouvez lire la [documentation de l'API](https://cocolis.stoplight.io/docs/cocolis-api/ZG9jOjQ2NDA5-authentification#obtenir-son-token-dauthentification)
 
 Par exemple, pour **vérifier la disponibilité** d'une Ride :
 
@@ -81,4 +104,3 @@ Si le token n'est plus valide, il suffit de refaire un `$client->signIn()`
 ## Environnements
 
 Il existe **deux environnements**, l'environnement de test (**sandbox**) et l'environnement de **production**, vous pouvez en savoir plus [ici](https://doc.cocolis.fr/docs/cocolis-api/docs/Installation-et-utilisation/01-Environnements.md).
-
