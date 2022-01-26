@@ -14,7 +14,7 @@ Le prélèvement du montant de la livraison est effectué sur le compte MangoPay
 
 ## 2. Demander un compte développeur
 
-Vous pouvez demander la création d'un compte développeur en remplissant [ce formulaire](https://docs.google.com/forms/d/e/1FAIpQLSe9DZntip2_5jSR5BVRBD8S84vtBdeI834K9-Mj7euLCNit4A/viewform?usp=pp_url). Une clé API vous sera alors fournie pour **Sandbox** et **Production**.
+Vous pouvez demander la création d'un compte développeur en remplissant [ce formulaire](https://docs.google.com/forms/d/e/1FAIpQLSe9DZntip2_5jSR5BVRBD8S84vtBdeI834K9-Mj7euLCNit4A/viewform?usp=pp_url).
 
 ## 3. Authentification
 
@@ -23,6 +23,27 @@ Toutes les requêtes API doivent être authentifiées grâce à notre librairie 
 > Pour comprendre le fonctionnement de l'authentification, reportez vous à la [rubrique dédiée](../../Installation-et-utilisation/03-Authentification.md). En particulier, concernant la vérification de la validité de vos tokens.
 
 1. Créez un Client HTTP avec notre API en vous authentifiant :
+
+<!--
+type: tab
+title: Authentification recommandée (API KEY)
+-->
+
+```php
+$client = Client::create(
+  [
+    'api_key' => 'mon_api_key',
+    'live' => false
+  ]
+);
+
+// Contrairement à l'authentification dépréciée, celle-ci ne nécessite pas un sign-in.
+```
+
+<!--
+type: tab
+title: Authentification dépréciée (Tokens)
+-->
 
 ```php
 $client = Client::create(array(
@@ -33,8 +54,9 @@ $client = Client::create(array(
 $client->signIn(); // Cet appel fait l'authentification
 ```
 
-> La librairie PHP se chargera d'utiliser vos tokens d'authentification pour vous authentifier lors de vos prochains appels
+<!-- type: tab-end -->
 
+> La librairie PHP se chargera d'utiliser vos tokens d'authentification pour vous authentifier lors de vos prochains appels
 
 ## 4. Gérer l'expiration d'un token
 
@@ -58,12 +80,14 @@ Si le token n'est plus valide, il suffit de refaire un `$client->signIn()`
 ## 5. Eligibilité d'une livraison
 
 <!-- theme: warning -->
+
 > ### Tous nos prix sont en centimes
 
 <!--
 type: tab
 title: Doc
 -->
+
 Pour savoir si la livraison Cocolis est éligible d'un code postal A à un code postal B, il faut appeler l'URL :
 
 ```php
@@ -74,47 +98,39 @@ $client->getRideClient()->canMatch(75000, 31400, 10); // Code postal de départ,
 
 ```json json_schema
 {
-    "title": "Response",
-    "type": "object",
-    "properties": {
-        "from": {
-            "type": "object",
-            "properties": {
-              "postal_code": {
-                "type": "string",
-                "description": "Code postal du point de départ"
-              }
-            },
-            "required": [
-              "postal_code"
-            ]
-        },
-        "to": {
-            "type": "object",
-            "properties": {
-              "postal_code": {
-                "type": "string",
-                "description": "Code postal du point d'arrivée"
-              }
-            },
-            "required": [
-              "postal_code"
-            ]
-        },
-        "volume": {
-            "type": "number",
-            "description": "Somme des volumes en m3 des produits à livrer"
-        },
-        "content_value": {
-            "type": "number",
-            "description": "Valeur de la livraison en Centimes (Valeur de la commande)"
+  "title": "Response",
+  "type": "object",
+  "properties": {
+    "from": {
+      "type": "object",
+      "properties": {
+        "postal_code": {
+          "type": "string",
+          "description": "Code postal du point de départ"
         }
+      },
+      "required": ["postal_code"]
     },
-    "required": [
-      "from",
-      "to",
-      "volume"
-    ]
+    "to": {
+      "type": "object",
+      "properties": {
+        "postal_code": {
+          "type": "string",
+          "description": "Code postal du point d'arrivée"
+        }
+      },
+      "required": ["postal_code"]
+    },
+    "volume": {
+      "type": "number",
+      "description": "Somme des volumes en m3 des produits à livrer"
+    },
+    "content_value": {
+      "type": "number",
+      "description": "Valeur de la livraison en Centimes (Valeur de la commande)"
+    }
+  },
+  "required": ["from", "to", "volume"]
 }
 ```
 
@@ -174,6 +190,7 @@ La réponse sera un stdClass du format :
 ## 6. Création d'une annonce :
 
 <!-- theme: warning -->
+
 > ### Tous nos prix sont en centimes
 
 Quand une vente a été réalisée sur votre site avec notre mode de livraison, il faut ensuite la créer sur Cocolis. Nous vous recommandons de la créer 30 minutes après le paiement pour gérer des cas d'annulation rapide sur votre site.
@@ -239,6 +256,7 @@ $params = [
 ];
 $ride = $rideClient->create($params);
 ```
+
 ---
 
 ```json json_schema
@@ -281,11 +299,10 @@ type: tab
 title: Paramètres
 -->
 
-
-| Paramètre        |      Valeur      |   Commentaire |
-| ------------- | :-----------: | -----: |
-| :domain      | `www.cocolis.fr` | En sandbox, le domaine sera `sandbox.cocolis.fr` |
-| :buyer_tracking      |   ride.buyer_tracking    |   Lors de la création de la ride, nous vous avons renvoyé ce paramètre dans la clé `buyer_tracking` |
+| Paramètre       |       Valeur        |                                                                                       Commentaire |
+| --------------- | :-----------------: | ------------------------------------------------------------------------------------------------: |
+| :domain         |  `www.cocolis.fr`   |                                                  En sandbox, le domaine sera `sandbox.cocolis.fr` |
+| :buyer_tracking | ride.buyer_tracking | Lors de la création de la ride, nous vous avons renvoyé ce paramètre dans la clé `buyer_tracking` |
 
 > Nous vous conseillons de remonter cette information sur la page de suivi de commande de votre client.
 
@@ -326,10 +343,10 @@ type: tab
 title: Paramètres
 -->
 
-| Paramètre        |      Valeur      |   Commentaire |
-| ------------- | :-----------: | -----: |
-| :domain      | `www.cocolis.fr` | En sandbox, le domaine sera `sandbox.cocolis.fr` |
-| :seller_tracking      |   ride.seller_tracking    |   Lors de la création de la ride, nous vous avons renvoyé ce paramètre dans la clé `seller_tracking` |
+| Paramètre        |        Valeur        |                                                                                        Commentaire |
+| ---------------- | :------------------: | -------------------------------------------------------------------------------------------------: |
+| :domain          |   `www.cocolis.fr`   |                                                   En sandbox, le domaine sera `sandbox.cocolis.fr` |
+| :seller_tracking | ride.seller_tracking | Lors de la création de la ride, nous vous avons renvoyé ce paramètre dans la clé `seller_tracking` |
 
 > Nous vous conseillons de remonter cette information sur la page de suivi de commande de votre client.
 
@@ -351,5 +368,3 @@ https://sandbox.cocolis.fr/rides/seller/7E20B021BF8721A2
 ```
 
 <!-- type: tab-end -->
-
-

@@ -33,6 +33,8 @@ Le principe de la librairie étant essentiellement basé sur la **documentation 
 > Avant toute chose, vous devez avoir un compte développeur, vous trouverez plus d'information ici :
 > [Demander un compte développeur](https://doc.cocolis.fr/docs/cocolis-api/docs/Tutoriel-impl%C3%A9mentation/Getting-Started.md#2-demander-un-compte-d%C3%A9veloppeur)
 
+> Pour savoir comment obtenir votre token d'authentification vous pouvez lire [ceci](docs/Tutoriel-implémentation/Get-API-KEY.md).
+
 Avec la librairie, vous pouvez vous authentifier facilement de cette façon et **une seule fois** :
 
 <!--
@@ -67,7 +69,7 @@ $client->signIn(); // Cet appel fait l'authentification
 
 <!-- type: tab-end -->
 
-Vous n'avez plus qu'à utiliser l'objet `$client` pour effectuer un appel. Pour savoir comment obtenir votre token d'authentification vous pouvez lire la [documentation de l'API](https://cocolis.stoplight.io/docs/cocolis-api/ZG9jOjQ2NDA5-authentification#obtenir-son-token-dauthentification)
+Vous n'avez plus qu'à utiliser l'objet `$client` pour effectuer un appel.
 
 Par exemple, pour **vérifier la disponibilité** d'une Ride :
 
