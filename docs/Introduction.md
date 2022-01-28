@@ -37,6 +37,12 @@ Le principe de la librairie étant essentiellement basé sur la **documentation 
 
 Avec la librairie, vous pouvez vous authentifier facilement de cette façon et **une seule fois** :
 
+<!-- theme: danger -->
+
+> #### Mise à jour 2022
+>
+> Changement de la méthode d'authentification, à partir de maintenant nous recommandons l'authentification par clée API.
+
 <!--
 type: tab
 title: Authentification recommandée (API KEY)
