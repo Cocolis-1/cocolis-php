@@ -17,7 +17,8 @@
     "friendsofphp/php-cs-fixer": "^3.3",
     "phpunit/php-code-coverage": "^9.2",
     "phpunit/phpunit": "^9.4",
-    "php-vcr/php-vcr": "^1.5.2"
+    "php-vcr/php-vcr": "^1.5.2",
+    "php-coveralls/php-coveralls": "dev-master"
   },
   "authors": [
     {
