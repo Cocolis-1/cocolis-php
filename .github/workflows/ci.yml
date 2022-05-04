@@ -32,11 +32,11 @@ jobs:
     - name: Run php-cs-fixer
       run: ./vendor/bin/php-cs-fixer fix ./ --diff --dry-run
     - name: Run phpunit
-      run: ./vendor/bin/phpunit --coverage-clover coverage.xml
+      run: ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
     - name: Upload coverage results to Coveralls
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         composer global require php-coveralls/php-coveralls
-        php-coveralls --coverage_clover=coverage.xml -v
+        php-coveralls --coverage_clover=build/logs/clover.xml -v
