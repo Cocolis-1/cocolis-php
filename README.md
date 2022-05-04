@@ -1,5 +1,5 @@
 ![CI](https://github.com/Cocolis-1/cocolis-php/workflows/CI/badge.svg)
-[![codecov](https://codecov.io/gh/Cocolis-1/cocolis-php/branch/develop/graph/badge.svg?token=P8KOPZKKB4)](https://codecov.io/gh/Cocolis-1/cocolis-php)
+[![Coverage Status](https://coveralls.io/repos/github/Cocolis-1/cocolis-php/badge.svg)](https://coveralls.io/github/Cocolis-1/cocolis-php)
 
 # PHP Library to use Cocolis.fr API
 
