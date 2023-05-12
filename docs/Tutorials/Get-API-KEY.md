@@ -1,12 +1,12 @@
 # Comment obtenir son token d'authentification
 
-Tous les appels à l'API publique doivent se faire de manière authentifiée. Voici les étapes pour pouvoir faire votre premier appel à l'API.
+Tous les appels à l'API doivent se faire de manière authentifiée. Voici les étapes pour pouvoir faire votre premier appel à l'API.
 
 Un **administrateur Cocolis** doit vous créer une **"API application"**, qui vous sera associée.
 
 ## Obtenir son token d'authentification
 
-Rendez vous sur la [page de gestion](https://cocolis.fr/my-account/api-keys) de votre clé api, puis créer votre clé api.
+Rendez vous sur la [page de gestion](https://www.cocolis.fr/my-account/api-keys) de votre clé api, puis créer votre clé api.
 
 <!--
 focus: top
@@ -19,4 +19,4 @@ Gardez précieusement le token généré. C'est votre mot de passe API, toute pe
 
 ![API KEY 2](https://res.cloudinary.com/cocolis-prod/image/upload/v1643208527/Documentation/api/dev/tuto_api_key_2_irbwqh.png 'Une fois créer, gardez la précieusement, elle ne sera plus affichée')
 
-**Ce token ne sera plus accessible plus tard, le seul moyen sera d'en regénérer un nouveau.**
+**Ce token ne pourra plus être récupéré plus tard, le seul moyen sera d'en régénérer un nouveau.**

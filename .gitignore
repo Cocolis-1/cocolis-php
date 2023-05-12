@@ -2,6 +2,7 @@
 .history
 composer.phar
 /vendor/
+.idea/
 .php*
 !.php_cs
 !.php-cs-fixer.php
