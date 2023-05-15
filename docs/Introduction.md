@@ -33,7 +33,36 @@ Le principe de la librairie étant essentiellement basé sur la **documentation 
 > Avant toute chose, vous devez avoir un compte développeur, vous trouverez plus d'information ici :
 > [Demander un compte développeur](https://doc.cocolis.fr/docs/cocolis-api/docs/Tutoriel-impl%C3%A9mentation/Getting-Started.md#2-demander-un-compte-d%C3%A9veloppeur)
 
+> Pour savoir comment obtenir votre token d'authentification vous pouvez lire [ceci](docs/Tutoriel-implémentation/Get-API-KEY.md).
+
 Avec la librairie, vous pouvez vous authentifier facilement de cette façon et **une seule fois** :
+
+<!-- theme: danger -->
+
+> #### Mise à jour 2022
+>
+> Changement de la méthode d'authentification, à partir de maintenant nous recommandons l'authentification par clée API.
+
+<!--
+type: tab
+title: Authentification recommandée (API KEY)
+-->
+
+```php
+$client = Client::create(
+  [
+    'api_key' => 'mon_api_key',
+    'live' => false
+  ]
+);
+
+// Contrairement à l'authentification dépréciée, celle-ci ne nécessite pas un sign-in.
+```
+
+<!--
+type: tab
+title: Authentification dépréciée (Tokens)
+-->
 
 ```php
 $client = Client::create(array(
@@ -43,6 +72,8 @@ $client = Client::create(array(
   ));
 $client->signIn(); // Cet appel fait l'authentification
 ```
+
+<!-- type: tab-end -->
 
 Vous n'avez plus qu'à utiliser l'objet `$client` pour effectuer un appel.
 
@@ -81,4 +112,3 @@ Si le token n'est plus valide, il suffit de refaire un `$client->signIn()`
 ## Environnements
 
 Il existe **deux environnements**, l'environnement de test (**sandbox**) et l'environnement de **production**, vous pouvez en savoir plus [ici](https://doc.cocolis.fr/docs/cocolis-api/docs/Installation-et-utilisation/01-Environnements.md).
-

@@ -13,6 +13,7 @@ class Version
 {
   public function __toString(): string
   {
-    return '2.0.2';
+    $json = json_decode(file_get_contents('./composer.json'));
+    return $json->version;
   }
 }
