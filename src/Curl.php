@@ -475,7 +475,8 @@ class Curl
             // value of curl_exec() instead of outputting it out directly.
             'CURLOPT_RETURNTRANSFER' => 1,
             'CURLOPT_BINARYTRANSFER' => 0,
-            'CURLOPT_SSL_VERIFYPEER' => 0,
+            // Verify the API TLS certificate to prevent man-in-the-middle attacks.
+            'CURLOPT_SSL_VERIFYPEER' => 1,
             'CURLOPT_SSL_VERIFYHOST' => 2,
             'CURLOPT_CONNECTTIMEOUT' => 30,
         ];

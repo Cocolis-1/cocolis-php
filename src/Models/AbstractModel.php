@@ -35,7 +35,8 @@ abstract class AbstractModel
         $return = null;
       }
     } else {
-      trigger_error('Data is no object!', E_USER_ERROR);
+      // trigger_error() with E_USER_ERROR is deprecated as of PHP 8.4.
+      throw new \UnexpectedValueException('Data is no object!');
     }
     return $return;
   }
