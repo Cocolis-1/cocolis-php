@@ -335,7 +335,7 @@ class Curl
     $main    = curl_multi_init();
     for ($i = 0; $i < $count; $i++) {
       $url = $requests[$i];
-      foreach ($url as $n=>$v) {
+      foreach ($url as $n => $v) {
         $options[$n] = $url[$n];
       }
       $handles[$i] = curl_init($url['url']);
@@ -669,7 +669,7 @@ class curl_cache
     $filename = 'u_'.md5(serialize($param));
     if (file_exists($this->dir.$filename)) {
       $lasttime = filemtime($this->dir.$filename);
-      if (time()-$lasttime > $this->ttl) {
+      if (time() - $lasttime > $this->ttl) {
         return false;
       } else {
         $fp = fopen($this->dir.$filename, 'r');
@@ -722,7 +722,7 @@ class curl_cache
     if ($dir = opendir($this->dir)) {
       while (false !== ($file = readdir($dir))) {
         if (!is_dir($file) && $file != '.' && $file != '..') {
-          if (strpos($file, 'u_')!==false) {
+          if (strpos($file, 'u_') !== false) {
             @unlink($this->dir.$file);
           }
         }
