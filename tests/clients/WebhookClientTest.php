@@ -49,4 +49,12 @@ class WebhookClientTest extends CocolisTest
     $result = $client->getWebhookClient()->remove('10');
     $this->assertEmpty($result);
   }
+
+  public function testGetSigningSecret()
+  {
+    $client = $this->authenticatedClient();
+    $secret = $client->getWebhookClient()->getSigningSecret();
+    $this->assertNotEmpty($secret);
+    $this->assertEquals('0123456789abcdef0123456789abcdef0123456789abcdef', $secret);
+  }
 }

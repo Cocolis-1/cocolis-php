@@ -226,7 +226,7 @@ class Curl
    */
   public function download($requests, $options = [])
   {
-    $options['CURLOPT_BINARYTRANSFER'] = 1;
+    // CURLOPT_BINARYTRANSFER is deprecated as of PHP 8.4 and has no effect since PHP 5.1.2.
     $options['RETURNTRANSFER'] = false;
     return $this->multi($requests, $options);
   }
@@ -412,7 +412,7 @@ class Curl
       throw new \Cocolis\Api\Errors\CocolisException($this->error);
     }
 
-    curl_close($curl);
+    // curl_close() is deprecated as of PHP 8.5 and has no effect since PHP 8.0.
 
     return $response;
   }
@@ -474,8 +474,8 @@ class Curl
             // TRUE to return the transfer as a string of the return
             // value of curl_exec() instead of outputting it out directly.
             'CURLOPT_RETURNTRANSFER' => 1,
-            'CURLOPT_BINARYTRANSFER' => 0,
-            'CURLOPT_SSL_VERIFYPEER' => 0,
+            // Verify the API TLS certificate to prevent man-in-the-middle attacks.
+            'CURLOPT_SSL_VERIFYPEER' => 1,
             'CURLOPT_SSL_VERIFYHOST' => 2,
             'CURLOPT_CONNECTTIMEOUT' => 30,
         ];
