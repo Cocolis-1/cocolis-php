@@ -23,7 +23,7 @@ class RideTest extends CocolisTest
 
   public function testObjectException()
   {
-    $this->expectException(\UnexpectedValueException::class);
+    $this->expectException(\InvalidArgumentException::class);
     $this->expectExceptionMessage('Data is no object!');
     $client = new Client();
     $ride = new Ride('toto', $client);
