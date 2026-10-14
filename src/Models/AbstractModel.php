@@ -35,7 +35,7 @@ abstract class AbstractModel
         $return = null;
       }
     } else {
-      trigger_error('Data is no object!', E_USER_ERROR);
+      throw new \InvalidArgumentException('Data is no object!');
     }
     return $return;
   }
